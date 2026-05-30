@@ -1,0 +1,158 @@
+# AttenGene Docker Compose
+#
+# Brings up the full stack:
+#
+#   db          PostgreSQL + pgvector (vector store, audit log, sessions)
+#   embeddings  BGE-large-en-v1.5 embeddings server (CPU by default;
+#               `--profile gpu` swaps in a CUDA build)
+#   api         FastAPI backend (RAG orchestration, OpenAI-compatible
+#               /v1/chat/completions endpoint)
+#
+# The LLM is intentionally NOT included. AttenGene calls out to any
+# OpenAI-compatible chat-completions endpoint of your choice (llama.cpp's
+# llama-server, Ollama, vLLM, etc.). Point BACKEND_LOCAL_URL at it.
+#
+# Quickstart:
+#
+#   cp .env.example .env
+#   docker compose up -d
+#   curl http://localhost:8000/health
+#
+# GPU embeddings (NVIDIA only, requires nvidia-container-toolkit):
+#
+#   docker compose --profile gpu up -d
+#
+# With Open WebUI as the chat frontend:
+#
+#   docker compose --profile openwebui up -d
+#
+# Local development (DB-only, run uvicorn on the host with --reload):
+#
+#   docker compose up -d db embeddings
+#   uvicorn app.main:app --reload
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: attengene-db
+    environment:
+      POSTGRES_USER: ${DB_USER:-attengene}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-changeme}
+      POSTGRES_DB: ${DB_NAME:-attengene}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/01-init.sql
+      - ./sql/audit_tables.sql:/docker-entrypoint-initdb.d/02-audit.sql
+      - ./sql/genereviews_schema.sql:/docker-entrypoint-initdb.d/03-genereviews.sql
+    ports:
+      - "127.0.0.1:5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-attengene} -d ${DB_NAME:-attengene}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  embeddings:
+    build:
+      context: .
+      dockerfile: Dockerfile.embeddings
+    container_name: attengene-embeddings
+    environment:
+      EMBEDDINGS_MODEL: ${EMBEDDINGS_MODEL:-BAAI/bge-large-en-v1.5}
+      EMBEDDINGS_DEVICE: ${EMBEDDINGS_DEVICE:-cpu}
+      EMBEDDINGS_DTYPE: ${EMBEDDINGS_DTYPE:-float32}
+      EMBEDDINGS_BATCH_SIZE: ${EMBEDDINGS_BATCH_SIZE:-32}
+      EMBEDDINGS_PORT: "8081"
+    ports:
+      - "127.0.0.1:8081:8081"
+    volumes:
+      - embeddings_cache:/home/appuser/.cache
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://127.0.0.1:8081/health', timeout=5).raise_for_status()"]
+      interval: 30s
+      timeout: 10s
+      # Model download on first boot can take a few minutes on CPU.
+      start_period: 300s
+      retries: 5
+    restart: unless-stopped
+
+  # GPU-accelerated embeddings. Only built when `--profile gpu` is set.
+  # Requires nvidia-container-toolkit on the host.
+  embeddings-gpu:
+    extends: embeddings
+    profiles: ["gpu"]
+    container_name: attengene-embeddings
+    build:
+      context: .
+      dockerfile: Dockerfile.embeddings.gpu
+    environment:
+      EMBEDDINGS_DEVICE: cuda
+      EMBEDDINGS_DTYPE: float16
+      EMBEDDINGS_BATCH_SIZE: ${EMBEDDINGS_BATCH_SIZE:-256}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  api:
+    build:
+      context: .
+      target: api
+    container_name: attengene-api
+    environment:
+      DB_HOST: db
+      DB_PORT: "5432"
+      DB_NAME: ${DB_NAME:-attengene}
+      DB_USER: ${DB_USER:-attengene}
+      DB_PASSWORD: ${DB_PASSWORD:-changeme}
+      BACKEND_LOCAL_URL: ${BACKEND_LOCAL_URL:-http://host.docker.internal:8080/v1/chat/completions}
+      BACKEND_LOCAL_MODEL: ${BACKEND_LOCAL_MODEL:-auto}
+      BACKEND_MISTRAL_KEY: ${BACKEND_MISTRAL_KEY:-}
+      EMBEDDINGS_URL: ${EMBEDDINGS_URL:-http://embeddings:8081/embed}
+      EMBEDDINGS_TIMEOUT: ${EMBEDDINGS_TIMEOUT:-10.0}
+      EMBEDDINGS_BATCH_SIZE: ${EMBEDDINGS_BATCH_SIZE:-256}
+      ATTENGENE_API_KEY: ${ATTENGENE_API_KEY:-}
+    ports:
+      - "127.0.0.1:8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+      embeddings:
+        condition: service_healthy
+    extra_hosts:
+      # Lets BACKEND_LOCAL_URL resolve host.docker.internal on Linux for
+      # users running llama-server/Ollama on the host. No effect on macOS
+      # or Windows where Docker provides this mapping natively.
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
+  # Open WebUI chat frontend. Opt-in via `--profile openwebui`.
+  openwebui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: attengene-openwebui
+    profiles: ["openwebui"]
+    ports:
+      - "127.0.0.1:3000:8080"
+    environment:
+      OPENAI_API_BASE_URL: http://api:8000/v1
+      OPENAI_API_KEY: ${ATTENGENE_API_KEY:-sk-unused}
+      ENABLE_OLLAMA_API: "false"
+      WEBUI_AUTH: "false"
+    depends_on:
+      - api
+    volumes:
+      - openwebui_data:/app/backend/data
+    restart: unless-stopped
+
+networks:
+  default:
+    name: attengene-net
+
+volumes:
+  postgres_data:
+  embeddings_cache:
+  openwebui_data:

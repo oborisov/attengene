@@ -1,0 +1,16 @@
+AttenGene
+Copyright 2026 Oleg Borisov
+
+This product includes software developed at https://attengene.de
+and licensed under the Apache License, Version 2.0
+(http://www.apache.org/licenses/LICENSE-2.0).
+
+AttenGene retrieves and surfaces content from public knowledge bases.
+Cite the underlying sources when publishing work that uses AttenGene:
+
+  - ClinVar (NCBI):       https://www.ncbi.nlm.nih.gov/clinvar/
+  - GeneReviews (UW):     https://www.ncbi.nlm.nih.gov/books/NBK1116/
+  - NephroGenetics:       see docs/architecture.md
+
+These sources are not redistributed with AttenGene. Users fetch them
+directly via the bundled indexing scripts.

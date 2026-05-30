@@ -1,0 +1,31 @@
+# Sprint-side dependencies for scripts/run_embeddings_server.py.
+#
+# Install in a sprint-local venv on top of requirements.txt:
+#
+#   pip install -r requirements.txt \
+#       -r requirements-embeddings-server.txt \
+#       --extra-index-url https://download.pytorch.org/whl/cu132
+#
+# Pins are sprint-specific (Blackwell sm_120 needs CUDA 13.2). Do NOT
+# install these into the main requirements.txt - the laptop dev path and
+# the FastAPI API container don't need CUDA torch and would just pay the
+# wheel-download cost for nothing.
+#
+# Why these versions:
+#   torch 2.12.0+cu132 is the lowest combo that builds CUDA kernels for
+#     compute capability 12.0 (RTX 5060 Ti / Blackwell). 2.11 and earlier
+#     emit sm_120 as a JIT-compile fallback which is exactly what made
+#     TEI/Candle unusable on this card.
+#   sentence-transformers 5.5.1 is what the bench script at
+#     sprint:/tmp/bge-bench2.py validated against; staying on the same
+#     minor keeps the cosine equivalence trivially true.
+#
+# uvicorn + fastapi + pydantic are already in requirements.txt at compatible
+# versions and are re-pulled here only for the case where someone wants to
+# install the server's deps standalone (without the main API deps).
+
+torch==2.12.0+cu132
+sentence-transformers==5.5.1
+fastapi>=0.128.0
+uvicorn>=0.34.0
+pydantic>=2.12.0

@@ -1,0 +1,39 @@
+# AttenGene embeddings server - CPU build
+#
+# Hosts BAAI/bge-large-en-v1.5 behind a TEI-compatible /embed endpoint plus
+# OpenAI-compatible /v1/embeddings. For GPU builds see Dockerfile.embeddings.gpu.
+
+FROM python:3.12-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/*
+
+# CPU torch wheels are smaller and avoid pulling in CUDA libraries that the
+# CPU build would never use. GPU builds use a different base image.
+RUN pip install --no-cache-dir \
+    --extra-index-url https://download.pytorch.org/whl/cpu \
+    torch==2.12.0+cpu \
+    sentence-transformers==5.5.1 \
+    fastapi>=0.128.0 \
+    uvicorn>=0.34.0 \
+    pydantic>=2.12.0
+
+COPY app/embeddings_server.py ./app/embeddings_server.py
+COPY app/__init__.py ./app/__init__.py
+COPY scripts/run_embeddings_server.py ./scripts/run_embeddings_server.py
+
+RUN useradd --create-home --shell /bin/bash appuser \
+    && chown -R appuser:appuser /app
+USER appuser
+
+# Pre-download the embedding model into the image so first-boot is fast.
+RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('BAAI/bge-large-en-v1.5')"
+
+EXPOSE 8081
+
+CMD ["python", "scripts/run_embeddings_server.py"]

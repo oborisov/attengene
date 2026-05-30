@@ -1,0 +1,59 @@
+# AttenGene embeddings server - NVIDIA CUDA build
+#
+# Use this image when running on a host with an NVIDIA GPU and
+# nvidia-container-toolkit installed. The Compose `gpu` profile selects
+# this Dockerfile automatically:
+#
+#   docker compose --profile gpu up -d
+#
+# Defaults to CUDA 12.6 wheels (covers GeForce 30/40 series and most data
+# center cards). For Blackwell (RTX 50 series, sm_120), override the build
+# args:
+#
+#   docker compose --profile gpu build \
+#       --build-arg TORCH_VERSION=2.12.0+cu132 \
+#       --build-arg TORCH_INDEX=https://download.pytorch.org/whl/cu132
+
+FROM nvidia/cuda:12.6.3-runtime-ubuntu24.04
+
+ARG TORCH_VERSION=2.12.0
+ARG TORCH_INDEX=https://download.pytorch.org/whl/cu126
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV DEBIAN_FRONTEND=noninteractive
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3.12 \
+    python3-pip \
+    python3.12-venv \
+    && rm -rf /var/lib/apt/lists/*
+
+# Use a virtualenv so we don't fight with the distro's externally-managed
+# Python on Ubuntu 24.04.
+RUN python3.12 -m venv /opt/venv
+ENV PATH="/opt/venv/bin:${PATH}"
+
+RUN pip install --no-cache-dir \
+    --extra-index-url "${TORCH_INDEX}" \
+    "torch==${TORCH_VERSION}" \
+    sentence-transformers==5.5.1 \
+    fastapi>=0.128.0 \
+    uvicorn>=0.34.0 \
+    pydantic>=2.12.0
+
+COPY app/embeddings_server.py ./app/embeddings_server.py
+COPY app/__init__.py ./app/__init__.py
+COPY scripts/run_embeddings_server.py ./scripts/run_embeddings_server.py
+
+RUN useradd --create-home --shell /bin/bash appuser \
+    && chown -R appuser:appuser /app /opt/venv
+USER appuser
+
+RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('BAAI/bge-large-en-v1.5')"
+
+EXPOSE 8081
+
+CMD ["python", "scripts/run_embeddings_server.py"]

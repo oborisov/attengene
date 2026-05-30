@@ -1,0 +1,18 @@
+# AttenGene API dependencies.
+# Embeddings live in a separate container - see requirements-embeddings-server.txt.
+
+# FastAPI backend
+fastapi>=0.128.0
+uvicorn>=0.34.0
+pydantic>=2.12.0
+httpx>=0.28.0
+
+# Database
+psycopg2-binary>=2.9.10
+
+# Parsing
+lxml>=5.0.0
+
+# Scripts (indexing, ad-hoc tools)
+python-dotenv>=1.0.0
+tqdm>=4.67.0

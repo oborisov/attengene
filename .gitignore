@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment / secrets
+.env
+.api_key
+.webui_secret_key
+*.log
+
+# Indexed data (downloaded by scripts/index_*.py)
+data/clinvar/
+data/genereviews/
+data/gene_NBK1116/
+data/nephrogenetics/
+gene_NBK1116/
+
+# Large data files
+*.tar.gz
+variant_summary.txt.gz
+
+# Database dumps
+*.sql.gz
+
+# Models (too large for git)
+models/
+
+# Embeddings cache (Docker volume mount target)
+.cache/
+
+# OS
+.DS_Store
+Thumbs.db
