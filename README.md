@@ -6,14 +6,13 @@ PubMed are on the roadmap). Bring your own LLM and embeddings server;
 AttenGene wires them up with a vector database, hybrid retrieval, source
 citations, and an OpenAI-compatible chat endpoint.
 
-> **AttenGene is a scientific exploration tool, not a medical device.**
->
-> It surfaces information from public knowledge bases and presents it
-> through an LLM. It is intended for research, learning, and literature
-> exploration. **It is not for diagnostic use, not for treatment
-> decisions, and not a substitute for advice from a qualified
-> professional.** The software is provided as-is under the Apache 2.0
-> License with no warranty of any kind.
+> **Research use only.** AttenGene is a research prototype - a search
+> and exploration interface over public knowledge bases (ClinVar,
+> GeneReviews, NephroGenetics). **It is not a medical device, is not
+> intended for clinical, diagnostic, or treatment decisions, and has
+> not been evaluated or certified by any regulatory authority.** Do
+> not use it to inform patient care. The software is provided as-is
+> under the Apache 2.0 License with no warranty of any kind.
 
 ## What you get
 

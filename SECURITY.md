@@ -33,8 +33,8 @@ Out of scope:
 
 ## Clinical safety reminder
 
-AttenGene is **not a medical device** and is **not intended for
-diagnostic use**. Any security report involving "the model gave wrong
-clinical advice" is a clinical-safety report, not a security report, and
-should also be raised with the operator of the deployment - not just
-the upstream project.
+AttenGene is a research prototype, **not a medical device**, and **not
+intended for any clinical or diagnostic use**. Any report involving
+"the model gave wrong clinical advice" is a clinical-safety report,
+not a security report, and should also be raised with the operator of
+the deployment - not just the upstream project.

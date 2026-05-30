@@ -1,6 +1,10 @@
 AttenGene
 Copyright 2026 Oleg Borisov
 
+Research use only. AttenGene is a research prototype and is not a
+medical device. It is not intended for clinical, diagnostic, or
+treatment decisions. See README.md for the full disclaimer.
+
 This product includes software developed at https://attengene.de
 and licensed under the Apache License, Version 2.0
 (http://www.apache.org/licenses/LICENSE-2.0).
