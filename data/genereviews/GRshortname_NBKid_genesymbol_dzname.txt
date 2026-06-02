@@ -1,0 +1,2427 @@
+mdel15q13_3|NBK50780|ARHGAP11B|15q13.3 Recurrent Deletion
+mdel15q13_3|NBK50780|CHRNA7|15q13.3 Recurrent Deletion
+mdel15q13_3|NBK50780|FAN1|15q13.3 Recurrent Deletion
+mdel15q13_3|NBK50780|KLF13|15q13.3 Recurrent Deletion
+mdel15q13_3|NBK50780|OTUD7A|15q13.3 Recurrent Deletion
+mdel15q13_3|NBK50780|TRPM1|15q13.3 Recurrent Deletion
+del16p11_2|NBK11167|Not applicable|16p11.2 Recurrent Deletion
+mdel17q12|NBK401562|HNF1B|17q12 Recurrent Deletion Syndrome
+mdel17q12|NBK401562|LHX1|17q12 Recurrent Deletion Syndrome
+dup17q12|NBK344340|Not applicable|17q12 Recurrent Duplication
+mdel1q21_1|NBK52787|GJA5|1q21.1 Recurrent Microdeletion
+mdel1q21_1|NBK52787|GJA8|1q21.1 Recurrent Microdeletion
+mdel1q21_1|NBK52787|Not applicable|1q21.1 Recurrent Microdeletion
+cah|NBK1171|CYP21A2|21-Hydroxylase-Deficient Congenital Adrenal Hyperplasia
+gr_22q11deletion|NBK1523|Not applicable|22q11.2 Deletion Syndrome
+gr_22q11deletion|NBK1523|TBX1|22q11.2 Deletion Syndrome
+hibch-def|NBK619246|HIBCH|3-Hydroxyisobutyryl-CoA Hydrolase Deficiency
+gr_3ms|NBK1481|CCDC8|3-M Syndrome
+gr_3ms|NBK1481|CUL7|3-M Syndrome
+gr_3ms|NBK1481|OBSL1|3-M Syndrome
+mdel3q29|NBK385289|-|3q29 Recurrent Deletion
+dup7q11_23|NBK327268|Not applicable|7q11.23 Duplication Syndrome
+aars2-dis|NBK608563|AARS2|AARS2-Related Disorder
+ab-lipo-p|NBK532447|MTTP|Abetalipoproteinemia
+acp|NBK1493|CP|Aceruloplasminemia
+achon1b|NBK1516|SLC26A2|Achondrogenesis Type 1B
+achondroplasia|NBK1152|FGFR3|Achondroplasia
+achm|NBK1418|ATF6|Achromatopsia
+achm|NBK1418|CNGA3|Achromatopsia
+achm|NBK1418|CNGB3|Achromatopsia
+achm|NBK1418|GNAT2|Achromatopsia
+achm|NBK1418|PDE6C|Achromatopsia
+achm|NBK1418|PDE6H|Achromatopsia
+npab|NBK1370|SMPD1|Acid Sphingomyelinase Deficiency
+actg2-dis|NBK299311|ACTG2|ACTG2 Visceral Myopathy
+apds|NBK611655|PIK3CD|Activated PI3K Delta Syndrome
+apds|NBK611655|PIK3R1|Activated PI3K Delta Syndrome
+aip|NBK1193|HMBS|Acute Intermittent Porphyria (AIP)
+adamtsl4-eyes|NBK84111|ADAMTSL4|ADAMTSL4-Related Eye Disorders
+adcy5-dysk|NBK263441|ADCY5|ADCY5-Related Movement Disorder
+aprt-def|NBK100238|APRT|Adenine Phosphoribosyltransferase Deficiency
+ada2-def|NBK544951|ADA2|Adenosine Deaminase 2 Deficiency
+ada|NBK1483|ADA|Adenosine Deaminase Deficiency
+adnp-dis|NBK355518|ADNP|ADNP-Related Helsmoortel-Van der Aa Syndrome
+refsum|NBK1353|PEX7|Adult Refsum Disease
+refsum|NBK1353|PHYH|Adult Refsum Disease
+sca28|NBK54582|AFG3L2|AFG3L2-Related Neurologic Disorders
+ags|NBK1475|ADAR|Aicardi-Goutieres Syndrome
+ags|NBK1475|IFIH1|Aicardi-Goutieres Syndrome
+ags|NBK1475|RNASEH2A|Aicardi-Goutieres Syndrome
+ags|NBK1475|RNASEH2B|Aicardi-Goutieres Syndrome
+ags|NBK1475|RNASEH2C|Aicardi-Goutieres Syndrome
+ags|NBK1475|SAMHD1|Aicardi-Goutieres Syndrome
+ags|NBK1475|TREX1|Aicardi-Goutieres Syndrome
+ipa|NBK97965|AIP|AIP Familial Isolated Pituitary Adenomas
+alagille|NBK1273|JAG1|Alagille Syndrome
+alagille|NBK1273|NOTCH2|Alagille Syndrome
+alexander|NBK1172|GFAP|Alexander Disease
+alkap|NBK1454|HGD|Alkaptonuria
+alk-nbs|NBK24599|ALK|ALK-Related Neuroblastic Tumor Susceptibility
+thctd|NBK26373|SLC16A2|Allan-Herndon-Dudley Syndrome
+alpha1-a|NBK1519|SERPINA1|Alpha-1 Antitrypsin Deficiency
+a-mannosidosis|NBK1396|MAN2B1|Alpha-Mannosidosis
+a-thal|NBK1435|HBA1|Alpha-Thalassemia
+a-thal|NBK1435|HBA2|Alpha-Thalassemia
+a-thal|NBK1435|HBZ|Alpha-Thalassemia
+xlmr|NBK1449|ATRX|Alpha-Thalassemia X-Linked Intellectual Disability Syndrome
+alpk1-auto|NBK604494|ALPK1|ALPK1-Related Autoinflammatory Disease
+alport|NBK1207|COL4A3|Alport Syndrome
+alport|NBK1207|COL4A4|Alport Syndrome
+alport|NBK1207|COL4A5|Alport Syndrome
+iahsp|NBK1243|ALS2|ALS2-Related Disorder
+alstrom|NBK1267|ALMS1|Alstrom Syndrome
+alzheimer|NBK1161|APOE|Alzheimer Disease
+alzheimer|NBK1161|APP|Alzheimer Disease
+alzheimer|NBK1161|PSEN1|Alzheimer Disease
+alzheimer|NBK1161|PSEN2|Alzheimer Disease
+als-overview|NBK1450|ALS2|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|ANG|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|ANXA11|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|C9orf72|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|CFAP410|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|CHCHD10|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|CHMP2B|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|DAO|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|DCTN1|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|ERBB4|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|FIG4|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|FUS|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|HNRNPA1|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|MATR3|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|MOBP|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|NEK1|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|OPTN|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|PFN1|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|SCFD1|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|SETX|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|SOD1|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|SPG11|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|SQSTM1|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|TAF15|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|TARDBP|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|TBK1|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|TUBA4A|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|UBQLN2|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|UNC13A|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|VAPB|Amyotrophic Lateral Sclerosis
+als-overview|NBK1450|VCP|Amyotrophic Lateral Sclerosis
+acpp|NBK1264|KCNJ2|Andersen-Tawil Syndrome
+acpp|NBK1264|KCNJ5|Andersen-Tawil Syndrome
+androgen|NBK1429|AR|Androgen Insensitivity Syndrome
+angelman|NBK1144|UBE3A|Angelman Syndrome
+ankrd17-nds|NBK588029|ANKRD17|ANKRD17-Related Neurodevelopmental Syndrome
+ankrd26|NBK507664|ANKRD26|ANKRD26-Related Thrombocytopenia
+ano5-md|NBK114459|ANO5|ANO5-Related Muscle Disease
+ap4-def|NBK535153|AP4B1|AP-4-Associated Hereditary Spastic Paraplegia
+ap4-def|NBK535153|AP4E1|AP-4-Associated Hereditary Spastic Paraplegia
+ap4-def|NBK535153|AP4M1|AP-4-Associated Hereditary Spastic Paraplegia
+ap4-def|NBK535153|AP4S1|AP-4-Associated Hereditary Spastic Paraplegia
+fap|NBK1345|APC|APC-Associated Polyposis Conditions
+apert|NBK541728|FGFR2|Apert Syndrome
+apob-hbl|NBK570370|APOB|APOB-Related Familial Hypobetalipoproteinemia
+arg1|NBK1159|ARG1|Arginase Deficiency
+args-aciduria|NBK51784|ASL|Argininosuccinate Lyase Deficiency
+arid1b-dis|NBK541502|ARID1B|ARID1B-Related Disorder
+aadc-def|NBK595821|DDC|Aromatic L-Amino Acid Decarboxylase Deficiency
+arvd|NBK1131|DES|Arrhythmogenic Right Ventricular Cardiomyopathy (ARVC)
+arvd|NBK1131|DSC2|Arrhythmogenic Right Ventricular Cardiomyopathy (ARVC)
+arvd|NBK1131|DSG2|Arrhythmogenic Right Ventricular Cardiomyopathy (ARVC)
+arvd|NBK1131|DSP|Arrhythmogenic Right Ventricular Cardiomyopathy (ARVC)
+arvd|NBK1131|JUP|Arrhythmogenic Right Ventricular Cardiomyopathy (ARVC)
+arvd|NBK1131|PKP2|Arrhythmogenic Right Ventricular Cardiomyopathy (ARVC)
+arvd|NBK1131|PLN|Arrhythmogenic Right Ventricular Cardiomyopathy (ARVC)
+arvd|NBK1131|TMEM43|Arrhythmogenic Right Ventricular Cardiomyopathy (ARVC)
+arsacs|NBK1255|SACS|ARSACS
+arterial-t|NBK253404|SLC2A10|Arterial Tortuosity Syndrome
+mld|NBK1130|ARSA|Arylsulfatase A Deficiency
+asah1|NBK488189|ASAH1|ASAH1-Related Disorders
+as-def|NBK525916|ASNS|Asparagine Synthetase Deficiency
+agu|NBK599378|AGA|Aspartylglucosaminuria
+aspm-pm|NBK555474|ASPM|ASPM Primary Microcephaly
+asxl3|NBK563693|ASXL3|ASXL3-Related Disorder
+aoa2|NBK1154|SETX|Ataxia with Oculomotor Apraxia Type 2
+aved|NBK1241|TTPA|Ataxia with Vitamin E Deficiency
+ataxia-telangiectas|NBK26468|ATM|Ataxia-Telangiectasia
+atn1-ndd|NBK583218|ATN1|ATN1-Related Neurodevelopmental Disorder
+rapid-odp|NBK1115|ATP1A3|ATP1A3-Related Disorder
+cutis-laxa|NBK5200|ATP6V0A2|ATP6V0A2-Related Cutis Laxa
+menkes|NBK1413|ATP7A|ATP7A-Related Copper Transport Disorders
+pfic|NBK1297|ATP8B1|ATP8B1 Deficiency
+au-kline|NBK540283|HNRNPK|Au-Kline Syndrome
+alps|NBK1108|CASP10|Autoimmune Lymphoproliferative Syndrome
+alps|NBK1108|FAS|Autoimmune Lymphoproliferative Syndrome
+alps|NBK1108|FASLG|Autoimmune Lymphoproliferative Syndrome
+cranio-md|NBK1461|ANKH|Autosomal Dominant Craniometaphyseal Dysplasia
+peaf|NBK1537|LGI1|Autosomal Dominant Epilepsy with Auditory Features
+peaf|NBK1537|MICAL1|Autosomal Dominant Epilepsy with Auditory Features
+peaf|NBK1537|RELN|Autosomal Dominant Epilepsy with Auditory Features
+rob-ad|NBK268648|DVL1|Autosomal Dominant Robinow Syndrome
+rob-ad|NBK268648|DVL3|Autosomal Dominant Robinow Syndrome
+rob-ad|NBK268648|WNT5A|Autosomal Dominant Robinow Syndrome
+adnfle|NBK1169|CABP4|Autosomal Dominant Sleep-Related Hypermotor (Hyperkinetic) Epilepsy
+adnfle|NBK1169|CHRNA2|Autosomal Dominant Sleep-Related Hypermotor (Hyperkinetic) Epilepsy
+adnfle|NBK1169|CHRNA4|Autosomal Dominant Sleep-Related Hypermotor (Hyperkinetic) Epilepsy
+adnfle|NBK1169|CHRNB2|Autosomal Dominant Sleep-Related Hypermotor (Hyperkinetic) Epilepsy
+adnfle|NBK1169|CRH|Autosomal Dominant Sleep-Related Hypermotor (Hyperkinetic) Epilepsy
+adnfle|NBK1169|DEPDC5|Autosomal Dominant Sleep-Related Hypermotor (Hyperkinetic) Epilepsy
+adnfle|NBK1169|KCNT1|Autosomal Dominant Sleep-Related Hypermotor (Hyperkinetic) Epilepsy
+adnfle|NBK1169|NPRL2|Autosomal Dominant Sleep-Related Hypermotor (Hyperkinetic) Epilepsy
+adnfle|NBK1169|NPRL3|Autosomal Dominant Sleep-Related Hypermotor (Hyperkinetic) Epilepsy
+adnfle|NBK1169|STX1B|Autosomal Dominant Sleep-Related Hypermotor (Hyperkinetic) Epilepsy
+cmt2c|NBK201366|TRPV4|Autosomal Dominant TRPV4 Disorders
+mckd1|NBK153723|MUC1|Autosomal Dominant Tubulointerstitial Kidney Disease – MUC1
+hyper-nfj2|NBK53700|REN|Autosomal Dominant Tubulointerstitial Kidney Disease – REN
+mckd2|NBK1356|UMOD|Autosomal Dominant Tubulointerstitial Kidney Disease – UMOD
+li-ar|NBK1420|ABCA12|Autosomal Recessive Congenital Ichthyosis
+li-ar|NBK1420|ALOX12B|Autosomal Recessive Congenital Ichthyosis
+li-ar|NBK1420|ALOXE3|Autosomal Recessive Congenital Ichthyosis
+li-ar|NBK1420|CASP14|Autosomal Recessive Congenital Ichthyosis
+li-ar|NBK1420|CERS3|Autosomal Recessive Congenital Ichthyosis
+li-ar|NBK1420|CYP4F22|Autosomal Recessive Congenital Ichthyosis
+li-ar|NBK1420|LIPN|Autosomal Recessive Congenital Ichthyosis
+li-ar|NBK1420|NIPAL4|Autosomal Recessive Congenital Ichthyosis
+li-ar|NBK1420|PNPLA1|Autosomal Recessive Congenital Ichthyosis
+li-ar|NBK1420|SDR9C7|Autosomal Recessive Congenital Ichthyosis
+li-ar|NBK1420|SLC27A4|Autosomal Recessive Congenital Ichthyosis
+li-ar|NBK1420|SULT2B1|Autosomal Recessive Congenital Ichthyosis
+li-ar|NBK1420|TGM1|Autosomal Recessive Congenital Ichthyosis
+pkd-ar|NBK1326|PKHD1|Autosomal Recessive Polycystic Kidney Disease – PKHD1
+ayme-gripp|NBK553534|MAF|Aymé-Gripp Syndrome
+bachmann-bupp|NBK583220|ODC1|Bachmann-Bupp Syndrome
+bgs|NBK1204|RECQL4|Baller-Gerold Syndrome
+bap1-tpds|NBK390611|BAP1|BAP1 Tumor Predisposition Syndrome
+baraitser-winter|NBK327153|ACTB|Baraitser-Winter Cerebrofrontofacial Syndrome
+baraitser-winter|NBK327153|ACTG1|Baraitser-Winter Cerebrofrontofacial Syndrome
+bbs|NBK1363|ARL6|Bardet-Biedl Syndrome
+bbs|NBK1363|BBIP1|Bardet-Biedl Syndrome
+bbs|NBK1363|BBS1|Bardet-Biedl Syndrome
+bbs|NBK1363|BBS10|Bardet-Biedl Syndrome
+bbs|NBK1363|BBS12|Bardet-Biedl Syndrome
+bbs|NBK1363|BBS2|Bardet-Biedl Syndrome
+bbs|NBK1363|BBS4|Bardet-Biedl Syndrome
+bbs|NBK1363|BBS5|Bardet-Biedl Syndrome
+bbs|NBK1363|BBS7|Bardet-Biedl Syndrome
+bbs|NBK1363|BBS9|Bardet-Biedl Syndrome
+bbs|NBK1363|CEP164|Bardet-Biedl Syndrome
+bbs|NBK1363|CEP290|Bardet-Biedl Syndrome
+bbs|NBK1363|CFAP418|Bardet-Biedl Syndrome
+bbs|NBK1363|IFT172|Bardet-Biedl Syndrome
+bbs|NBK1363|IFT27|Bardet-Biedl Syndrome
+bbs|NBK1363|IFT74|Bardet-Biedl Syndrome
+bbs|NBK1363|LZTFL1|Bardet-Biedl Syndrome
+bbs|NBK1363|MKKS|Bardet-Biedl Syndrome
+bbs|NBK1363|MKS1|Bardet-Biedl Syndrome
+bbs|NBK1363|SCAPER|Bardet-Biedl Syndrome
+bbs|NBK1363|SCLT1|Bardet-Biedl Syndrome
+bbs|NBK1363|SDCCAG8|Bardet-Biedl Syndrome
+bbs|NBK1363|TRIM32|Bardet-Biedl Syndrome
+bbs|NBK1363|TTC8|Bardet-Biedl Syndrome
+bbs|NBK1363|WDPCP|Bardet-Biedl Syndrome
+barth|NBK247162|TAFAZZIN|Barth Syndrome
+bcl11a-id|NBK547048|BCL11A|BCL11A-Related Intellectual Disability
+bws|NBK1394|CDKN1C|Beckwith-Wiedemann Syndrome
+bws|NBK1394|H19|Beckwith-Wiedemann Syndrome
+bws|NBK1394|IGF2|Beckwith-Wiedemann Syndrome
+bws|NBK1394|KCNQ1|Beckwith-Wiedemann Syndrome
+bws|NBK1394|KCNQ1OT1|Beckwith-Wiedemann Syndrome
+bscl|NBK1212|AGPAT2|Berardinelli-Seip Congenital Lipodystrophy
+bscl|NBK1212|BSCL2|Berardinelli-Seip Congenital Lipodystrophy
+bvd|NBK1167|BEST1|Bestrophinopathies
+bpan|NBK424403|WDR45|Beta-Propeller Protein-Associated Neurodegeneration
+b-thal|NBK1426|HBB|Beta-Thalassemia
+bietti-cd|NBK91457|CYP4V2|Bietti Crystalline Dystrophy
+biotin|NBK1322|BTD|Biotinidase Deficiency
+bgd-biotin|NBK169615|SLC19A3|Biotin-Thiamine-Responsive Basal Ganglia Disease
+bhd|NBK1522|FLCN|Birt-Hogg-Dube Syndrome
+bpes|NBK1441|FOXL2|Blepharophimosis, Ptosis, and Epicanthus Inversus Syndrome
+bloom|NBK1398|BLM|Bloom Syndrome
+bohring-opitz|NBK481833|ASXL1|Bohring-Opitz Syndrome
+bofs|NBK55063|TFAP2A|Branchiooculofacial Syndrome
+bor|NBK1380|EYA1|Branchiootorenal Spectrum Disorder
+bor|NBK1380|SIX1|Branchiootorenal Spectrum Disorder
+brca1|NBK1247|BRCA1|BRCA1- and BRCA2-Associated Hereditary Breast and Ovarian Cancer
+brca1|NBK1247|BRCA2|BRCA1- and BRCA2-Associated Hereditary Breast and Ovarian Cancer
+brugada|NBK1517|ABCC9|Brugada Syndrome
+brugada|NBK1517|CACNA1C|Brugada Syndrome
+brugada|NBK1517|CACNA2D1|Brugada Syndrome
+brugada|NBK1517|CACNB2|Brugada Syndrome
+brugada|NBK1517|FGF12|Brugada Syndrome
+brugada|NBK1517|GPD1L|Brugada Syndrome
+brugada|NBK1517|HCN4|Brugada Syndrome
+brugada|NBK1517|KCND2|Brugada Syndrome
+brugada|NBK1517|KCND3|Brugada Syndrome
+brugada|NBK1517|KCNE2|Brugada Syndrome
+brugada|NBK1517|KCNE3|Brugada Syndrome
+brugada|NBK1517|KCNE5|Brugada Syndrome
+brugada|NBK1517|KCNH2|Brugada Syndrome
+brugada|NBK1517|KCNJ8|Brugada Syndrome
+brugada|NBK1517|PKP2|Brugada Syndrome
+brugada|NBK1517|RANGRF|Brugada Syndrome
+brugada|NBK1517|SCN10A|Brugada Syndrome
+brugada|NBK1517|SCN1B|Brugada Syndrome
+brugada|NBK1517|SCN2B|Brugada Syndrome
+brugada|NBK1517|SCN3B|Brugada Syndrome
+brugada|NBK1517|SCN5A|Brugada Syndrome
+brugada|NBK1517|SEMA3A|Brugada Syndrome
+brugada|NBK1517|SLMAP|Brugada Syndrome
+brugada|NBK1517|TRPM4|Brugada Syndrome
+brylib|NBK595206|H3-3A|Bryant-Li-Bhoj Neurodevelopmental Syndrome
+brylib|NBK595206|H3-3B|Bryant-Li-Bhoj Neurodevelopmental Syndrome
+spg17|NBK1307|BSCL2|BSCL2-Related Neurologic Disorders/Seipinopathy
+mpgn|NBK1425|C3|C3 Glomerulopathy
+mpgn|NBK1425|CD46|C3 Glomerulopathy
+mpgn|NBK1425|CFB|C3 Glomerulopathy
+mpgn|NBK1425|CFH|C3 Glomerulopathy
+mpgn|NBK1425|CFHR1|C3 Glomerulopathy
+mpgn|NBK1425|CFHR5|C3 Glomerulopathy
+mpgn|NBK1425|CFI|C3 Glomerulopathy
+mpgn|NBK1425|DGKE|C3 Glomerulopathy
+als-ftd|NBK268647|C9orf72|C9orf72 Frontotemporal Dementia and/or Amyotrophic Lateral Sclerosis
+timothy|NBK1403|CACNA1C|CACNA1C-Related Disorders
+cadasil|NBK1500|NOTCH3|CADASIL
+caffey|NBK99168|COL1A1|Caffey Disease
+lgmd2a|NBK1313|CAPN3|Calpainopathy
+campo-dysp|NBK1760|SOX9|Campomelic Dysplasia
+ced|NBK1156|TGFB1|Camurati-Engelmann Disease
+canavan|NBK1234|ASPA|Canavan Disease
+cantu|NBK246980|ABCC9|Cantú Syndrome
+cantu|NBK246980|KCNJ8|Cantú Syndrome
+rasa1-rel-dis|NBK52764|EPHB4|Capillary Malformation-Arteriovenous Malformation Syndrome
+rasa1-rel-dis|NBK52764|RASA1|Capillary Malformation-Arteriovenous Malformation Syndrome
+ca5a-def|NBK284774|CA5A|Carbonic Anhydrase VA Deficiency
+cfc|NBK1186|BRAF|Cardiofaciocutaneous Syndrome
+cfc|NBK1186|KRAS|Cardiofaciocutaneous Syndrome
+cfc|NBK1186|MAP2K1|Cardiofaciocutaneous Syndrome
+cfc|NBK1186|MAP2K2|Cardiofaciocutaneous Syndrome
+carney|NBK1286|PRKAR1A|Carney Complex
+cpt1a|NBK1527|CPT1A|Carnitine Palmitoyltransferase 1A Deficiency
+cpt2|NBK1253|CPT2|Carnitine Palmitoyltransferase II Deficiency
+cact-def|NBK582032|SLC25A20|Carnitine-Acylcarnitine Translocase Deficiency
+chh|NBK84550|RMRP|Cartilage-Hair Hypoplasia – Anauxetic Dysplasia Spectrum Disorders
+cask-dis|NBK169825|CASK|CASK Disorders
+cvt|NBK1289|CALM1|Catecholaminergic Polymorphic Ventricular Tachycardia
+cvt|NBK1289|CALM2|Catecholaminergic Polymorphic Ventricular Tachycardia
+cvt|NBK1289|CALM3|Catecholaminergic Polymorphic Ventricular Tachycardia
+cvt|NBK1289|CASQ2|Catecholaminergic Polymorphic Ventricular Tachycardia
+cvt|NBK1289|KCNJ2|Catecholaminergic Polymorphic Ventricular Tachycardia
+cvt|NBK1289|RYR2|Catecholaminergic Polymorphic Ventricular Tachycardia
+cvt|NBK1289|TECRL|Catecholaminergic Polymorphic Ventricular Tachycardia
+cvt|NBK1289|TRDN|Catecholaminergic Polymorphic Ventricular Tachycardia
+hrpt2|NBK3789|CDC73|CDC73-Related Disorders
+cdk13-dis|NBK536784|CDK13|CDK13-Related Disorder
+cdkl5-def|NBK602610|CDKL5|CDKL5 Deficiency Disorder
+cdkn2a-cpd|NBK616232|CDKN2A|CDKN2A Cancer Predisposition
+cebpa-aml|NBK47457|CEBPA|CEBPA-Associated Familial Acute Myeloid Leukemia (AML)
+celiac|NBK1727|HLA-DQA1|Celiac Disease
+celiac|NBK1727|HLA-DQB1|Celiac Disease
+ctx|NBK1409|CYP27A1|Cerebrotendinous Xanthomatosis
+cetp-def|NBK614254|CETP|CETP-Related Hyperalphalipoproteinemia
+char|NBK1106|TFAP2B|Char Syndrome
+cmt|NBK1358|AARS1|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|AIFM1|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|DNAJB2|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|DNM2|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|DYNC1H1|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|EGR2|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|FGD4|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|FIG4|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|GARS1|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|GDAP1|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|GJB1|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|GNB4|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|HSPB1|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|HSPB8|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|IGHMBP2|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|KIF1B|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|LITAF|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|LMNA|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|LRSAM1|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|MARS1|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|MFN2|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|MPZ|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|MTMR2|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|NDRG1|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|NEFL|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|PDK3|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|PMP2|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|PMP22|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|PNKP|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|PRPS1|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|PRX|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|RAB7A|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|SBF2|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|SH3TC2|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|TRPV4|Charcot-Marie-Tooth Hereditary Neuropathy
+cmt|NBK1358|YARS1|Charcot-Marie-Tooth Hereditary Neuropathy
+chchd10-dis|NBK304142|CHCHD10|CHCHD10-Related Disorders
+chd2-dis|NBK333201|CHD2|CHD2-Related Neurodevelopmental Disorders
+chd4-ndd|NBK561516|CHD4|CHD4 Neurodevelopmental Disorder
+charge|NBK1117|CHD7|CHD7 Disorder
+chd8-ndd-og|NBK585456|CHD8|CHD8-Related Neurodevelopmental Disorder with Overgrowth
+chediak-higashi|NBK5188|LYST|Chediak-Higashi Syndrome
+chek2-cpd|NBK615090|CHEK2|CHEK2-Related Cancer Predisposition
+cherubism|NBK1137|OGFRL1|Cherubism
+cherubism|NBK1137|SH3BP2|Cherubism
+cach|NBK1258|EIF2B1|Childhood Ataxia with Central Nervous System Hypomyelination / Vanishing White Matter
+cach|NBK1258|EIF2B2|Childhood Ataxia with Central Nervous System Hypomyelination / Vanishing White Matter
+cach|NBK1258|EIF2B3|Childhood Ataxia with Central Nervous System Hypomyelination / Vanishing White Matter
+cach|NBK1258|EIF2B4|Childhood Ataxia with Central Nervous System Hypomyelination / Vanishing White Matter
+cach|NBK1258|EIF2B5|Childhood Ataxia with Central Nervous System Hypomyelination / Vanishing White Matter
+chkb-md|NBK589929|CHKB|CHKB-Related Muscular Dystrophy
+ftd-chmp2b|NBK1199|CHMP2B|CHMP2B Frontotemporal Dementia
+cdp1-xlr|NBK1544|ARSL|Chondrodysplasia Punctata 1, X-Linked
+x-dcdp|NBK55062|EBP|Chondrodysplasia Punctata 2, X-Linked
+cd-chst3|NBK62112|CHST3|Chondrodysplasia with Congenital Joint Dislocations, CHST3-Related
+choroid|NBK1337|CHM|Choroideremia
+christianson|NBK475801|SLC9A6|Christianson Syndrome
+cgd|NBK99496|CYBA|Chronic Granulomatous Disease
+cgd|NBK99496|CYBB|Chronic Granulomatous Disease
+cgd|NBK99496|CYBC1|Chronic Granulomatous Disease
+cgd|NBK99496|NCF1|Chronic Granulomatous Disease
+cgd|NBK99496|NCF2|Chronic Granulomatous Disease
+cgd|NBK99496|NCF4|Chronic Granulomatous Disease
+cmr|NBK578949|SAR1B|Chylomicron Retention Disease
+citrin|NBK1181|SLC25A13|Citrin Deficiency
+ctlm|NBK1458|ASS1|Citrullinemia Type I
+eds|NBK1244|COL1A1|Classic Ehlers-Danlos Syndrome
+eds|NBK1244|COL5A1|Classic Ehlers-Danlos Syndrome
+eds|NBK1244|COL5A2|Classic Ehlers-Danlos Syndrome
+galactosemia|NBK1518|GALT|Classic Galactosemia and Clinical Variant Galactosemia
+isovaleric-a|NBK601614|IVD|Classic Isovaleric Acidemia
+mws|NBK1412|ZEB2|Classic Mowat-Wilson Syndrome
+cc2-leuk|NBK326661|CLCN2|CLCN2-Related Leukoencephalopathy
+clcn4-ndd|NBK575836|CLCN4|CLCN4-Related Neurodevelopmental Disorder
+clcn7|NBK1127|CLCN7|CLCN7-Related Osteopetrosis
+ccd|NBK1513|RUNX2|Cleidocranial Dysplasia Spectrum Disorder
+clpb-def|NBK396257|CLPB|CLPB Deficiency
+cockayne|NBK1342|ERCC6|Cockayne Syndrome
+cockayne|NBK1342|ERCC8|Cockayne Syndrome
+coffin-siris|NBK131811|ARID1A|Coffin-Siris Syndrome
+coffin-siris|NBK131811|ARID1B|Coffin-Siris Syndrome
+coffin-siris|NBK131811|ARID2|Coffin-Siris Syndrome
+coffin-siris|NBK131811|BICRA|Coffin-Siris Syndrome
+coffin-siris|NBK131811|DPF2|Coffin-Siris Syndrome
+coffin-siris|NBK131811|SMARCA4|Coffin-Siris Syndrome
+coffin-siris|NBK131811|SMARCB1|Coffin-Siris Syndrome
+coffin-siris|NBK131811|SMARCC2|Coffin-Siris Syndrome
+coffin-siris|NBK131811|SMARCD1|Coffin-Siris Syndrome
+coffin-siris|NBK131811|SMARCE1|Coffin-Siris Syndrome
+coffin-siris|NBK131811|SOX11|Coffin-Siris Syndrome
+coffin-siris|NBK131811|SOX4|Coffin-Siris Syndrome
+cohen|NBK1482|VPS13B|Cohen Syndrome
+oi|NBK1295|COL1A1|COL1A1- and COL1A2-Related Osteogenesis Imperfecta
+oi|NBK1295|COL1A2|COL1A1- and COL1A2-Related Osteogenesis Imperfecta
+col4a1-dis|NBK7046|COL4A1|COL4A1-Related Disorders
+ciss|NBK52917|CLCF1|Cold-Induced Sweating Syndrome Including Crisponi Syndrome
+ciss|NBK52917|CRLF1|Cold-Induced Sweating Syndrome Including Crisponi Syndrome
+bethlem|NBK1503|COL6A1|Collagen VI-Related Dystrophies
+bethlem|NBK1503|COL6A2|Collagen VI-Related Dystrophies
+bethlem|NBK1503|COL6A3|Collagen VI-Related Dystrophies
+pai-1-def|NBK447152|SERPINE1|Complete Plasminogen Activator Inhibitor 1 Deficiency
+psach|NBK1487|COMP|COMP-Related Pseudoachondroplasia
+ondine|NBK1427|PHOX2B|Congenital Central Hypoventilation Syndrome (CCHS)
+cca|NBK1386|FBN2|Congenital Contractural Arachnodactyly
+df-lamm|NBK100664|FGF3|Congenital Deafness with Labyrinthine Aplasia, Microtia, and Microdontia
+cdg|NBK1332|ALG1|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|ALG11|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|ALG12|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|ALG13|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|ALG2|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|ALG3|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|ALG6|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|ALG8|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|ALG9|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|B4GALT1|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|COG1|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|COG2|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|COG4|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|COG5|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|COG6|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|COG7|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|COG8|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|DDOST|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|DHDDS|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|DOLK|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|DPAGT1|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|DPM1|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|DPM2|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|DPM3|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|GMPPA|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|MAGT1|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|MAN1B1|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|MGAT2|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|MOGS|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|MPDU1|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|MPI|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|PGM1|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|PGM3|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|PMM2|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|RFT1|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|SLC35A1|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|SLC35A2|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|SLC35C1|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|SRD5A3|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|SSR4|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|STT3A|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|STT3B|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|TMEM165|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cdg|NBK1332|TUSC3|Congenital Disorders of N-Linked Glycosylation and Multiple Pathway Overview
+cda1|NBK5313|CDAN1|Congenital Dyserythropoietic Anemia Type I
+cda1|NBK5313|CDIN1|Congenital Dyserythropoietic Anemia Type I
+cep|NBK154652|GATA1|Congenital Erythropoietic Porphyria
+cep|NBK154652|UROS|Congenital Erythropoietic Porphyria
+cfeom|NBK1348|-|Congenital Fibrosis of the Extraocular Muscles
+cfeom|NBK1348|KIF21A|Congenital Fibrosis of the Extraocular Muscles
+cfeom|NBK1348|PHOX2A|Congenital Fibrosis of the Extraocular Muscles
+cfeom|NBK1348|TUBB2B|Congenital Fibrosis of the Extraocular Muscles
+cfeom|NBK1348|TUBB3|Congenital Fibrosis of the Extraocular Muscles
+cip-overview|NBK481553|CLTCL1|Congenital Insensitivity to Pain Overview
+cip-overview|NBK481553|NGF|Congenital Insensitivity to Pain Overview
+cip-overview|NBK481553|NTRK1|Congenital Insensitivity to Pain Overview
+cip-overview|NBK481553|PRDM12|Congenital Insensitivity to Pain Overview
+cip-overview|NBK481553|SCN11A|Congenital Insensitivity to Pain Overview
+cip-overview|NBK481553|SCN9A|Congenital Insensitivity to Pain Overview
+cip-overview|NBK481553|ZFHX2|Congenital Insensitivity to Pain Overview
+mirror|NBK279760|DCC|Congenital Mirror Movements
+mirror|NBK279760|NTN1|Congenital Mirror Movements
+mirror|NBK279760|RAD51|Congenital Mirror Movements
+cms|NBK1168|AGRN|Congenital Myasthenic Syndromes
+cms|NBK1168|ALG14|Congenital Myasthenic Syndromes
+cms|NBK1168|ALG2|Congenital Myasthenic Syndromes
+cms|NBK1168|CHAT|Congenital Myasthenic Syndromes
+cms|NBK1168|CHRNA1|Congenital Myasthenic Syndromes
+cms|NBK1168|CHRNB1|Congenital Myasthenic Syndromes
+cms|NBK1168|CHRND|Congenital Myasthenic Syndromes
+cms|NBK1168|CHRNE|Congenital Myasthenic Syndromes
+cms|NBK1168|COL13A1|Congenital Myasthenic Syndromes
+cms|NBK1168|COLQ|Congenital Myasthenic Syndromes
+cms|NBK1168|DOK7|Congenital Myasthenic Syndromes
+cms|NBK1168|DPAGT1|Congenital Myasthenic Syndromes
+cms|NBK1168|GFPT1|Congenital Myasthenic Syndromes
+cms|NBK1168|GMPPB|Congenital Myasthenic Syndromes
+cms|NBK1168|LAMB2|Congenital Myasthenic Syndromes
+cms|NBK1168|LRP4|Congenital Myasthenic Syndromes
+cms|NBK1168|MUSK|Congenital Myasthenic Syndromes
+cms|NBK1168|MYO9A|Congenital Myasthenic Syndromes
+cms|NBK1168|PLEC|Congenital Myasthenic Syndromes
+cms|NBK1168|PREPL|Congenital Myasthenic Syndromes
+cms|NBK1168|RAPSN|Congenital Myasthenic Syndromes
+cms|NBK1168|SCN4A|Congenital Myasthenic Syndromes
+cms|NBK1168|SLC25A1|Congenital Myasthenic Syndromes
+cms|NBK1168|SLC5A7|Congenital Myasthenic Syndromes
+cms|NBK1168|SNAP25|Congenital Myasthenic Syndromes
+cms|NBK1168|SYT2|Congenital Myasthenic Syndromes
+nad-def|NBK593504|HAAO|Congenital NAD Deficiency Disorder
+nad-def|NBK593504|KYNU|Congenital NAD Deficiency Disorder
+nad-def|NBK593504|NADSYN1|Congenital NAD Deficiency Disorder
+csc-dys|NBK2690|DCN|Congenital Stromal Corneal Dystrophy
+cdls|NBK1104|BRD4|Cornelia de Lange Syndrome
+cdls|NBK1104|HDAC8|Cornelia de Lange Syndrome
+cdls|NBK1104|NIPBL|Cornelia de Lange Syndrome
+cdls|NBK1104|RAD21|Cornelia de Lange Syndrome
+cdls|NBK1104|SMC1A|Cornelia de Lange Syndrome
+cdls|NBK1104|SMC3|Cornelia de Lange Syndrome
+mga3|NBK1473|OPA3|Costeff Syndrome
+ce-dysp|NBK154653|IFT122|Cranioectodermal Dysplasia
+ce-dysp|NBK154653|IFT140|Cranioectodermal Dysplasia
+ce-dysp|NBK154653|IFT43|Cranioectodermal Dysplasia
+ce-dysp|NBK154653|IFT52|Cranioectodermal Dysplasia
+ce-dysp|NBK154653|WDR19|Cranioectodermal Dysplasia
+ce-dysp|NBK154653|WDR35|Cranioectodermal Dysplasia
+creatine|NBK3794|GAMT|Creatine Deficiency Disorders
+creatine|NBK3794|GATM|Creatine Deficiency Disorders
+creatine|NBK3794|SLC6A8|Creatine Deficiency Disorders
+hdls|NBK100239|CSF1R|CSF1R-Related Disorder
+csnk2b-ndd|NBK606532|CSNK2B|CSNK2B-Related Neurodevelopmental Disorder
+ctcf-dis|NBK603087|CTCF|CTCF-Related Disorder
+ccfdn|NBK25565|CTDP1|CTDP1-Related Congenital Cataracts, Facial Dysmorphism, and Neuropathy
+ctnnb1-ndd|NBK580527|CTNNB1|CTNNB1 Neurodevelopmental Disorder
+cyld-cs|NBK555820|CYLD|CYLD Cutaneous Syndrome
+cf|NBK1250|CFTR|Cystic Fibrosis
+ctns|NBK1400|CTNS|Cystinosis
+cystinuria|NBK619248|SLC3A1|Cystinuria
+cystinuria|NBK619248|SLC7A9|Cystinuria
+abs|NBK1419|POR|Cytochrome P450 Oxidoreductase Deficiency
+danon|NBK554742|LAMP2|Danon Disease
+diamond-b|NBK7047|GATA1|DBA Syndrome
+diamond-b|NBK7047|HEATR3|DBA Syndrome
+diamond-b|NBK7047|RPL11|DBA Syndrome
+diamond-b|NBK7047|RPL15|DBA Syndrome
+diamond-b|NBK7047|RPL18|DBA Syndrome
+diamond-b|NBK7047|RPL26|DBA Syndrome
+diamond-b|NBK7047|RPL27|DBA Syndrome
+diamond-b|NBK7047|RPL31|DBA Syndrome
+diamond-b|NBK7047|RPL35|DBA Syndrome
+diamond-b|NBK7047|RPL35A|DBA Syndrome
+diamond-b|NBK7047|RPL5|DBA Syndrome
+diamond-b|NBK7047|RPS10|DBA Syndrome
+diamond-b|NBK7047|RPS15A|DBA Syndrome
+diamond-b|NBK7047|RPS17|DBA Syndrome
+diamond-b|NBK7047|RPS19|DBA Syndrome
+diamond-b|NBK7047|RPS24|DBA Syndrome
+diamond-b|NBK7047|RPS26|DBA Syndrome
+diamond-b|NBK7047|RPS27|DBA Syndrome
+diamond-b|NBK7047|RPS28|DBA Syndrome
+diamond-b|NBK7047|RPS29|DBA Syndrome
+diamond-b|NBK7047|RPS7|DBA Syndrome
+diamond-b|NBK7047|TSR2|DBA Syndrome
+perry|NBK47027|DCTN1|DCTN1-Related Neurodegeneration
+dcx|NBK1185|DCX|DCX-Related Disorders
+warsaw|NBK541972|DDX11|DDX11-Related Cohesinopathy
+ddx3x-ndd|NBK561282|DDX3X|DDX3X-Related Neurodevelopmental Disorder
+ddx41-mds|NBK574843|DDX41|DDX41-Associated Familial Myelodysplastic Syndrome and Acute Myeloid Leukemia
+ddon|NBK1216|TIMM8A|Deafness-Dystonia-Optic Neuronopathy Syndrome
+dent|NBK99494|CLCN5|Dent Disease
+dent|NBK99494|OCRL|Dent Disease
+dguok-mtddepl|NBK7040|DGUOK|Deoxyguanosine Kinase Deficiency
+depdc5-epilepsy|NBK385626|DEPDC5|DEPDC5-Related Epilepsy
+dfna2|NBK1209|KCNQ4|DFNA2 Nonsyndromic Hearing Loss
+dmtn|NBK1534|HYMAI|Diabetes Mellitus, 6q24-Related Transient Neonatal
+dmtn|NBK1534|PLAGL1|Diabetes Mellitus, 6q24-Related Transient Neonatal
+dmtn|NBK1534|ZFP57|Diabetes Mellitus, 6q24-Related Transient Neonatal
+diastrophic-d|NBK1350|SLC26A2|Diastrophic Dysplasia
+pp-blastoma|NBK196157|DICER1|DICER1 Tumor Predisposition
+hgc|NBK1139|CDH1|Diffuse Gastric and Lobular Breast Cancer Syndrome
+hgc|NBK1139|CTNNA1|Diffuse Gastric and Lobular Breast Cancer Syndrome
+dcm-ov|NBK1309|ACTC1|Dilated Cardiomyopathy
+dcm-ov|NBK1309|ACTN2|Dilated Cardiomyopathy
+dcm-ov|NBK1309|ANKRD1|Dilated Cardiomyopathy
+dcm-ov|NBK1309|BAG3|Dilated Cardiomyopathy
+dcm-ov|NBK1309|CSRP3|Dilated Cardiomyopathy
+dcm-ov|NBK1309|DES|Dilated Cardiomyopathy
+dcm-ov|NBK1309|DMD|Dilated Cardiomyopathy
+dcm-ov|NBK1309|DSG2|Dilated Cardiomyopathy
+dcm-ov|NBK1309|EYA4|Dilated Cardiomyopathy
+dcm-ov|NBK1309|LDB3|Dilated Cardiomyopathy
+dcm-ov|NBK1309|LMNA|Dilated Cardiomyopathy
+dcm-ov|NBK1309|MYBPC3|Dilated Cardiomyopathy
+dcm-ov|NBK1309|MYH6|Dilated Cardiomyopathy
+dcm-ov|NBK1309|MYH7|Dilated Cardiomyopathy
+dcm-ov|NBK1309|NEXN|Dilated Cardiomyopathy
+dcm-ov|NBK1309|PLN|Dilated Cardiomyopathy
+dcm-ov|NBK1309|PSEN1|Dilated Cardiomyopathy
+dcm-ov|NBK1309|PSEN2|Dilated Cardiomyopathy
+dcm-ov|NBK1309|RBM20|Dilated Cardiomyopathy
+dcm-ov|NBK1309|SCN5A|Dilated Cardiomyopathy
+dcm-ov|NBK1309|SGCD|Dilated Cardiomyopathy
+dcm-ov|NBK1309|TAFAZZIN|Dilated Cardiomyopathy
+dcm-ov|NBK1309|TCAP|Dilated Cardiomyopathy
+dcm-ov|NBK1309|TMPO|Dilated Cardiomyopathy
+dcm-ov|NBK1309|TNNC1|Dilated Cardiomyopathy
+dcm-ov|NBK1309|TNNI3|Dilated Cardiomyopathy
+dcm-ov|NBK1309|TNNT2|Dilated Cardiomyopathy
+dcm-ov|NBK1309|TPM1|Dilated Cardiomyopathy
+dcm-ov|NBK1309|TTN|Dilated Cardiomyopathy
+dcm-ov|NBK1309|VCL|Dilated Cardiomyopathy
+gnas-dis|NBK459117|GNAS|Disorders of GNAS Inactivation
+gnas-dis|NBK459117|STX16|Disorders of GNAS Inactivation
+cbl|NBK1328|ABCD4|Disorders of Intracellular Cobalamin Metabolism
+cbl|NBK1328|HCFC1|Disorders of Intracellular Cobalamin Metabolism
+cbl|NBK1328|LMBRD1|Disorders of Intracellular Cobalamin Metabolism
+cbl|NBK1328|MMACHC|Disorders of Intracellular Cobalamin Metabolism
+cbl|NBK1328|MMADHC|Disorders of Intracellular Cobalamin Metabolism
+cbl|NBK1328|MTR|Disorders of Intracellular Cobalamin Metabolism
+cbl|NBK1328|MTRR|Disorders of Intracellular Cobalamin Metabolism
+cbl|NBK1328|THAP11|Disorders of Intracellular Cobalamin Metabolism
+cbl|NBK1328|ZNF143|Disorders of Intracellular Cobalamin Metabolism
+dlg4-synap|NBK592682|DLG4|DLG4-Related Synaptopathy
+dnajc6-pd|NBK570369|DNAJC6|DNAJC6 Parkinson Disease
+dnmt1-ddsn|NBK84112|DNMT1|DNMT1-Related Disorder
+donnai|NBK1878|LRP2|Donnai-Barrow Syndrome
+dbh|NBK1474|DBH|Dopamine Beta-Hydroxylase Deficiency
+drpla|NBK1491|ATN1|DRPLA
+duane|NBK1190|CHN1|Duane Syndrome
+duane|NBK1190|MAFB|Duane Syndrome
+duane|NBK1190|SALL4|Duane Syndrome
+duarte-gal|NBK258640|GALT|Duarte Variant Galactosemia
+dync1h1-dis|NBK601997|DYNC1H1|DYNC1H1-Related Disorders
+dyrk1a-id|NBK333438|DYRK1A|DYRK1A Syndrome
+miyoshi|NBK1303|DYSF|Dysferlinopathy
+dkc|NBK22301|ACD|Dyskeratosis Congenita and Related Telomere Biology Disorders
+dkc|NBK22301|CTC1|Dyskeratosis Congenita and Related Telomere Biology Disorders
+dkc|NBK22301|DKC1|Dyskeratosis Congenita and Related Telomere Biology Disorders
+dkc|NBK22301|NAF1|Dyskeratosis Congenita and Related Telomere Biology Disorders
+dkc|NBK22301|NHP2|Dyskeratosis Congenita and Related Telomere Biology Disorders
+dkc|NBK22301|NOP10|Dyskeratosis Congenita and Related Telomere Biology Disorders
+dkc|NBK22301|PARN|Dyskeratosis Congenita and Related Telomere Biology Disorders
+dkc|NBK22301|POT1|Dyskeratosis Congenita and Related Telomere Biology Disorders
+dkc|NBK22301|RPA1|Dyskeratosis Congenita and Related Telomere Biology Disorders
+dkc|NBK22301|RTEL1|Dyskeratosis Congenita and Related Telomere Biology Disorders
+dkc|NBK22301|STN1|Dyskeratosis Congenita and Related Telomere Biology Disorders
+dkc|NBK22301|TERC|Dyskeratosis Congenita and Related Telomere Biology Disorders
+dkc|NBK22301|TERT|Dyskeratosis Congenita and Related Telomere Biology Disorders
+dkc|NBK22301|TINF2|Dyskeratosis Congenita and Related Telomere Biology Disorders
+dkc|NBK22301|WRAP53|Dyskeratosis Congenita and Related Telomere Biology Disorders
+dkc|NBK22301|ZCCHC8|Dyskeratosis Congenita and Related Telomere Biology Disorders
+ebd|NBK1304|COL7A1|Dystrophic Epidermolysis Bullosa
+dbmd|NBK1119|DMD|Dystrophinopathies
+gnal-dystonia|NBK535640|GNAL|DYT-GNAL
+dystonia|NBK1492|TOR1A|DYT-TOR1A
+ebf3-ndd|NBK570204|EBF3|EBF3 Neurodevelopmental Disorder
+eed-og|NBK540017|EED|EED-Related Overgrowth
+efemp2-cutis-laxa|NBK54467|EFEMP2|EFEMP2-Related Cutis Laxa
+cyclic-n|NBK1533|ELANE|ELANE-Related Neutropenia
+el-hattab-alkuraya|NBK584547|WDR45B|El-Hattab-Alkuraya Syndrome
+evc|NBK596643|DYNC2H1|Ellis-van Creveld Syndrome
+evc|NBK596643|DYNC2LI1|Ellis-van Creveld Syndrome
+evc|NBK596643|EVC|Ellis-van Creveld Syndrome
+evc|NBK596643|EVC2|Ellis-van Creveld Syndrome
+evc|NBK596643|GLI1|Ellis-van Creveld Syndrome
+evc|NBK596643|PRKACA|Ellis-van Creveld Syndrome
+evc|NBK596643|PRKACB|Ellis-van Creveld Syndrome
+evc|NBK596643|SMO|Ellis-van Creveld Syndrome
+evc|NBK596643|WDR35|Ellis-van Creveld Syndrome
+eln-cutis-laxa|NBK584550|ELN|ELN-Related Cutis Laxa
+emc10-ndd|NBK592645|EMC10|EMC10-Related Neurodevelopmental Disorder
+edmd|NBK1436|EMD|Emery-Dreifuss Muscular Dystrophy
+edmd|NBK1436|FHL1|Emery-Dreifuss Muscular Dystrophy
+edmd|NBK1436|LMNA|Emery-Dreifuss Muscular Dystrophy
+edmd|NBK1436|SUN1|Emery-Dreifuss Muscular Dystrophy
+edmd|NBK1436|SUN2|Emery-Dreifuss Muscular Dystrophy
+edmd|NBK1436|SYNE1|Emery-Dreifuss Muscular Dystrophy
+edmd|NBK1436|SYNE2|Emery-Dreifuss Muscular Dystrophy
+edmd|NBK1436|TMEM43|Emery-Dreifuss Muscular Dystrophy
+eccl|NBK576966|FGFR1|Encephalocraniocutaneous Lipomatosis
+eccl|NBK576966|KRAS|Encephalocraniocutaneous Lipomatosis
+msx2|NBK1128|ALX4|Enlarged Parietal Foramina
+msx2|NBK1128|MSX2|Enlarged Parietal Foramina
+entpd1-ndd|NBK592266|ENTPD1|ENTPD1-Related Neurodevelopmental Disorder
+epb42-spherocytosis|NBK190102|EPB42|EPB42-Related Hereditary Spherocytosis
+epg5|NBK584989|EPG5|EPG5-Related Disorder
+ebs|NBK1369|CD151|Epidermolysis Bullosa Simplex
+ebs|NBK1369|DST|Epidermolysis Bullosa Simplex
+ebs|NBK1369|EXPH5|Epidermolysis Bullosa Simplex
+ebs|NBK1369|KLHL24|Epidermolysis Bullosa Simplex
+ebs|NBK1369|KRT14|Epidermolysis Bullosa Simplex
+ebs|NBK1369|KRT5|Epidermolysis Bullosa Simplex
+ebs|NBK1369|PLEC|Epidermolysis Bullosa Simplex
+eb-pa|NBK1157|ITGA6|Epidermolysis Bullosa with Pyloric Atresia
+eb-pa|NBK1157|ITGB4|Epidermolysis Bullosa with Pyloric Atresia
+eb-pa|NBK1157|PLEC|Epidermolysis Bullosa with Pyloric Atresia
+gale-def|NBK51671|GALE|Epimerase Deficiency Galactosemia
+ea1|NBK25442|KCNA1|Episodic Ataxia Type 1
+epp-ar|NBK100826|FECH|Erythropoietic Protoporphyria, Autosomal Recessive
+rbs|NBK1153|ESCO2|ESCO2 Spectrum Disorder
+ee|NBK453432|ETHE1|Ethylmalonic Encephalopathy
+etv6-tpl|NBK564234|ETV6|ETV6-Related Thrombocytopenia and Predisposition to Leukemia
+exoc6b-semd|NBK592183|EXOC6B|EXOC6B-Related Spondyloepimetaphyseal Dysplasia with Joint Laxity
+exosc3-pc-hypo-p|NBK236968|EXOSC3|EXOSC3 Pontocerebellar Hypoplasia
+weaver|NBK148820|EZH2|EZH2-Related Overgrowth
+fabry|NBK1292|GLA|Fabry Disease
+fsh|NBK1443|DNMT3B|Facioscapulohumeral Muscular Dystrophy
+fsh|NBK1443|DUX4L1|Facioscapulohumeral Muscular Dystrophy
+fsh|NBK1443|LRIF1|Facioscapulohumeral Muscular Dystrophy
+fsh|NBK1443|SMCHD1|Facioscapulohumeral Muscular Dystrophy
+factor-v-leiden|NBK1368|F5|Factor V Leiden Thrombophilia
+fam111a-dysp|NBK590151|FAM111A|FAM111A-Related Skeletal Dysplasias
+ccm|NBK1293|CCM2|Familial Cerebral Cavernous Malformations
+ccm|NBK1293|KRIT1|Familial Cerebral Cavernous Malformations
+ccm|NBK1293|PDCD10|Familial Cerebral Cavernous Malformations
+fch|NBK593236|ANGPTL3|Familial Combined Hypolipidemia
+fd|NBK1180|ELP1|Familial Dysautonomia
+fhm|NBK1388|ATP1A2|Familial Hemiplegic Migraine
+fhm|NBK1388|CACNA1A|Familial Hemiplegic Migraine
+fhm|NBK1388|SCN1A|Familial Hemiplegic Migraine
+hlh|NBK1444|PRF1|Familial Hemophagocytic Lymphohistiocytosis
+hlh|NBK1444|STX11|Familial Hemophagocytic Lymphohistiocytosis
+hlh|NBK1444|STXBP2|Familial Hemophagocytic Lymphohistiocytosis
+hlh|NBK1444|UNC13D|Familial Hemophagocytic Lymphohistiocytosis
+hyperchol|NBK174884|APOB|Familial Hypercholesterolemia
+hyperchol|NBK174884|LDLR|Familial Hypercholesterolemia
+hyperchol|NBK174884|LDLRAP1|Familial Hypercholesterolemia
+hyperchol|NBK174884|PCSK9|Familial Hypercholesterolemia
+lpl|NBK1308|LPL|Familial Lipoprotein Lipase Deficiency
+fmf|NBK1227|MEFV|Familial Mediterranean Fever
+pnknd|NBK1221|PNKD|Familial Paroxysmal Nonkinesigenic Dyskinesia
+porphyria-ct|NBK143129|UROD|Familial Porphyria Cutanea Tarda
+fa|NBK1401|BRCA1|Fanconi Anemia
+fa|NBK1401|BRCA2|Fanconi Anemia
+fa|NBK1401|BRIP1|Fanconi Anemia
+fa|NBK1401|ERCC4|Fanconi Anemia
+fa|NBK1401|FAAP100|Fanconi Anemia
+fa|NBK1401|FANCA|Fanconi Anemia
+fa|NBK1401|FANCB|Fanconi Anemia
+fa|NBK1401|FANCC|Fanconi Anemia
+fa|NBK1401|FANCD2|Fanconi Anemia
+fa|NBK1401|FANCE|Fanconi Anemia
+fa|NBK1401|FANCF|Fanconi Anemia
+fa|NBK1401|FANCG|Fanconi Anemia
+fa|NBK1401|FANCI|Fanconi Anemia
+fa|NBK1401|FANCL|Fanconi Anemia
+fa|NBK1401|FANCM|Fanconi Anemia
+fa|NBK1401|MAD2L2|Fanconi Anemia
+fa|NBK1401|PALB2|Fanconi Anemia
+fa|NBK1401|RAD51|Fanconi Anemia
+fa|NBK1401|RAD51C|Fanconi Anemia
+fa|NBK1401|RFWD3|Fanconi Anemia
+fa|NBK1401|SLX4|Fanconi Anemia
+fa|NBK1401|UBE2T|Fanconi Anemia
+fa|NBK1401|XRCC2|Fanconi Anemia
+fars2-def|NBK538658|FARS2|FARS2 Deficiency
+fahn|NBK56080|FA2H|Fatty Acid Hydroxylase-Associated Neurodegeneration
+fbln5-cutis-laxa|NBK5201|FBLN5|FBLN5-Related Cutis Laxa
+marfan|NBK1335|FBN1|FBN1-Related Marfan Syndrome
+fbxl4-mtddepl|NBK425540|FBXL4|FBXL4-Related Encephalomyopathic Mitochondrial DNA Depletion Syndrome
+feingold|NBK7050|MYCN|Feingold Syndrome 1
+craniosynostosis|NBK1455|FGFR1|FGFR Craniosynostosis Syndromes
+craniosynostosis|NBK1455|FGFR2|FGFR Craniosynostosis Syndromes
+craniosynostosis|NBK1455|FGFR3|FGFR Craniosynostosis Syndromes
+hartsfield|NBK349073|FGFR1|FGFR1-Related Hartsfield Syndrome
+hlrcc|NBK1252|FH|FH Tumor Predisposition Syndrome
+fop|NBK558090|ACVR1|Fibrodysplasia Ossificans Progressiva
+mccune-albright|NBK274564|GNAS|Fibrous Dysplasia / McCune-Albright Syndrome
+fkbp14-keds|NBK541503|FKBP14|FKBP14-Kyphoscoliotic Ehlers-Danlos Syndrome
+x-pvh|NBK1213|FLNA|FLNA Deficiency
+opd|NBK1393|FLNA|FLNA-Related Otopalatodigital Spectrum Disorders
+flnb-dis|NBK2534|FLNB|FLNB-Related Disorders
+fragilex|NBK1384|FMR1|FMR1 Disorders
+folr1-cft-def|NBK599286|FOLR1|FOLR1-Related Cerebral Folate Transport Deficiency
+foxg1-ndd|NBK604176|FOXG1|FOXG1 Syndrome
+foxp1|NBK594825|FOXP1|FOXP1 Syndrome
+foxp2-sl-dis|NBK368474|FOXP2|FOXP2-Related Speech and Language Disorder
+issd|NBK1470|SLC17A5|Free Sialic Acid Storage Disorder
+mota|NBK1728|FREM1|FREM1 Autosomal Recessive Disorders
+friedreich|NBK1281|FXN|Friedreich Ataxia
+xl-nystag|NBK3822|FRMD7|FRMD7-Related Infantile Nystagmus
+fructose1-6-def|NBK550349|FBP1|Fructose-1,6-Bisphosphatase Deficiency
+fryns|NBK1459|PIGN|Fryns Syndrome
+fcmd|NBK1206|FKTN|Fukuyama Congenital Muscular Dystrophy
+fum|NBK1506|FH|Fumarate Hydratase Deficiency
+g6pc3-def|NBK285321|G6PC3|G6PC3 Deficiency
+fgf14-ataxia|NBK599589|FGF14|GAA-FGF14-Related Ataxia
+gabriele-devries|NBK541730|YY1|Gabriele-de Vries Syndrome
+gan|NBK1136|GAN|GAN-Related Neurodegeneration
+cmt2d|NBK1242|GARS1|GARS1-Associated Axonal Neuropathy
+gata1|NBK1364|GATA1|GATA1-Related Cytopenia
+gaucher|NBK1269|GBA1|Gaucher Disease
+apbd|NBK5300|GBE1|GBE1-Adult Polyglucosan Body Disease
+geleophys-dysp|NBK11168|ADAMTSL2|Geleophysic Dysplasia
+geleophys-dysp|NBK11168|FBN1|Geleophysic Dysplasia
+geleophys-dysp|NBK11168|LTBP3|Geleophysic Dysplasia
+gaci|NBK253403|ABCC6|Generalized Arterial Calcification of Infancy
+gaci|NBK253403|ENPP1|Generalized Arterial Calcification of Infancy
+husa|NBK1367|C3|Genetic Atypical Hemolytic-Uremic Syndrome
+husa|NBK1367|CD46|Genetic Atypical Hemolytic-Uremic Syndrome
+husa|NBK1367|CFB|Genetic Atypical Hemolytic-Uremic Syndrome
+husa|NBK1367|CFH|Genetic Atypical Hemolytic-Uremic Syndrome
+husa|NBK1367|CFHR1|Genetic Atypical Hemolytic-Uremic Syndrome
+husa|NBK1367|CFHR3|Genetic Atypical Hemolytic-Uremic Syndrome
+husa|NBK1367|CFHR4|Genetic Atypical Hemolytic-Uremic Syndrome
+husa|NBK1367|CFI|Genetic Atypical Hemolytic-Uremic Syndrome
+husa|NBK1367|DGKE|Genetic Atypical Hemolytic-Uremic Syndrome
+husa|NBK1367|THBD|Genetic Atypical Hemolytic-Uremic Syndrome
+husa|NBK1367|VTN|Genetic Atypical Hemolytic-Uremic Syndrome
+deafness-overview|NBK1434|ACTG1|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|BSND|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|CCDC50|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|CDH23|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|CLDN14|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|COCH|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|COL11A2|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|DIAPH1|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|DSPP|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|ENTREP1|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|ESPN|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|ESRRB|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|EYA4|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|GJB2|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|GJB3|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|GJB6|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|GPSM2|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|GRHL2|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|GRXCR1|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|GSDME|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|HGF|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|KCNQ4|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|LHFPL5|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|LOXHD1|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|LRTOMT|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|MARVELD2|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|MIR96|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|MT-CO1|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|MT-RNR1|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|MT-TS1|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|MYH14|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|MYH9|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|MYO15A|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|MYO1A|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|MYO3A|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|MYO6|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|MYO7A|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|OTOA|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|OTOF|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|P2RX2|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|PCDH15|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|PJVK|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|POU3F4|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|POU4F3|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|PRPS1|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|PTPRQ|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|RDX|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|SIX1|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|SLC17A8|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|SLC26A4|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|SLC26A5|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|SMPX|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|STRC|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|SYNE4|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|TECTA|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|TJP2|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|TMC1|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|TMIE|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|TMPRSS3|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|TPRN|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|TRIOBP|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|USH1C|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|WFS1|Genetic Hearing Loss Overview
+deafness-overview|NBK1434|WHRN|Genetic Hearing Loss Overview
+prion|NBK1229|PRNP|Genetic Prion Disease
+cmtx|NBK1374|GJB1|GJB1 Disorders: Charcot-Marie-Tooth Neuropathy (CMT1X) and Central Nervous System Phenotypes
+dfnb1|NBK1272|GJB2|GJB2-Related Autosomal Recessive Nonsyndromic Hearing Loss
+gm1-ganglio|NBK164500|GLB1|GLB1-Related Disorders
+gcps|NBK1446|GLI3|GLI3-Related Greig Cephalopolysyndactyly Syndrome
+phs|NBK1465|GLI3|GLI3-Related Pallister-Hall Syndrome
+glut1|NBK1430|SLC2A1|Glucose Transporter Type 1 Deficiency Syndrome
+glutaric-a1|NBK546575|GCDH|Glutaric Acidemia Type 1
+gsd1|NBK1312|G6PC1|Glycogen Storage Disease Type I
+gsd1|NBK1312|SLC37A4|Glycogen Storage Disease Type I
+gsd3|NBK26372|AGL|Glycogen Storage Disease Type III
+gsd4|NBK115333|GBE1|Glycogen Storage Disease Type IV
+gsd5|NBK1344|PYGM|Glycogen Storage Disease Type V
+gsd6|NBK5941|PYGL|Glycogen Storage Disease Type VI
+gm2a-def|NBK583219|GM2A|GM2 Activator Deficiency
+gm3-def|NBK593237|ST3GAL5|GM3 Synthase Deficiency
+gnai1-ndd|NBK605493|GNAI1|GNAI1-Related Neurodevelopmental Disorder
+gnao1-dis|NBK597155|GNAO1|GNAO1-Related Disorder
+gnb1-e|NBK554743|GNB1|GNB1 Encephalopathy
+gnb5-ndd|NBK573218|GNB5|GNB5-Related Neurodevelopmental Disorder
+ibm|NBK1262|GNE|GNE Myopathy
+ml2|NBK1828|GNPTAB|GNPTAB-Related Disorders
+gria2-ndd|NBK599285|GRIA2|GRIA2-Related Neurodevelopmental Disorder
+grin1-ndd|NBK542807|GRIN1|GRIN1-Related Neurodevelopmental Disorder
+grin2a-dis|NBK385627|GRIN2A|GRIN2A-Related Disorders
+grin2b|NBK501979|GRIN2B|GRIN2B-Related Neurodevelopmental Disorder
+grin2d-dee|NBK582335|GRIN2D|GRIN2D-Related Developmental and Epileptic Encephalopathy
+ftd-grn|NBK1371|GRN|GRN Frontotemporal Dementia
+drd|NBK1508|GCH1|GTP Cyclohydrolase 1-Deficient Dopa-Responsive Dystonia
+hfg|NBK1423|HOXA13|Hand-Foot-Genital Syndrome
+haplo-a20|NBK610430|TNFAIP3|Haploinsufficiency of A20
+hemo-a|NBK1404|F8|Hemophilia A
+hemo-b|NBK1495|F9|Hemophilia B
+vodi|NBK1271|SP110|Hepatic Veno-Occlusive Disease with Immunodeficiency
+hep|NBK169003|UROD|Hepatoerythropoietic Porphyria
+ataxias|NBK1138|AFG3L2|Hereditary Ataxia
+ataxias|NBK1138|ANGPTL3|Hereditary Ataxia
+ataxias|NBK1138|ANO10|Hereditary Ataxia
+ataxias|NBK1138|APOB|Hereditary Ataxia
+ataxias|NBK1138|APTX|Hereditary Ataxia
+ataxias|NBK1138|ATM|Hereditary Ataxia
+ataxias|NBK1138|ATN1|Hereditary Ataxia
+ataxias|NBK1138|ATXN1|Hereditary Ataxia
+ataxias|NBK1138|ATXN10|Hereditary Ataxia
+ataxias|NBK1138|ATXN2|Hereditary Ataxia
+ataxias|NBK1138|ATXN3|Hereditary Ataxia
+ataxias|NBK1138|ATXN7|Hereditary Ataxia
+ataxias|NBK1138|ATXN8|Hereditary Ataxia
+ataxias|NBK1138|ATXN8OS|Hereditary Ataxia
+ataxias|NBK1138|BEAN1|Hereditary Ataxia
+ataxias|NBK1138|CACNA1A|Hereditary Ataxia
+ataxias|NBK1138|COQ2|Hereditary Ataxia
+ataxias|NBK1138|COQ4|Hereditary Ataxia
+ataxias|NBK1138|COQ8A|Hereditary Ataxia
+ataxias|NBK1138|FGF14|Hereditary Ataxia
+ataxias|NBK1138|FMR1|Hereditary Ataxia
+ataxias|NBK1138|FXN|Hereditary Ataxia
+ataxias|NBK1138|ITPR1|Hereditary Ataxia
+ataxias|NBK1138|KCNC3|Hereditary Ataxia
+ataxias|NBK1138|KCND3|Hereditary Ataxia
+ataxias|NBK1138|MTTP|Hereditary Ataxia
+ataxias|NBK1138|NOP56|Hereditary Ataxia
+ataxias|NBK1138|PPP2R2B|Hereditary Ataxia
+ataxias|NBK1138|PRKCG|Hereditary Ataxia
+ataxias|NBK1138|RFC1|Hereditary Ataxia
+ataxias|NBK1138|SACS|Hereditary Ataxia
+ataxias|NBK1138|SETX|Hereditary Ataxia
+ataxias|NBK1138|SPG7|Hereditary Ataxia
+ataxias|NBK1138|SPTBN2|Hereditary Ataxia
+ataxias|NBK1138|SYNE1|Hereditary Ataxia
+ataxias|NBK1138|TBP|Hereditary Ataxia
+ataxias|NBK1138|TTPA|Hereditary Ataxia
+ataxias|NBK1138|ZFHX3|Hereditary Ataxia
+hcp|NBK114807|CPOX|Hereditary Coproporphyria
+hered-drta|NBK547595|ATP6V0A4|Hereditary Distal Renal Tubular Acidosis
+hered-drta|NBK547595|ATP6V1B1|Hereditary Distal Renal Tubular Acidosis
+hered-drta|NBK547595|FOXI1|Hereditary Distal Renal Tubular Acidosis
+hered-drta|NBK547595|SLC4A1|Hereditary Distal Renal Tubular Acidosis
+hered-drta|NBK547595|WDR72|Hereditary Distal Renal Tubular Acidosis
+dystonia-ov|NBK1155|ADAR|Hereditary Dystonia
+dystonia-ov|NBK1155|ARSA|Hereditary Dystonia
+dystonia-ov|NBK1155|ATN1|Hereditary Dystonia
+dystonia-ov|NBK1155|ATP13A2|Hereditary Dystonia
+dystonia-ov|NBK1155|ATP1A3|Hereditary Dystonia
+dystonia-ov|NBK1155|ATP7B|Hereditary Dystonia
+dystonia-ov|NBK1155|BTD|Hereditary Dystonia
+dystonia-ov|NBK1155|C19orf12|Hereditary Dystonia
+dystonia-ov|NBK1155|CBS|Hereditary Dystonia
+dystonia-ov|NBK1155|CLN3|Hereditary Dystonia
+dystonia-ov|NBK1155|CLN5|Hereditary Dystonia
+dystonia-ov|NBK1155|CLN6|Hereditary Dystonia
+dystonia-ov|NBK1155|CLN8|Hereditary Dystonia
+dystonia-ov|NBK1155|CP|Hereditary Dystonia
+dystonia-ov|NBK1155|CTSD|Hereditary Dystonia
+dystonia-ov|NBK1155|CTSF|Hereditary Dystonia
+dystonia-ov|NBK1155|D2HGDH|Hereditary Dystonia
+dystonia-ov|NBK1155|DCAF17|Hereditary Dystonia
+dystonia-ov|NBK1155|DNAJC5|Hereditary Dystonia
+dystonia-ov|NBK1155|FA2H|Hereditary Dystonia
+dystonia-ov|NBK1155|FTL|Hereditary Dystonia
+dystonia-ov|NBK1155|FUCA1|Hereditary Dystonia
+dystonia-ov|NBK1155|GALC|Hereditary Dystonia
+dystonia-ov|NBK1155|GALT|Hereditary Dystonia
+dystonia-ov|NBK1155|GAMT|Hereditary Dystonia
+dystonia-ov|NBK1155|GATM|Hereditary Dystonia
+dystonia-ov|NBK1155|GCDH|Hereditary Dystonia
+dystonia-ov|NBK1155|GCH1|Hereditary Dystonia
+dystonia-ov|NBK1155|GLB1|Hereditary Dystonia
+dystonia-ov|NBK1155|GM2A|Hereditary Dystonia
+dystonia-ov|NBK1155|GNAL|Hereditary Dystonia
+dystonia-ov|NBK1155|GRN|Hereditary Dystonia
+dystonia-ov|NBK1155|HPRT1|Hereditary Dystonia
+dystonia-ov|NBK1155|HTT|Hereditary Dystonia
+dystonia-ov|NBK1155|JPH3|Hereditary Dystonia
+dystonia-ov|NBK1155|KCTD7|Hereditary Dystonia
+dystonia-ov|NBK1155|MCEE|Hereditary Dystonia
+dystonia-ov|NBK1155|MECP2|Hereditary Dystonia
+dystonia-ov|NBK1155|MFSD8|Hereditary Dystonia
+dystonia-ov|NBK1155|MMAA|Hereditary Dystonia
+dystonia-ov|NBK1155|MMAB|Hereditary Dystonia
+dystonia-ov|NBK1155|MMADHC|Hereditary Dystonia
+dystonia-ov|NBK1155|MMUT|Hereditary Dystonia
+dystonia-ov|NBK1155|NPC1|Hereditary Dystonia
+dystonia-ov|NBK1155|NPC2|Hereditary Dystonia
+dystonia-ov|NBK1155|PAH|Hereditary Dystonia
+dystonia-ov|NBK1155|PANK2|Hereditary Dystonia
+dystonia-ov|NBK1155|PDGFB|Hereditary Dystonia
+dystonia-ov|NBK1155|PDGFRB|Hereditary Dystonia
+dystonia-ov|NBK1155|PLA2G6|Hereditary Dystonia
+dystonia-ov|NBK1155|PLP1|Hereditary Dystonia
+dystonia-ov|NBK1155|PNKD|Hereditary Dystonia
+dystonia-ov|NBK1155|POLG|Hereditary Dystonia
+dystonia-ov|NBK1155|PPT1|Hereditary Dystonia
+dystonia-ov|NBK1155|PRKN|Hereditary Dystonia
+dystonia-ov|NBK1155|PRRT2|Hereditary Dystonia
+dystonia-ov|NBK1155|RNASEH2A|Hereditary Dystonia
+dystonia-ov|NBK1155|RNASEH2B|Hereditary Dystonia
+dystonia-ov|NBK1155|RNASEH2C|Hereditary Dystonia
+dystonia-ov|NBK1155|SAMHD1|Hereditary Dystonia
+dystonia-ov|NBK1155|SGCE|Hereditary Dystonia
+dystonia-ov|NBK1155|SLC19A3|Hereditary Dystonia
+dystonia-ov|NBK1155|SLC20A2|Hereditary Dystonia
+dystonia-ov|NBK1155|SLC2A1|Hereditary Dystonia
+dystonia-ov|NBK1155|SLC30A10|Hereditary Dystonia
+dystonia-ov|NBK1155|SLC6A19|Hereditary Dystonia
+dystonia-ov|NBK1155|SLC6A8|Hereditary Dystonia
+dystonia-ov|NBK1155|SPR|Hereditary Dystonia
+dystonia-ov|NBK1155|TAF1|Hereditary Dystonia
+dystonia-ov|NBK1155|TH|Hereditary Dystonia
+dystonia-ov|NBK1155|THAP1|Hereditary Dystonia
+dystonia-ov|NBK1155|TIMM8A|Hereditary Dystonia
+dystonia-ov|NBK1155|TOR1A|Hereditary Dystonia
+dystonia-ov|NBK1155|TPP1|Hereditary Dystonia
+dystonia-ov|NBK1155|TREX1|Hereditary Dystonia
+dystonia-ov|NBK1155|VPS13A|Hereditary Dystonia
+dystonia-ov|NBK1155|WDR45|Hereditary Dystonia
+dystonia-ov|NBK1155|XK|Hereditary Dystonia
+hfpoik-tmp|NBK390610|FAM111B|Hereditary Fibrosing Poikiloderma with Tendon Contractures, Myopathy, and Pulmonary Fibrosis
+folate-mal|NBK1673|SLC46A1|Hereditary Folate Malabsorption
+hfi|NBK333439|ALDOB|Hereditary Fructose Intolerance
+hht|NBK1351|ACVRL1|Hereditary Hemorrhagic Telangiectasia
+hht|NBK1351|ENG|Hereditary Hemorrhagic Telangiectasia
+hht|NBK1351|SMAD4|Hereditary Hemorrhagic Telangiectasia
+hyperek|NBK1260|GLRA1|Hereditary Hyperekplexia
+hyperek|NBK1260|GLRB|Hereditary Hyperekplexia
+hyperek|NBK1260|SLC6A5|Hereditary Hyperekplexia
+accpn|NBK1372|SLC12A6|Hereditary Motor and Sensory Neuropathy with Agenesis of the Corpus Callosum
+ext|NBK1235|EXT1|Hereditary Multiple Osteochondromas
+ext|NBK1235|EXT2|Hereditary Multiple Osteochondromas
+hmerf|NBK185330|TTN|Hereditary Myopathy with Early Respiratory Failure
+ndi|NBK1177|AQP2|Hereditary Nephrogenic Diabetes Insipidus
+ndi|NBK1177|AVPR2|Hereditary Nephrogenic Diabetes Insipidus
+hnpp|NBK1392|PMP22|Hereditary Neuropathy with Liability to Pressure Palsies
+paragangliomas|NBK1548|MAX|Hereditary Paraganglioma-Pheochromocytoma Syndromes
+paragangliomas|NBK1548|SDHA|Hereditary Paraganglioma-Pheochromocytoma Syndromes
+paragangliomas|NBK1548|SDHAF2|Hereditary Paraganglioma-Pheochromocytoma Syndromes
+paragangliomas|NBK1548|SDHB|Hereditary Paraganglioma-Pheochromocytoma Syndromes
+paragangliomas|NBK1548|SDHC|Hereditary Paraganglioma-Pheochromocytoma Syndromes
+paragangliomas|NBK1548|SDHD|Hereditary Paraganglioma-Pheochromocytoma Syndromes
+paragangliomas|NBK1548|TMEM127|Hereditary Paraganglioma-Pheochromocytoma Syndromes
+hsan2|NBK49247|KIF1A|Hereditary Sensory and Autonomic Neuropathy Type II
+hsan2|NBK49247|RETREG1|Hereditary Sensory and Autonomic Neuropathy Type II
+hsan2|NBK49247|SCN9A|Hereditary Sensory and Autonomic Neuropathy Type II
+hsan2|NBK49247|WNK1|Hereditary Sensory and Autonomic Neuropathy Type II
+tfap|NBK1194|TTR|Hereditary Transthyretin Amyloidosis
+pph|NBK1485|ACVRL1|Heritable Pulmonary Arterial Hypertension
+pph|NBK1485|BMPR1B|Heritable Pulmonary Arterial Hypertension
+pph|NBK1485|BMPR2|Heritable Pulmonary Arterial Hypertension
+pph|NBK1485|CAV1|Heritable Pulmonary Arterial Hypertension
+pph|NBK1485|ENG|Heritable Pulmonary Arterial Hypertension
+pph|NBK1485|KCNK3|Heritable Pulmonary Arterial Hypertension
+pph|NBK1485|KDR|Heritable Pulmonary Arterial Hypertension
+pph|NBK1485|SMAD9|Heritable Pulmonary Arterial Hypertension
+pph|NBK1485|TBX4|Heritable Pulmonary Arterial Hypertension
+pph|NBK1485|TET2|Heritable Pulmonary Arterial Hypertension
+taa|NBK1120|ACTA2|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|BGN|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|CBS|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|COL3A1|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|COL4A5|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|EFEMP2|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|ELN|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|FBN1|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|FBN2|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|FLNA|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|FOXE3|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|HCN4|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|LOX|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|MAT2A|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|MFAP5|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|MYH11|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|MYLK|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|NOTCH1|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|PKD1|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|PKD2|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|PRKG1|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|SKI|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|SLC2A10|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|SMAD2|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|SMAD3|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|SMAD4|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|TGFB2|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|TGFB3|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|TGFBR1|Heritable Thoracic Aortic Disease (HTAD)
+taa|NBK1120|TGFBR2|Heritable Thoracic Aortic Disease (HTAD)
+hps|NBK1287|AP3B1|Hermansky-Pudlak Syndrome
+hps|NBK1287|AP3D1|Hermansky-Pudlak Syndrome
+hps|NBK1287|BLOC1S3|Hermansky-Pudlak Syndrome
+hps|NBK1287|BLOC1S5|Hermansky-Pudlak Syndrome
+hps|NBK1287|BLOC1S6|Hermansky-Pudlak Syndrome
+hps|NBK1287|DTNBP1|Hermansky-Pudlak Syndrome
+hps|NBK1287|HPS1|Hermansky-Pudlak Syndrome
+hps|NBK1287|HPS3|Hermansky-Pudlak Syndrome
+hps|NBK1287|HPS4|Hermansky-Pudlak Syndrome
+hps|NBK1287|HPS5|Hermansky-Pudlak Syndrome
+hps|NBK1287|HPS6|Hermansky-Pudlak Syndrome
+tay-sachs|NBK1218|HEXA|HEXA Disorders
+hemochromatosis|NBK1440|HFE|HFE-Related Hemochromatosis
+ed2|NBK1200|GJB6|Hidrotic Ectodermal Dysplasia 2
+h1-4|NBK564966|H1-4|HIST1H1E Syndrome
+hnrnph2-ndd|NBK584018|HNRNPH2|HNRNPH2-Related Neurodevelopmental Disorder
+hnrnpu-ndd|NBK578573|HNRNPU|HNRNPU-Related Neurodevelopmental Disorder
+hpe-overview|NBK1530|CDON|Holoprosencephaly
+hpe-overview|NBK1530|CNOT1|Holoprosencephaly
+hpe-overview|NBK1530|DISP1|Holoprosencephaly
+hpe-overview|NBK1530|DLL1|Holoprosencephaly
+hpe-overview|NBK1530|FGF8|Holoprosencephaly
+hpe-overview|NBK1530|FGFR1|Holoprosencephaly
+hpe-overview|NBK1530|GLI2|Holoprosencephaly
+hpe-overview|NBK1530|KMT2D|Holoprosencephaly
+hpe-overview|NBK1530|PPP1R12A|Holoprosencephaly
+hpe-overview|NBK1530|RAD21|Holoprosencephaly
+hpe-overview|NBK1530|SHH|Holoprosencephaly
+hpe-overview|NBK1530|SIX3|Holoprosencephaly
+hpe-overview|NBK1530|SMC1A|Holoprosencephaly
+hpe-overview|NBK1530|SMC3|Holoprosencephaly
+hpe-overview|NBK1530|STAG2|Holoprosencephaly
+hpe-overview|NBK1530|STIL|Holoprosencephaly
+hpe-overview|NBK1530|TGIF1|Holoprosencephaly
+hpe-overview|NBK1530|ZIC2|Holoprosencephaly
+hos|NBK1111|TBX5|Holt-Oram Syndrome
+homocystinuria|NBK1524|CBS|Homocystinuria due to Cystathionine Beta-Synthase Deficiency
+mthfr-homocystinuria|NBK615089|MTHFR|Homocystinuria due to Deficiency of N(5,10)-Methylenetetrahydrofolate Reductase Activity
+hoxa1-dis|NBK609107|HOXA1|HOXA1-Related Disorders
+lns|NBK1149|HPRT1|HPRT1 Disorders
+costello|NBK1507|HRAS|HRAS-Related Costello Syndrome
+carasil|NBK32533|HTRA1|HTRA1 Disorder
+huntington|NBK1305|HTT|Huntington Disease
+hd-l2|NBK1529|JPH3|Huntington Disease-Like 2
+huppke-brendel|NBK542334|SLC33A1|Huppke-Brendel Syndrome
+hgps|NBK1121|LMNA|Hutchinson-Gilford Progeria Syndrome
+hyal2-def|NBK594824|HYAL2|HYAL2 Deficiency
+sys-h|NBK1525|ANTXR2|Hyaline Fibromatosis Syndrome
+hyper-pp|NBK1496|SCN4A|Hyperkalemic Periodic Paralysis
+hmdpc|NBK100241|SLC30A10|Hypermanganesemia with Dystonia 1
+hhhs|NBK97260|SLC25A15|Hyperornithinemia-Hyperammonemia-Homocitrullinuria Syndrome
+hyper-ftc|NBK476672|FGF23|Hyperphosphatemic Familial Tumoral Calcinosis
+hyper-ftc|NBK476672|GALNT3|Hyperphosphatemic Familial Tumoral Calcinosis
+hyper-ftc|NBK476672|KL|Hyperphosphatemic Familial Tumoral Calcinosis
+hypochondroplasia|NBK1477|FGFR3|Hypochondroplasia
+x-hed|NBK1112|EDA|Hypohidrotic Ectodermal Dysplasia
+x-hed|NBK1112|EDAR|Hypohidrotic Ectodermal Dysplasia
+x-hed|NBK1112|EDARADD|Hypohidrotic Ectodermal Dysplasia
+x-hed|NBK1112|WNT10A|Hypohidrotic Ectodermal Dysplasia
+hpp|NBK1338|CACNA1S|Hypokalemic Periodic Paralysis
+hpp|NBK1338|SCN4A|Hypokalemic Periodic Paralysis
+hypo-mcc|NBK2587|HYCC1|Hypomyelination and Congenital Cataract
+hops|NBK1150|ALPL|Hypophosphatasia
+idednik|NBK609106|AP1B1|IDEDNIK Syndrome
+idednik|NBK609106|AP1S1|IDEDNIK Syndrome
+image|NBK190103|CDKN1C|IMAGe Syndrome
+ibmpfd|NBK1476|HNRNPA1|Inclusion Body Myopathy with Paget Disease of Bone and/or Frontotemporal Dementia
+ibmpfd|NBK1476|HNRNPA2B1|Inclusion Body Myopathy with Paget Disease of Bone and/or Frontotemporal Dementia
+ibmpfd|NBK1476|VCP|Inclusion Body Myopathy with Paget Disease of Bone and/or Frontotemporal Dementia
+i-p|NBK1472|IKBKG|Incontinentia Pigmenti
+inppl1-opsmd|NBK615431|INPPL1|INPPL1-Related Opsismodysplasia
+insr-ir|NBK476444|INSR|INSR-Related Severe Insulin Resistance Syndrome
+ipex|NBK1118|FOXP3|IPEX Syndrome
+irf2bpl-dis|NBK609461|IRF2BPL|IRF2BPL-Related Disorder
+vws|NBK1407|IRF6|IRF6-Related Disorders
+isca1-mmds|NBK547304|ISCA1|ISCA1-Related Multiple Mitochondrial Dysfunctions Syndrome
+isca2-mt-dis|NBK481904|ISCA2|ISCA2-Related Mitochondrial Disorder
+cmtc|NBK581081|GNA11|Isolated and Classic Cutis Marmorata Telangiectatica Congenita (CMTC)
+kms|NBK1334|ANOS1|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|AXL|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|CCDC141|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|CHD7|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|DUSP6|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|FEZF1|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|FGF17|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|FGF8|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|FGFR1|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|FLRT3|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|GNRH1|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|GNRHR|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|HS6ST1|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|IL17RD|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|KISS1|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|KISS1R|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|NSMF|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|POLR3B|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|PROK2|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|PROKR2|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|SEMA3A|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|SEMA3E|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|SOX10|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|SPRY4|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|SRA1|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|TAC3|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|TACR3|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+kms|NBK1334|WDR11|Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency
+mma|NBK1231|MCEE|Isolated Methylmalonic Acidemia
+mma|NBK1231|MMAA|Isolated Methylmalonic Acidemia
+mma|NBK1231|MMAB|Isolated Methylmalonic Acidemia
+mma|NBK1231|MMADHC|Isolated Methylmalonic Acidemia
+mma|NBK1231|MMUT|Isolated Methylmalonic Acidemia
+iso-def|NBK453433|SUOX|Isolated Sulfite Oxidase Deficiency
+jln|NBK1405|KCNE1|Jervell and Lange-Nielsen Syndrome
+jln|NBK1405|KCNQ1|Jervell and Lange-Nielsen Syndrome
+joubert|NBK1325|AHI1|Joubert Syndrome
+joubert|NBK1325|ARL13B|Joubert Syndrome
+joubert|NBK1325|B9D1|Joubert Syndrome
+joubert|NBK1325|B9D2|Joubert Syndrome
+joubert|NBK1325|C2CD3|Joubert Syndrome
+joubert|NBK1325|CC2D2A|Joubert Syndrome
+joubert|NBK1325|CEP104|Joubert Syndrome
+joubert|NBK1325|CEP120|Joubert Syndrome
+joubert|NBK1325|CEP290|Joubert Syndrome
+joubert|NBK1325|CEP41|Joubert Syndrome
+joubert|NBK1325|CPLANE1|Joubert Syndrome
+joubert|NBK1325|CSPP1|Joubert Syndrome
+joubert|NBK1325|IFT172|Joubert Syndrome
+joubert|NBK1325|INPP5E|Joubert Syndrome
+joubert|NBK1325|KATNIP|Joubert Syndrome
+joubert|NBK1325|KIAA0586|Joubert Syndrome
+joubert|NBK1325|KIF7|Joubert Syndrome
+joubert|NBK1325|MKS1|Joubert Syndrome
+joubert|NBK1325|NPHP1|Joubert Syndrome
+joubert|NBK1325|OFD1|Joubert Syndrome
+joubert|NBK1325|PDE6D|Joubert Syndrome
+joubert|NBK1325|POC1B|Joubert Syndrome
+joubert|NBK1325|RPGRIP1L|Joubert Syndrome
+joubert|NBK1325|TCTN1|Joubert Syndrome
+joubert|NBK1325|TCTN2|Joubert Syndrome
+joubert|NBK1325|TCTN3|Joubert Syndrome
+joubert|NBK1325|TMEM107|Joubert Syndrome
+joubert|NBK1325|TMEM138|Joubert Syndrome
+joubert|NBK1325|TMEM216|Joubert Syndrome
+joubert|NBK1325|TMEM231|Joubert Syndrome
+joubert|NBK1325|TMEM237|Joubert Syndrome
+joubert|NBK1325|TMEM67|Joubert Syndrome
+joubert|NBK1325|TTC21B|Joubert Syndrome
+joubert|NBK1325|ZNF423|Joubert Syndrome
+ebj|NBK1125|COL17A1|Junctional Epidermolysis Bullosa
+ebj|NBK1125|ITGB4|Junctional Epidermolysis Bullosa
+ebj|NBK1125|LAMA3|Junctional Epidermolysis Bullosa
+ebj|NBK1125|LAMB3|Junctional Epidermolysis Bullosa
+ebj|NBK1125|LAMC2|Junctional Epidermolysis Bullosa
+jh|NBK1170|HAMP|Juvenile Hemochromatosis
+jh|NBK1170|HJV|Juvenile Hemochromatosis
+jps|NBK1469|BMPR1A|Juvenile Polyposis Syndrome
+jps|NBK1469|SMAD4|Juvenile Polyposis Syndrome
+kabuki|NBK62111|KDM6A|Kabuki Syndrome
+kabuki|NBK62111|KMT2D|Kabuki Syndrome
+kat6b-dis|NBK114806|KAT6B|KAT6B Disorders
+kos|NBK390670|UBE3B|Kaufman Oculocerebrofacial Syndrome
+kbgs|NBK487886|ANKRD11|KBG Syndrome
+kcnk9-is|NBK425128|KCNK9|KCNK9 Imprinting Syndrome
+bfns|NBK32534|KCNQ2|KCNQ2-Related Disorders
+kcnq3-dis|NBK201978|KCNQ3|KCNQ3-Related Disorders
+kcnt1-epilepsy|NBK525917|KCNT1|KCNT1-Related Epilepsy
+kctd7-epilepsy|NBK619245|KCTD7|KCTD7-Related Progressive Myoclonic Epilepsy
+kindler|NBK349072|FERMT1|Kindler Syndrome
+kleefstra|NBK47079|EHMT1|Kleefstra Syndrome
+kmt2b-dystonia|NBK493766|KMT2B|KMT2B-Related Disorders
+kmt2e-ndd|NBK602945|KMT2E|KMT2E-Related Neurodevelopmental Disorder
+mdel17q21_31|NBK24676|KANSL1|Koolen-de Vries Syndrome
+mdel17q21_31|NBK24676|Not applicable|Koolen-de Vries Syndrome
+kptn-dis|NBK605495|KPTN|KPTN-Related Disorder
+krabbe|NBK1238|GALC|Krabbe Disease
+l1cam|NBK1484|L1CAM|L1 Syndrome
+mpd1|NBK1433|MYH7|Laing Distal Myopathy
+mdef-cmd|NBK97333|LAMA2|LAMA2 Muscular Dystrophy
+lathosterolosis|NBK597809|SC5D|Lathosterolosis
+lca-ov|NBK531510|AIPL1|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|ALMS1|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|CABP4|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|CEP290|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|CLUAP1|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|CRB1|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|CRX|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|DTHD1|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|GDF6|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|GUCY2D|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|IFT140|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|IMPDH1|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|IQCB1|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|KCNJ13|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|LCA5|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|LRAT|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|NMNAT1|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|OTX2|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|PRPH2|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|RD3|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|RDH12|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|RPE65|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|RPGRIP1|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|SPATA7|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lca-ov|NBK531510|TULP1|Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+lhon|NBK1174|MT-ATP6|Leber Hereditary Optic Neuropathy
+lhon|NBK1174|MT-CO3|Leber Hereditary Optic Neuropathy
+lhon|NBK1174|MT-CYB|Leber Hereditary Optic Neuropathy
+lhon|NBK1174|MT-ND1|Leber Hereditary Optic Neuropathy
+lhon|NBK1174|MT-ND2|Leber Hereditary Optic Neuropathy
+lhon|NBK1174|MT-ND3|Leber Hereditary Optic Neuropathy
+lhon|NBK1174|MT-ND4|Leber Hereditary Optic Neuropathy
+lhon|NBK1174|MT-ND4L|Leber Hereditary Optic Neuropathy
+lhon|NBK1174|MT-ND5|Leber Hereditary Optic Neuropathy
+lhon|NBK1174|MT-ND6|Leber Hereditary Optic Neuropathy
+legius|NBK47312|SPRED1|Legius Syndrome
+lbsl|NBK43417|DARS2|Leukoencephalopathy with Brainstem and Spinal Cord Involvement and Lactate Elevation
+li-fraumeni|NBK1311|TP53|Li-Fraumeni Syndrome
+lipoid-p|NBK338540|ECM1|Lipoid Proteinosis
+dcm-lmna|NBK1674|LMNA|LMNA-Related Dilated Cardiomyopathy
+lad-ad|NBK338165|LMNB1|LMNB1-Related Autosomal Dominant Leukodystrophy
+loeys-dietz|NBK1133|IPO8|Loeys-Dietz Syndrome
+loeys-dietz|NBK1133|SMAD2|Loeys-Dietz Syndrome
+loeys-dietz|NBK1133|SMAD3|Loeys-Dietz Syndrome
+loeys-dietz|NBK1133|TGFB2|Loeys-Dietz Syndrome
+loeys-dietz|NBK1133|TGFB3|Loeys-Dietz Syndrome
+loeys-dietz|NBK1133|TGFBR1|Loeys-Dietz Syndrome
+loeys-dietz|NBK1133|TGFBR2|Loeys-Dietz Syndrome
+rws|NBK1129|CACNA1C|Long QT Syndrome
+rws|NBK1129|CALM1|Long QT Syndrome
+rws|NBK1129|CALM2|Long QT Syndrome
+rws|NBK1129|CALM3|Long QT Syndrome
+rws|NBK1129|CAV3|Long QT Syndrome
+rws|NBK1129|KCNE1|Long QT Syndrome
+rws|NBK1129|KCNE2|Long QT Syndrome
+rws|NBK1129|KCNH2|Long QT Syndrome
+rws|NBK1129|KCNJ2|Long QT Syndrome
+rws|NBK1129|KCNQ1|Long QT Syndrome
+rws|NBK1129|SCN5A|Long QT Syndrome
+rws|NBK1129|TRDN|Long QT Syndrome
+lchad|NBK583531|HADHA|Long-Chain Hydroxyacyl-CoA Dehydrogenase Deficiency / Trifunctional Protein Deficiency
+lchad|NBK583531|HADHB|Long-Chain Hydroxyacyl-CoA Dehydrogenase Deficiency / Trifunctional Protein Deficiency
+lowe|NBK1480|OCRL|Lowe Syndrome
+lpin2-majeed|NBK589480|LPIN2|LPIN2-Related Majeed Syndrome
+lrrk2|NBK1208|LRRK2|LRRK2 Parkinson Disease
+ltbp4-cutis-laxa|NBK343782|LTBP4|LTBP4-Related Cutis Laxa
+lds|NBK1457|FOXC2|Lymphedema-Distichiasis Syndrome
+hnpcc|NBK1211|EPCAM|Lynch Syndrome
+hnpcc|NBK1211|MLH1|Lynch Syndrome
+hnpcc|NBK1211|MSH2|Lynch Syndrome
+hnpcc|NBK1211|MSH6|Lynch Syndrome
+hnpcc|NBK1211|PMS2|Lynch Syndrome
+lpi|NBK1361|SLC7A7|Lysinuric Protein Intolerance
+lal-def|NBK305870|LIPA|Lysosomal Acid Lipase Deficiency
+mf-dys-mic|NBK214367|EFTUD2|Mandibulofacial Dysostosis with Microcephaly
+msud|NBK1319|BCKDHA|Maple Syrup Urine Disease
+msud|NBK1319|BCKDHB|Maple Syrup Urine Disease
+msud|NBK1319|DBT|Maple Syrup Urine Disease
+ftdp-17|NBK1505|MAPT|MAPT-Related Frontotemporal Dementia
+mss|NBK1192|SIL1|Marinesco-Sjögren Syndrome
+dup15q|NBK367946|Not applicable|Maternal 15q Duplication Syndrome
+mlid-maternal|NBK614473|KHDC3L|Maternal Effect Gene-Related Multi-Locus Imprinting Disturbances
+mlid-maternal|NBK614473|NLRP2|Maternal Effect Gene-Related Multi-Locus Imprinting Disturbances
+mlid-maternal|NBK614473|NLRP5|Maternal Effect Gene-Related Multi-Locus Imprinting Disturbances
+mlid-maternal|NBK614473|NLRP7|Maternal Effect Gene-Related Multi-Locus Imprinting Disturbances
+mlid-maternal|NBK614473|PADI6|Maternal Effect Gene-Related Multi-Locus Imprinting Disturbances
+mody-ov|NBK500456|ABCC8|Maturity Onset Diabetes of the Young
+mody-ov|NBK500456|APPL1|Maturity Onset Diabetes of the Young
+mody-ov|NBK500456|BLK|Maturity Onset Diabetes of the Young
+mody-ov|NBK500456|CEL|Maturity Onset Diabetes of the Young
+mody-ov|NBK500456|GCK|Maturity Onset Diabetes of the Young
+mody-ov|NBK500456|HNF1A|Maturity Onset Diabetes of the Young
+mody-ov|NBK500456|HNF1B|Maturity Onset Diabetes of the Young
+mody-ov|NBK500456|HNF4A|Maturity Onset Diabetes of the Young
+mody-ov|NBK500456|INS|Maturity Onset Diabetes of the Young
+mody-ov|NBK500456|KCNJ11|Maturity Onset Diabetes of the Young
+mody-ov|NBK500456|KLF11|Maturity Onset Diabetes of the Young
+mody-ov|NBK500456|NEUROD1|Maturity Onset Diabetes of the Young
+mody-ov|NBK500456|PAX4|Maturity Onset Diabetes of the Young
+mody-ov|NBK500456|PDX1|Maturity Onset Diabetes of the Young
+mbd5-dis|NBK390803|MBD5|MBD5 Haploinsufficiency
+mbtps1-semd|NBK597768|MBTPS1|MBTPS1-Related Spondyloepimetaphyseal Dysplasia with Elevated Lysosomal Enzymes
+mkks|NBK1502|MKKS|McKusick-Kaufman Syndrome
+mcleod|NBK1354|XK|McLeod Neuroacanthocytosis Syndrome
+rett|NBK1497|MECP2|MECP2 Disorders
+mecp2-dup|NBK1284|MECP2|MECP2 Duplication Syndrome
+mecr-dis|NBK540959|MECR|MECR-Related Neurologic Disorder
+fg|NBK1676|MED12|MED12-Related Disorders
+med13l|NBK613517|MED13L|MED13L Syndrome
+mcad|NBK1424|ACADM|Medium-Chain Acyl-Coenzyme A Dehydrogenase Deficiency
+mef2c-dis|NBK610216|MEF2C|MEF2C-Related Disorder
+mmihs-ov|NBK540960|ACTG2|Megacystis-Microcolon-Intestinal Hypoperistalsis Syndrome
+mmihs-ov|NBK540960|ATP2B4|Megacystis-Microcolon-Intestinal Hypoperistalsis Syndrome
+mmihs-ov|NBK540960|LMOD1|Megacystis-Microcolon-Intestinal Hypoperistalsis Syndrome
+mmihs-ov|NBK540960|MYH11|Megacystis-Microcolon-Intestinal Hypoperistalsis Syndrome
+mmihs-ov|NBK540960|MYL9|Megacystis-Microcolon-Intestinal Hypoperistalsis Syndrome
+mmihs-ov|NBK540960|MYLK|Megacystis-Microcolon-Intestinal Hypoperistalsis Syndrome
+mmihs-ov|NBK540960|PDCL3|Megacystis-Microcolon-Intestinal Hypoperistalsis Syndrome
+mlc|NBK1535|AQP4|Megalencephalic Leukoencephalopathy with Subcortical Cysts
+mlc|NBK1535|GPRC5B|Megalencephalic Leukoencephalopathy with Subcortical Cysts
+mlc|NBK1535|HEPACAM|Megalencephalic Leukoencephalopathy with Subcortical Cysts
+mlc|NBK1535|MLC1|Megalencephalic Leukoencephalopathy with Subcortical Cysts
+melas|NBK1233|MT-CO2|MELAS
+melas|NBK1233|MT-CO3|MELAS
+melas|NBK1233|MT-CYB|MELAS
+melas|NBK1233|MT-ND1|MELAS
+melas|NBK1233|MT-ND5|MELAS
+melas|NBK1233|MT-ND6|MELAS
+melas|NBK1233|MT-TC|MELAS
+melas|NBK1233|MT-TF|MELAS
+melas|NBK1233|MT-TH|MELAS
+melas|NBK1233|MT-TK|MELAS
+melas|NBK1233|MT-TL1|MELAS
+melas|NBK1233|MT-TL2|MELAS
+melas|NBK1233|MT-TQ|MELAS
+melas|NBK1233|MT-TS1|MELAS
+melas|NBK1233|MT-TS2|MELAS
+melas|NBK1233|MT-TV|MELAS
+melas|NBK1233|MT-TW|MELAS
+merrf|NBK1520|MT-TF|MERRF
+merrf|NBK1520|MT-TH|MERRF
+merrf|NBK1520|MT-TI|MERRF
+merrf|NBK1520|MT-TK|MERRF
+merrf|NBK1520|MT-TL1|MERRF
+merrf|NBK1520|MT-TP|MERRF
+merrf|NBK1520|MT-TS1|MERRF
+merrf|NBK1520|MT-TS2|MERRF
+cmt2a|NBK1511|MFN2|MFN2 Hereditary Motor and Sensory Neuropathy
+mopd2|NBK575926|PCNT|Microcephalic Osteodysplastic Primordial Dwarfism Type II
+miccap-ms|NBK174452|STAMBP|Microcephaly-Capillary Malformation Syndrome
+microph-lsd|NBK7041|COX7B|Microphthalmia with Linear Skin Defects Syndrome
+microph-lsd|NBK7041|HCCS|Microphthalmia with Linear Skin Defects Syndrome
+microph-lsd|NBK7041|NDUFB11|Microphthalmia with Linear Skin Defects Syndrome
+opitz|NBK1327|MID1|MID1-Related Opitz G/BBB Syndrome
+milroy|NBK1239|FLT4|Milroy Disease
+mirage|NBK564655|SAMD9|MIRAGE Syndrome
+narp|NBK1173|MT-ATP6|Mitochondrial DNA-Associated Leigh Syndrome Spectrum
+narp|NBK1173|MT-CO1|Mitochondrial DNA-Associated Leigh Syndrome Spectrum
+narp|NBK1173|MT-CO2|Mitochondrial DNA-Associated Leigh Syndrome Spectrum
+narp|NBK1173|MT-CO3|Mitochondrial DNA-Associated Leigh Syndrome Spectrum
+narp|NBK1173|MT-ND1|Mitochondrial DNA-Associated Leigh Syndrome Spectrum
+narp|NBK1173|MT-ND2|Mitochondrial DNA-Associated Leigh Syndrome Spectrum
+narp|NBK1173|MT-ND3|Mitochondrial DNA-Associated Leigh Syndrome Spectrum
+narp|NBK1173|MT-ND4|Mitochondrial DNA-Associated Leigh Syndrome Spectrum
+narp|NBK1173|MT-ND5|Mitochondrial DNA-Associated Leigh Syndrome Spectrum
+narp|NBK1173|MT-ND6|Mitochondrial DNA-Associated Leigh Syndrome Spectrum
+narp|NBK1173|MT-TI|Mitochondrial DNA-Associated Leigh Syndrome Spectrum
+narp|NBK1173|MT-TK|Mitochondrial DNA-Associated Leigh Syndrome Spectrum
+narp|NBK1173|MT-TL1|Mitochondrial DNA-Associated Leigh Syndrome Spectrum
+narp|NBK1173|MT-TV|Mitochondrial DNA-Associated Leigh Syndrome Spectrum
+narp|NBK1173|MT-TW|Mitochondrial DNA-Associated Leigh Syndrome Spectrum
+mt-mpan|NBK185329|C19orf12|Mitochondrial Membrane Protein-Associated Neurodegeneration
+mngie|NBK1179|TYMP|Mitochondrial Neurogastrointestinal Encephalopathy Disease
+echs1-def|NBK542806|ECHS1|Mitochondrial Short-Chain Enoyl-CoA Hydratase 1 Deficiency
+mn1-ctt|NBK560443|MN1|MN1 C-Terminal Truncation Syndrome
+mc-def|NBK575630|GPHN|Molybdenum Cofactor Deficiency
+mc-def|NBK575630|MOCS1|Molybdenum Cofactor Deficiency
+mc-def|NBK575630|MOCS2|Molybdenum Cofactor Deficiency
+mc-def|NBK575630|MOCS3|Molybdenum Cofactor Deficiency
+parkinson-overview|NBK1223|ATP13A2|Monogenic Parkinson Disease
+parkinson-overview|NBK1223|DNAJC6|Monogenic Parkinson Disease
+parkinson-overview|NBK1223|FBXO7|Monogenic Parkinson Disease
+parkinson-overview|NBK1223|LRRK2|Monogenic Parkinson Disease
+parkinson-overview|NBK1223|PARK7|Monogenic Parkinson Disease
+parkinson-overview|NBK1223|PINK1|Monogenic Parkinson Disease
+parkinson-overview|NBK1223|PLA2G6|Monogenic Parkinson Disease
+parkinson-overview|NBK1223|PRKN|Monogenic Parkinson Disease
+parkinson-overview|NBK1223|RAB32|Monogenic Parkinson Disease
+parkinson-overview|NBK1223|RAB39B|Monogenic Parkinson Disease
+parkinson-overview|NBK1223|SNCA|Monogenic Parkinson Disease
+parkinson-overview|NBK1223|SYNJ1|Monogenic Parkinson Disease
+parkinson-overview|NBK1223|VPS13C|Monogenic Parkinson Disease
+parkinson-overview|NBK1223|VPS35|Monogenic Parkinson Disease
+mpph|NBK396098|AKT3|MPPH Syndrome
+mpph|NBK396098|CCND2|MPPH Syndrome
+mpph|NBK396098|PIK3R2|MPPH Syndrome
+mpv17-mtdep|NBK92947|MPV17|MPV17-Related Mitochondrial DNA Maintenance Defect
+ml3c|NBK24701|GNPTG|Mucolipidosis III Gamma
+ml4|NBK1214|MCOLN1|Mucolipidosis IV
+mps1|NBK1162|IDUA|Mucopolysaccharidosis Type I
+hunter|NBK1274|IDS|Mucopolysaccharidosis Type II
+mps3|NBK546574|GNS|Mucopolysaccharidosis Type III
+mps3|NBK546574|HGSNAT|Mucopolysaccharidosis Type III
+mps3|NBK546574|NAGLU|Mucopolysaccharidosis Type III
+mps3|NBK546574|SGSH|Mucopolysaccharidosis Type III
+mps4a|NBK148668|GALNS|Mucopolysaccharidosis Type IVA
+mps7|NBK598990|GUSB|Mucopolysaccharidosis Type VII
+muenke|NBK1415|FGFR3|Muenke Syndrome
+mona|NBK373578|MMP2|Multicentric Osteolysis Nodulosis and Arthropathy
+madd|NBK558236|ETFA|Multiple Acyl-CoA Dehydrogenase Deficiency
+madd|NBK558236|ETFB|Multiple Acyl-CoA Dehydrogenase Deficiency
+madd|NBK558236|ETFDH|Multiple Acyl-CoA Dehydrogenase Deficiency
+men1|NBK1538|MEN1|Multiple Endocrine Neoplasia Type 1
+men2|NBK1257|RET|Multiple Endocrine Neoplasia Type 2
+men4|NBK594826|CDKN1B|Multiple Endocrine Neoplasia Type 4
+edm-ad|NBK1123|COL9A1|Multiple Epiphyseal Dysplasia, Autosomal Dominant
+edm-ad|NBK1123|COL9A2|Multiple Epiphyseal Dysplasia, Autosomal Dominant
+edm-ad|NBK1123|COL9A3|Multiple Epiphyseal Dysplasia, Autosomal Dominant
+edm-ad|NBK1123|COMP|Multiple Epiphyseal Dysplasia, Autosomal Dominant
+edm-ad|NBK1123|MATN3|Multiple Epiphyseal Dysplasia, Autosomal Dominant
+m-sulfatase-def|NBK538937|SUMF1|Multiple Sulfatase Deficiency
+eds-mc|NBK614472|CHST14|Musculocontractural Ehlers-Danlos Syndrome
+eds-mc|NBK614472|DSE|Musculocontractural Ehlers-Danlos Syndrome
+maps|NBK107219|MUTYH|MUTYH Polyposis
+myh9|NBK2689|MYH9|MYH9-Related Disease (MYH9-RD)
+myhre|NBK425723|SMAD4|Myhre Syndrome
+myotonia-c|NBK1355|CLCN1|Myotonia Congenita
+myotonic-d|NBK1165|DMPK|Myotonic Dystrophy Type 1
+myotonic-d2|NBK1466|CNBP|Myotonic Dystrophy Type 2
+myrf-cugs|NBK586169|MYRF|MYRF-Related Cardiac Urogenital Syndrome
+nail-ps|NBK1132|LMX1B|Nail-Patella Syndrome
+nars1|NBK612410|NARS1|NARS1-Related Neurologic Disorders
+norrie|NBK1331|NDP|NDP-Related Retinopathies
+nephron-ov|NBK368475|ANKS6|Nephronophthisis-Related Ciliopathies
+nephron-ov|NBK368475|CEP164|Nephronophthisis-Related Ciliopathies
+nephron-ov|NBK368475|CEP290|Nephronophthisis-Related Ciliopathies
+nephron-ov|NBK368475|CEP83|Nephronophthisis-Related Ciliopathies
+nephron-ov|NBK368475|DCDC2|Nephronophthisis-Related Ciliopathies
+nephron-ov|NBK368475|GLIS2|Nephronophthisis-Related Ciliopathies
+nephron-ov|NBK368475|IFT172|Nephronophthisis-Related Ciliopathies
+nephron-ov|NBK368475|INVS|Nephronophthisis-Related Ciliopathies
+nephron-ov|NBK368475|IQCB1|Nephronophthisis-Related Ciliopathies
+nephron-ov|NBK368475|NEK8|Nephronophthisis-Related Ciliopathies
+nephron-ov|NBK368475|NPHP1|Nephronophthisis-Related Ciliopathies
+nephron-ov|NBK368475|NPHP3|Nephronophthisis-Related Ciliopathies
+nephron-ov|NBK368475|NPHP4|Nephronophthisis-Related Ciliopathies
+nephron-ov|NBK368475|RPGRIP1L|Nephronophthisis-Related Ciliopathies
+nephron-ov|NBK368475|SDCCAG8|Nephronophthisis-Related Ciliopathies
+nephron-ov|NBK368475|TMEM67|Nephronophthisis-Related Ciliopathies
+nephron-ov|NBK368475|TTC21B|Nephronophthisis-Related Ciliopathies
+nephron-ov|NBK368475|WDR19|Nephronophthisis-Related Ciliopathies
+nephron-ov|NBK368475|ZNF423|Nephronophthisis-Related Ciliopathies
+nbia-ov|NBK121988|ATP13A2|Neurodegeneration with Brain Iron Accumulation Disorders
+nbia-ov|NBK121988|C19orf12|Neurodegeneration with Brain Iron Accumulation Disorders
+nbia-ov|NBK121988|COASY|Neurodegeneration with Brain Iron Accumulation Disorders
+nbia-ov|NBK121988|CP|Neurodegeneration with Brain Iron Accumulation Disorders
+nbia-ov|NBK121988|DCAF17|Neurodegeneration with Brain Iron Accumulation Disorders
+nbia-ov|NBK121988|FA2H|Neurodegeneration with Brain Iron Accumulation Disorders
+nbia-ov|NBK121988|FTL|Neurodegeneration with Brain Iron Accumulation Disorders
+nbia-ov|NBK121988|PANK2|Neurodegeneration with Brain Iron Accumulation Disorders
+nbia-ov|NBK121988|PLA2G6|Neurodegeneration with Brain Iron Accumulation Disorders
+nbia-ov|NBK121988|WDR45|Neurodegeneration with Brain Iron Accumulation Disorders
+neuroferritin|NBK1141|FTL|Neuroferritinopathy
+nf1|NBK1109|NF1|Neurofibromatosis 1
+ncl|NBK1428|CLN3|Neuronal Ceroid Lipofuscinoses
+ncl|NBK1428|CLN5|Neuronal Ceroid Lipofuscinoses
+ncl|NBK1428|CLN6|Neuronal Ceroid Lipofuscinoses
+ncl|NBK1428|CLN8|Neuronal Ceroid Lipofuscinoses
+ncl|NBK1428|CTSD|Neuronal Ceroid Lipofuscinoses
+ncl|NBK1428|CTSF|Neuronal Ceroid Lipofuscinoses
+ncl|NBK1428|DNAJC5|Neuronal Ceroid Lipofuscinoses
+ncl|NBK1428|GRN|Neuronal Ceroid Lipofuscinoses
+ncl|NBK1428|KCTD7|Neuronal Ceroid Lipofuscinoses
+ncl|NBK1428|MFSD8|Neuronal Ceroid Lipofuscinoses
+ncl|NBK1428|PPT1|Neuronal Ceroid Lipofuscinoses
+ncl|NBK1428|TPP1|Neuronal Ceroid Lipofuscinoses
+bcns|NBK1151|PTCH1|Nevoid Basal Cell Carcinoma Syndrome
+bcns|NBK1151|SUFU|Nevoid Basal Cell Carcinoma Syndrome
+nf2|NBK1201|NF2|NF2-Related Schwannomatosis
+nfia-dis|NBK542336|NFIA|NFIA-Related Disorder
+nfix-malan|NBK605494|NFIX|NFIX-Related Malan Syndrome
+ngly1-cddg|NBK481554|NGLY1|NGLY1-Related Congenital Disorder of Deglycosylation
+npc|NBK1296|NPC1|Niemann-Pick Disease Type C
+npc|NBK1296|NPC2|Niemann-Pick Disease Type C
+nijmegen|NBK1176|NBN|Nijmegen Breakage Syndrome
+nkx2-1-dis|NBK185066|NKX2-1|NKX2-1-Related Disorders
+nkx6-2-spax|NBK531509|NKX6-2|NKX6-2-Related Disorder
+nkh|NBK1357|AMT|Nonketotic Hyperglycinemia
+nkh|NBK1357|GLDC|Nonketotic Hyperglycinemia
+xxms|NBK1416|NR5A1|Nonsyndromic 46,XX Testicular Disorders/Differences of Sex Development
+xxms|NBK1416|SOX3|Nonsyndromic 46,XX Testicular Disorders/Differences of Sex Development
+xxms|NBK1416|SOX9|Nonsyndromic 46,XX Testicular Disorders/Differences of Sex Development
+xxms|NBK1416|SRY|Nonsyndromic 46,XX Testicular Disorders/Differences of Sex Development
+xxms|NBK1416|WT1|Nonsyndromic 46,XX Testicular Disorders/Differences of Sex Development
+gonad-dys-46xy|NBK1547|DHH|Nonsyndromic Disorders of Testicular Development Overview
+gonad-dys-46xy|NBK1547|DHX37|Nonsyndromic Disorders of Testicular Development Overview
+gonad-dys-46xy|NBK1547|DMRT1|Nonsyndromic Disorders of Testicular Development Overview
+gonad-dys-46xy|NBK1547|MAP3K1|Nonsyndromic Disorders of Testicular Development Overview
+gonad-dys-46xy|NBK1547|NR5A1|Nonsyndromic Disorders of Testicular Development Overview
+gonad-dys-46xy|NBK1547|SOX8|Nonsyndromic Disorders of Testicular Development Overview
+gonad-dys-46xy|NBK1547|SOX9|Nonsyndromic Disorders of Testicular Development Overview
+gonad-dys-46xy|NBK1547|SRY|Nonsyndromic Disorders of Testicular Development Overview
+hi|NBK1375|ABCC8|Nonsyndromic Genetic Hyperinsulinism
+hi|NBK1375|GCK|Nonsyndromic Genetic Hyperinsulinism
+hi|NBK1375|GLUD1|Nonsyndromic Genetic Hyperinsulinism
+hi|NBK1375|HADH|Nonsyndromic Genetic Hyperinsulinism
+hi|NBK1375|HK1|Nonsyndromic Genetic Hyperinsulinism
+hi|NBK1375|HNF1A|Nonsyndromic Genetic Hyperinsulinism
+hi|NBK1375|HNF4A|Nonsyndromic Genetic Hyperinsulinism
+hi|NBK1375|INSR|Nonsyndromic Genetic Hyperinsulinism
+hi|NBK1375|KCNJ11|Nonsyndromic Genetic Hyperinsulinism
+hi|NBK1375|PMM2|Nonsyndromic Genetic Hyperinsulinism
+hi|NBK1375|SLC16A1|Nonsyndromic Genetic Hyperinsulinism
+hi|NBK1375|UCP2|Nonsyndromic Genetic Hyperinsulinism
+mt-deafness|NBK1422|MT-RNR1|Nonsyndromic Hearing Loss and Deafness, Mitochondrial
+mt-deafness|NBK1422|MT-TS1|Nonsyndromic Hearing Loss and Deafness, Mitochondrial
+hyper-card|NBK1768|ACTC1|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|ACTN2|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|ALPK3|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|ANKRD1|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|CALR3|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|CSRP3|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|JPH2|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|KLF10|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|MYBPC3|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|MYH6|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|MYH7|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|MYL2|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|MYL3|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|MYLK2|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|MYOM1|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|MYOZ2|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|MYPN|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|NEXN|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|OBSCN|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|PDLIM3|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|PLN|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|RYR2|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|TCAP|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|TNNC1|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|TNNI3|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|TNNT2|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|TPM1|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|TRIM63|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|TTN|Nonsyndromic Hypertrophic Cardiomyopathy
+hyper-card|NBK1768|VCL|Nonsyndromic Hypertrophic Cardiomyopathy
+mhs|NBK1146|CACNA1S|Nonsyndromic Malignant Hyperthermia Susceptibility
+mhs|NBK1146|RYR1|Nonsyndromic Malignant Hyperthermia Susceptibility
+mhs|NBK1146|STAC3|Nonsyndromic Malignant Hyperthermia Susceptibility
+rp-overview|NBK1417|ABCA4|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|ADGRA3|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|AGBL5|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|ARL2BP|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|ARL3|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|ARL6|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|BBS1|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|BBS2|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|BEST1|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|CA4|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|CERKL|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|CFAP418|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|CLRN1|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|CNGA1|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|CNGB1|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|CRB1|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|CRX|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|CYP4V2|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|DHDDS|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|DHX38|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|EMC1|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|EYS|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|FAM161A|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|FSCN2|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|GUCA1B|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|HGSNAT|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|HK1|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|IDH3B|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|IFT140|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|IFT172|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|IMPDH1|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|IMPG2|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|KIAA1549|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|KIZ|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|KLHL7|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|LRAT|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|MAK|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|MERTK|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|MVK|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|NEK2|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|NEUROD1|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|NR2E3|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|NRL|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|OFD1|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|PCARE|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|PDE6A|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|PDE6B|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|PDE6G|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|POMGNT1|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|PRCD|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|PROM1|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|PRPF3|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|PRPF31|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|PRPF6|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|PRPF8|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|PRPH2|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|RBP3|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|RDH12|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|RGR|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|RHO|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|RLBP1|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|ROM1|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|RP1|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|RP2|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|RP9|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|RPE65|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|RPGR|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|SAG|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|SEMA4A|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|SLC7A14|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|SNRNP200|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|SPATA7|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|SPP2|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|TOPORS|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|TRNT1|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|TTC8|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|TULP1|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|USH2A|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|ZNF408|Nonsyndromic Retinitis Pigmentosa
+rp-overview|NBK1417|ZNF513|Nonsyndromic Retinitis Pigmentosa
+noonan|NBK1124|BRAF|Noonan Syndrome
+noonan|NBK1124|KRAS|Noonan Syndrome
+noonan|NBK1124|LZTR1|Noonan Syndrome
+noonan|NBK1124|MAP2K1|Noonan Syndrome
+noonan|NBK1124|MRAS|Noonan Syndrome
+noonan|NBK1124|NRAS|Noonan Syndrome
+noonan|NBK1124|PTPN11|Noonan Syndrome
+noonan|NBK1124|RAF1|Noonan Syndrome
+noonan|NBK1124|RASA2|Noonan Syndrome
+noonan|NBK1124|RIT1|Noonan Syndrome
+noonan|NBK1124|RRAS2|Noonan Syndrome
+noonan|NBK1124|SOS1|Noonan Syndrome
+noonan|NBK1124|SOS2|Noonan Syndrome
+leopard|NBK1383|BRAF|Noonan Syndrome with Multiple Lentigines
+leopard|NBK1383|MAP2K1|Noonan Syndrome with Multiple Lentigines
+leopard|NBK1383|PTPN11|Noonan Syndrome with Multiple Lentigines
+leopard|NBK1383|RAF1|Noonan Syndrome with Multiple Lentigines
+lms|NBK368476|NOTCH3|NOTCH3-Related Lateral Meningocele Syndrome
+ahc|NBK1431|DMD|NR0B1-Related Adrenal Hypoplasia Congenita
+ahc|NBK1431|GK|NR0B1-Related Adrenal Hypoplasia Congenita
+ahc|NBK1431|IL1RAPL1|NR0B1-Related Adrenal Hypoplasia Congenita
+ahc|NBK1431|NR0B1|NR0B1-Related Adrenal Hypoplasia Congenita
+nr2f1-ndd|NBK587319|NR2F1|NR2F1-Related Neurodevelopmental Disorder
+nsdhl-dis|NBK51754|NSDHL|NSDHL-Related Disorders
+nthl1-ts|NBK555473|NTHL1|NTHL1 Tumor Syndrome
+hsan4|NBK1769|NTRK1|NTRK1 Congenital Insensitivity to Pain with Anhidrosis
+leigh-nucl-ov|NBK320989|ATP5MK|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|ATP5PO|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|BCS1L|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|BTD|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|CLPB|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|COA6|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|COQ4|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|COQ7|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|COQ9|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|COX10|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|COX15|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|COX4I1|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|COX8A|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|COXFA4|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|DLAT|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|DLD|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|DNAJC30|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|DNM1L|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|EARS2|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|ECHS1|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|ETHE1|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|FARS2|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|FASTKD2|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|FBXL4|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|FOXRED1|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|GFM1|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|GFM2|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|GTPBP3|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|HIBCH|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|HPDL|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|HTRA2|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|IARS2|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|KGD4|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|L2HGDH|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|LIAS|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|LIPT1|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|LONP1|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|LRPPRC|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|MECR|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|MFF|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|MFN2|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|MPC1|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|MPV17|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|MRPL3|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|MRPL39|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|MRPS34|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|MTFMT|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|MTO1|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|MTRFR|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|NARS2|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|NDUFA1|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|NDUFA10|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|NDUFA12|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|NDUFA2|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|NDUFA9|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|NDUFAF2|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|NDUFAF5|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|NDUFAF6|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|NDUFS1|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|NDUFS2|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|NDUFS3|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|NDUFS4|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|NDUFS7|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|NDUFS8|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|NDUFV1|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|PDHB|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|PDHX|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|PDSS2|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|PET100|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|SCO2|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|SDHA|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|SLC19A3|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|SLC25A19|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|SURF1|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|TACO1|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|TPK1|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|TTC19|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+leigh-nucl-ov|NBK320989|UQCRQ|Nuclear Gene-Encoded Leigh Syndrome Spectrum
+oca-oa-ov|NBK590568|DCT|Oculocutaneous Albinism and Ocular Albinism
+oca-oa-ov|NBK590568|GPR143|Oculocutaneous Albinism and Ocular Albinism
+oca-oa-ov|NBK590568|LRMDA|Oculocutaneous Albinism and Ocular Albinism
+oca-oa-ov|NBK590568|OCA2|Oculocutaneous Albinism and Ocular Albinism
+oca-oa-ov|NBK590568|SLC24A5|Oculocutaneous Albinism and Ocular Albinism
+oca-oa-ov|NBK590568|SLC45A2|Oculocutaneous Albinism and Ocular Albinism
+oca-oa-ov|NBK590568|TYR|Oculocutaneous Albinism and Ocular Albinism
+oca-oa-ov|NBK590568|TYRP1|Oculocutaneous Albinism and Ocular Albinism
+oca4|NBK1510|SLC45A2|Oculocutaneous Albinism Type 4
+opmd|NBK1126|PABPN1|Oculopharyngeal Muscular Dystrophy
+okur-chung|NBK581083|CSNK2A1|Okur-Chung Neurodevelopmental Syndrome
+ofd1|NBK1188|OFD1|Oral-Facial-Digital Syndrome Type I
+otc-def|NBK154378|OTC|Ornithine Transcarbamylase Deficiency
+og-dysp|NBK602944|FGFR1|Osteoglophonic Dysplasia
+os-cs|NBK569515|AMER1|Osteopathia Striata with Cranial Sclerosis
+dfnb9|NBK1251|OTOF|OTOF-Related Hearing Loss
+pc|NBK1280|KRT16|Pachyonychia Congenita
+pc|NBK1280|KRT17|Pachyonychia Congenita
+pc|NBK1280|KRT6A|Pachyonychia Congenita
+pc|NBK1280|KRT6B|Pachyonychia Congenita
+pc|NBK1280|KRT6C|Pachyonychia Congenita
+pacs1-ndd|NBK559434|PACS1|PACS1 Neurodevelopmental Disorder
+chrom17-lis|NBK5189|PAFAH1B1|PAFAH1B1-Related Lissencephaly/Subcortical Band Heterotopia
+pancreatitis-ov|NBK190101|CASR|Pancreatitis Overview
+pancreatitis-ov|NBK190101|CEL|Pancreatitis Overview
+pancreatitis-ov|NBK190101|CFTR|Pancreatitis Overview
+pancreatitis-ov|NBK190101|CLDN2|Pancreatitis Overview
+pancreatitis-ov|NBK190101|CPA1|Pancreatitis Overview
+pancreatitis-ov|NBK190101|CTRC|Pancreatitis Overview
+pancreatitis-ov|NBK190101|GGT1|Pancreatitis Overview
+pancreatitis-ov|NBK190101|PRSS1|Pancreatitis Overview
+pancreatitis-ov|NBK190101|SBDS|Pancreatitis Overview
+pancreatitis-ov|NBK190101|SPINK1|Pancreatitis Overview
+pancreatitis-ov|NBK190101|TRPV6|Pancreatitis Overview
+pancreatitis-ov|NBK190101|UBR1|Pancreatitis Overview
+pkan|NBK1490|PANK2|Pantothenate Kinase-Associated Neurodegeneration
+jpd|NBK1478|PRKN|Parkin Type of Early-Onset Parkinson Disease
+papr|NBK1451|PAX2|PAX2-Related Disorder
+aniridia|NBK1360|PAX6|PAX6-Related Aniridia
+chol-liver-ov|NBK584020|ABCB11|Pediatric Genetic Cholestatic Liver Disease
+chol-liver-ov|NBK584020|ABCB4|Pediatric Genetic Cholestatic Liver Disease
+chol-liver-ov|NBK584020|AKR1D1|Pediatric Genetic Cholestatic Liver Disease
+chol-liver-ov|NBK584020|AMACR|Pediatric Genetic Cholestatic Liver Disease
+chol-liver-ov|NBK584020|ATP8B1|Pediatric Genetic Cholestatic Liver Disease
+chol-liver-ov|NBK584020|BAAT|Pediatric Genetic Cholestatic Liver Disease
+chol-liver-ov|NBK584020|CYP7B1|Pediatric Genetic Cholestatic Liver Disease
+chol-liver-ov|NBK584020|HSD3B7|Pediatric Genetic Cholestatic Liver Disease
+chol-liver-ov|NBK584020|KIF12|Pediatric Genetic Cholestatic Liver Disease
+chol-liver-ov|NBK584020|LSR|Pediatric Genetic Cholestatic Liver Disease
+chol-liver-ov|NBK584020|MYO5B|Pediatric Genetic Cholestatic Liver Disease
+chol-liver-ov|NBK584020|NR1H4|Pediatric Genetic Cholestatic Liver Disease
+chol-liver-ov|NBK584020|TJP2|Pediatric Genetic Cholestatic Liver Disease
+chol-liver-ov|NBK584020|USP53|Pediatric Genetic Cholestatic Liver Disease
+pmld1|NBK470716|GJC2|Pelizaeus-Merzbacher-Like Disease 1
+eds-pd|NBK572429|C1R|Periodontal Ehlers-Danlos Syndrome
+eds-pd|NBK572429|C1S|Periodontal Ehlers-Danlos Syndrome
+dmn|NBK1447|ABCC8|Permanent Neonatal Diabetes Mellitus
+dmn|NBK1447|EIF2AK3|Permanent Neonatal Diabetes Mellitus
+dmn|NBK1447|GATA6|Permanent Neonatal Diabetes Mellitus
+dmn|NBK1447|GCK|Permanent Neonatal Diabetes Mellitus
+dmn|NBK1447|GLIS3|Permanent Neonatal Diabetes Mellitus
+dmn|NBK1447|HNF1B|Permanent Neonatal Diabetes Mellitus
+dmn|NBK1447|INS|Permanent Neonatal Diabetes Mellitus
+dmn|NBK1447|KCNJ11|Permanent Neonatal Diabetes Mellitus
+dmn|NBK1447|MNX1|Permanent Neonatal Diabetes Mellitus
+dmn|NBK1447|NEUROD1|Permanent Neonatal Diabetes Mellitus
+dmn|NBK1447|NKX2-2|Permanent Neonatal Diabetes Mellitus
+dmn|NBK1447|PDX1|Permanent Neonatal Diabetes Mellitus
+dmn|NBK1447|PTF1A|Permanent Neonatal Diabetes Mellitus
+dmn|NBK1447|RFX6|Permanent Neonatal Diabetes Mellitus
+dmn|NBK1447|SLC19A2|Permanent Neonatal Diabetes Mellitus
+dmn|NBK1447|SLC2A2|Permanent Neonatal Diabetes Mellitus
+perrault|NBK242617|CLPP|Perrault Syndrome
+perrault|NBK242617|DAP3|Perrault Syndrome
+perrault|NBK242617|ERAL1|Perrault Syndrome
+perrault|NBK242617|GGPS1|Perrault Syndrome
+perrault|NBK242617|HARS2|Perrault Syndrome
+perrault|NBK242617|HSD17B4|Perrault Syndrome
+perrault|NBK242617|LARS2|Perrault Syndrome
+perrault|NBK242617|MRPL49|Perrault Syndrome
+perrault|NBK242617|PEX6|Perrault Syndrome
+perrault|NBK242617|PRORP|Perrault Syndrome
+perrault|NBK242617|RMND1|Perrault Syndrome
+perrault|NBK242617|TWNK|Perrault Syndrome
+peters-plus|NBK1464|B3GLCT|Peters Plus Syndrome
+pjs|NBK1266|STK11|Peutz-Jeghers Syndrome
+rcdp|NBK1270|PEX7|PEX7-Related Rhizomelic Chondrodysplasia Punctata
+gr_22q13_3|NBK1198|SHANK3|Phelan-McDermid Syndrome-SHANK3 Related
+pku|NBK1504|PAH|Phenylalanine Hydroxylase Deficiency
+arts|NBK2591|PRPS1|Phosphoribosylpyrophosphate Synthetase Deficiency
+prs|NBK1973|PRPS1|Phosphoribosylpyrophosphate Synthetase Superactivity
+gsd9|NBK55061|PHKA1|Phosphorylase Kinase Deficiency
+gsd9|NBK55061|PHKA2|Phosphorylase Kinase Deficiency
+gsd9|NBK55061|PHKB|Phosphorylase Kinase Deficiency
+gsd9|NBK55061|PHKG2|Phosphorylase Kinase Deficiency
+pi4ka|NBK583038|PI4KA|PI4KA-Related Disorder
+pik3ca-overgrowth|NBK153722|PIK3CA|PIK3CA-Related Overgrowth Spectrum
+pink1-pd|NBK26472|PINK1|PINK1 Type of Young-Onset Parkinson Disease
+pitt-hopkins|NBK100240|TCF4|Pitt-Hopkins Syndrome
+inad|NBK1675|PLA2G6|PLA2G6-Associated Neurodegeneration
+eds6|NBK1462|PLOD1|PLOD1-Related Kyphoscoliotic Ehlers-Danlos Syndrome
+pmd|NBK1182|PLP1|PLP1-Related Disorders
+plpbp-def|NBK589231|PLPBP|PLPBP Deficiency
+cdg-1a|NBK1110|PMM2|PMM2-CDG
+pnpla6-dis|NBK247161|PNPLA6|PNPLA6 Disorders
+pnpo-def|NBK581452|PNPO|PNPO Deficiency
+poikiloderma-n|NBK459118|USB1|Poikiloderma with Neutropenia
+alpers|NBK26471|POLG|POLG-Related Disorders
+pol3-leuk|NBK99167|POLR1C|POLR3-Related Leukodystrophy
+pol3-leuk|NBK99167|POLR3A|POLR3-Related Leukodystrophy
+pol3-leuk|NBK99167|POLR3B|POLR3-Related Leukodystrophy
+pkd-ad|NBK1246|ALG5|Polycystic Kidney Disease, Autosomal Dominant
+pkd-ad|NBK1246|ALG9|Polycystic Kidney Disease, Autosomal Dominant
+pkd-ad|NBK1246|DNAJB11|Polycystic Kidney Disease, Autosomal Dominant
+pkd-ad|NBK1246|GANAB|Polycystic Kidney Disease, Autosomal Dominant
+pkd-ad|NBK1246|IFT140|Polycystic Kidney Disease, Autosomal Dominant
+pkd-ad|NBK1246|PKD1|Polycystic Kidney Disease, Autosomal Dominant
+pkd-ad|NBK1246|PKD2|Polycystic Kidney Disease, Autosomal Dominant
+plosl|NBK1197|TREM2|Polycystic Lipomembranous Osteodysplasia with Sclerosing Leukoencephalopathy
+plosl|NBK1197|TYROBP|Polycystic Lipomembranous Osteodysplasia with Sclerosing Leukoencephalopathy
+gsd2|NBK1261|GAA|Pompe Disease
+focal-dh|NBK1543|PORCN|PORCN-Related Developmental Disorders
+pot1-tpd|NBK563529|POT1|POT1 Tumor Predisposition
+potocki-lupski|NBK447920|-|Potocki-Lupski Syndrome
+potocki-lupski|NBK447920|FLCN|Potocki-Lupski Syndrome
+potocki-lupski|NBK447920|RAI1|Potocki-Lupski Syndrome
+ppp1r12a-ubm|NBK573670|PPP1R12A|PPP1R12A-Related Urogenital and/or Brain Malformation Syndrome
+ppp2r1a-ndd|NBK580243|PPP2R1A|PPP2R1A-Related Neurodevelopmental Disorder
+ppp2r5d-dis|NBK536360|PPP2R5D|PPP2R5D-Related Neurodevelopmental Disorder
+pws|NBK1330|-|Prader-Willi Syndrome
+me-ataxia|NBK9674|PRICKLE1|PRICKLE1-Related Disorders
+cdsp|NBK84551|SLC22A5|Primary Carnitine Deficiency
+pcd|NBK1122|CCDC39|Primary Ciliary Dyskinesia
+pcd|NBK1122|CCDC40|Primary Ciliary Dyskinesia
+pcd|NBK1122|CCNO|Primary Ciliary Dyskinesia
+pcd|NBK1122|CFAP221|Primary Ciliary Dyskinesia
+pcd|NBK1122|CFAP298|Primary Ciliary Dyskinesia
+pcd|NBK1122|CFAP300|Primary Ciliary Dyskinesia
+pcd|NBK1122|CFAP54|Primary Ciliary Dyskinesia
+pcd|NBK1122|CFAP57|Primary Ciliary Dyskinesia
+pcd|NBK1122|CFAP74|Primary Ciliary Dyskinesia
+pcd|NBK1122|CLXN|Primary Ciliary Dyskinesia
+pcd|NBK1122|DNAAF1|Primary Ciliary Dyskinesia
+pcd|NBK1122|DNAAF11|Primary Ciliary Dyskinesia
+pcd|NBK1122|DNAAF19|Primary Ciliary Dyskinesia
+pcd|NBK1122|DNAAF2|Primary Ciliary Dyskinesia
+pcd|NBK1122|DNAAF3|Primary Ciliary Dyskinesia
+pcd|NBK1122|DNAAF4|Primary Ciliary Dyskinesia
+pcd|NBK1122|DNAAF5|Primary Ciliary Dyskinesia
+pcd|NBK1122|DNAAF6|Primary Ciliary Dyskinesia
+pcd|NBK1122|DNAH1|Primary Ciliary Dyskinesia
+pcd|NBK1122|DNAH10|Primary Ciliary Dyskinesia
+pcd|NBK1122|DNAH11|Primary Ciliary Dyskinesia
+pcd|NBK1122|DNAH5|Primary Ciliary Dyskinesia
+pcd|NBK1122|DNAH7|Primary Ciliary Dyskinesia
+pcd|NBK1122|DNAH9|Primary Ciliary Dyskinesia
+pcd|NBK1122|DNAI1|Primary Ciliary Dyskinesia
+pcd|NBK1122|DNAI2|Primary Ciliary Dyskinesia
+pcd|NBK1122|DNAJB13|Primary Ciliary Dyskinesia
+pcd|NBK1122|DNAL1|Primary Ciliary Dyskinesia
+pcd|NBK1122|DRC1|Primary Ciliary Dyskinesia
+pcd|NBK1122|DRC2|Primary Ciliary Dyskinesia
+pcd|NBK1122|DRC4|Primary Ciliary Dyskinesia
+pcd|NBK1122|FOXJ1|Primary Ciliary Dyskinesia
+pcd|NBK1122|GAS2L2|Primary Ciliary Dyskinesia
+pcd|NBK1122|HYDIN|Primary Ciliary Dyskinesia
+pcd|NBK1122|IFT74|Primary Ciliary Dyskinesia
+pcd|NBK1122|KIAA0586|Primary Ciliary Dyskinesia
+pcd|NBK1122|LRRC56|Primary Ciliary Dyskinesia
+pcd|NBK1122|MCIDAS|Primary Ciliary Dyskinesia
+pcd|NBK1122|NEK10|Primary Ciliary Dyskinesia
+pcd|NBK1122|NME5|Primary Ciliary Dyskinesia
+pcd|NBK1122|NME8|Primary Ciliary Dyskinesia
+pcd|NBK1122|ODAD1|Primary Ciliary Dyskinesia
+pcd|NBK1122|ODAD2|Primary Ciliary Dyskinesia
+pcd|NBK1122|ODAD3|Primary Ciliary Dyskinesia
+pcd|NBK1122|ODAD4|Primary Ciliary Dyskinesia
+pcd|NBK1122|OFD1|Primary Ciliary Dyskinesia
+pcd|NBK1122|RPGR|Primary Ciliary Dyskinesia
+pcd|NBK1122|RSPH1|Primary Ciliary Dyskinesia
+pcd|NBK1122|RSPH3|Primary Ciliary Dyskinesia
+pcd|NBK1122|RSPH4A|Primary Ciliary Dyskinesia
+pcd|NBK1122|RSPH9|Primary Ciliary Dyskinesia
+pcd|NBK1122|SPAG1|Primary Ciliary Dyskinesia
+pcd|NBK1122|SPEF2|Primary Ciliary Dyskinesia
+pcd|NBK1122|STK36|Primary Ciliary Dyskinesia
+pcd|NBK1122|TP73|Primary Ciliary Dyskinesia
+pcd|NBK1122|TTC12|Primary Ciliary Dyskinesia
+pcd|NBK1122|TUBB4B|Primary Ciliary Dyskinesia
+pcd|NBK1122|ZMYND10|Primary Ciliary Dyskinesia
+coq10-def|NBK410087|COQ2|Primary Coenzyme Q10 Deficiency
+coq10-def|NBK410087|COQ4|Primary Coenzyme Q10 Deficiency
+coq10-def|NBK410087|COQ5|Primary Coenzyme Q10 Deficiency
+coq10-def|NBK410087|COQ6|Primary Coenzyme Q10 Deficiency
+coq10-def|NBK410087|COQ7|Primary Coenzyme Q10 Deficiency
+coq10-def|NBK410087|COQ8A|Primary Coenzyme Q10 Deficiency
+coq10-def|NBK410087|COQ8B|Primary Coenzyme Q10 Deficiency
+coq10-def|NBK410087|COQ9|Primary Coenzyme Q10 Deficiency
+coq10-def|NBK410087|PDSS1|Primary Coenzyme Q10 Deficiency
+coq10-def|NBK410087|PDSS2|Primary Coenzyme Q10 Deficiency
+glc|NBK1135|-|Primary Congenital Glaucoma
+glc|NBK1135|CYP1B1|Primary Congenital Glaucoma
+glc|NBK1135|LTBP2|Primary Congenital Glaucoma
+glc|NBK1135|TEK|Primary Congenital Glaucoma
+pfcp|NBK395975|EPOR|Primary Familial and Congenital Polycythemia
+bgc|NBK1421|JAM2|Primary Familial Brain Calcification
+bgc|NBK1421|MYORG|Primary Familial Brain Calcification
+bgc|NBK1421|NAA60|Primary Familial Brain Calcification
+bgc|NBK1421|PDGFB|Primary Familial Brain Calcification
+bgc|NBK1421|PDGFRB|Primary Familial Brain Calcification
+bgc|NBK1421|SLC20A2|Primary Familial Brain Calcification
+bgc|NBK1421|XPR1|Primary Familial Brain Calcification
+ph1|NBK1283|AGXT|Primary Hyperoxaluria Type 1
+ph2|NBK2692|GRHPR|Primary Hyperoxaluria Type 2
+ph3|NBK316514|HOGA1|Primary Hyperoxaluria Type 3
+mt-overview|NBK1224|MT-ATP6|Primary Mitochondrial Disorders
+mt-overview|NBK1224|MT-ND1|Primary Mitochondrial Disorders
+mt-overview|NBK1224|MT-ND4|Primary Mitochondrial Disorders
+mt-overview|NBK1224|MT-ND5|Primary Mitochondrial Disorders
+mt-overview|NBK1224|MT-ND6|Primary Mitochondrial Disorders
+mt-overview|NBK1224|MT-TA|Primary Mitochondrial Disorders
+mt-overview|NBK1224|MT-TC|Primary Mitochondrial Disorders
+mt-overview|NBK1224|MT-TD|Primary Mitochondrial Disorders
+mt-overview|NBK1224|MT-TF|Primary Mitochondrial Disorders
+mt-overview|NBK1224|MT-TH|Primary Mitochondrial Disorders
+mt-overview|NBK1224|MT-TK|Primary Mitochondrial Disorders
+mt-overview|NBK1224|MT-TL1|Primary Mitochondrial Disorders
+mt-overview|NBK1224|MT-TL2|Primary Mitochondrial Disorders
+mt-overview|NBK1224|MT-TM|Primary Mitochondrial Disorders
+mt-overview|NBK1224|MT-TQ|Primary Mitochondrial Disorders
+mt-overview|NBK1224|MT-TR|Primary Mitochondrial Disorders
+mt-overview|NBK1224|MT-TS1|Primary Mitochondrial Disorders
+mt-overview|NBK1224|MT-TS2|Primary Mitochondrial Disorders
+mt-overview|NBK1224|MT-TT|Primary Mitochondrial Disorders
+mt-overview|NBK1224|MT-TV|Primary Mitochondrial Disorders
+mt-overview|NBK1224|MT-TW|Primary Mitochondrial Disorders
+mt-overview|NBK1224|MT-TY|Primary Mitochondrial Disorders
+pdhc-def-ov|NBK571223|DLAT|Primary Pyruvate Dehydrogenase Complex Deficiency
+pdhc-def-ov|NBK571223|DLD|Primary Pyruvate Dehydrogenase Complex Deficiency
+pdhc-def-ov|NBK571223|PDHA1|Primary Pyruvate Dehydrogenase Complex Deficiency
+pdhc-def-ov|NBK571223|PDHB|Primary Pyruvate Dehydrogenase Complex Deficiency
+pdhc-def-ov|NBK571223|PDHX|Primary Pyruvate Dehydrogenase Complex Deficiency
+pdhc-def-ov|NBK571223|PDK3|Primary Pyruvate Dehydrogenase Complex Deficiency
+pdhc-def-ov|NBK571223|PDP1|Primary Pyruvate Dehydrogenase Complex Deficiency
+trimethylaminuria|NBK1103|FMO3|Primary Trimethylaminuria
+primrose|NBK570205|ZBTB20|Primrose Syndrome
+epm1|NBK1142|CSTB|Progressive Myoclonic Epilepsy Type 1
+lafora|NBK1389|EPM2A|Progressive Myoclonus Epilepsy, Lafora Type
+lafora|NBK1389|NHLRC1|Progressive Myoclonus Epilepsy, Lafora Type
+ppr-dysp|NBK327267|CCN6|Progressive Pseudorheumatoid Dysplasia
+prolidase-def|NBK299584|PEPD|Prolidase Deficiency
+prop1|NBK1347|PROP1|PROP1-Related Combined Pituitary Hormone Deficiency
+propionic-a|NBK92946|PCCA|Propionic Acidemia
+propionic-a|NBK92946|PCCB|Propionic Acidemia
+proteus|NBK99495|AKT1|Proteus Syndrome
+ptt|NBK1148|F2|Prothrombin Thrombophilia
+prrt2-parox|NBK475803|PRRT2|PRRT2-Related Disorder
+prss1-hp|NBK84399|PRSS1|PRSS1-Related Hereditary Pancreatitis
+pha2|NBK65707|CUL3|Pseudohypoaldosteronism Type II
+pha2|NBK65707|KLHL3|Pseudohypoaldosteronism Type II
+pha2|NBK65707|WNK1|Pseudohypoaldosteronism Type II
+pha2|NBK65707|WNK4|Pseudohypoaldosteronism Type II
+pxe|NBK1113|ABCC6|Pseudoxanthoma Elasticum
+phts|NBK1488|PTEN|PTEN Hamartoma Tumor Syndrome (PHTS)
+jmc|NBK616087|PTH1R|PTH1R-Related Jansen Metaphyseal Chondrodysplasia
+ptps-def|NBK616086|PTS|PTS-Related Tetrahydrobiopterin Deficiency
+pf|NBK1230|ABCA3|Pulmonary Fibrosis Predisposition
+pf|NBK1230|DKC1|Pulmonary Fibrosis Predisposition
+pf|NBK1230|NAF1|Pulmonary Fibrosis Predisposition
+pf|NBK1230|PARN|Pulmonary Fibrosis Predisposition
+pf|NBK1230|RTEL1|Pulmonary Fibrosis Predisposition
+pf|NBK1230|SFTPA1|Pulmonary Fibrosis Predisposition
+pf|NBK1230|SFTPA2|Pulmonary Fibrosis Predisposition
+pf|NBK1230|SFTPC|Pulmonary Fibrosis Predisposition
+pf|NBK1230|TERC|Pulmonary Fibrosis Predisposition
+pf|NBK1230|TERT|Pulmonary Fibrosis Predisposition
+pf|NBK1230|TINF2|Pulmonary Fibrosis Predisposition
+pf|NBK1230|ZCCHC8|Pulmonary Fibrosis Predisposition
+pura-dis|NBK426063|PURA|PURA-Related Neurodevelopmental Disorders
+pycnodys|NBK563694|CTSK|Pycnodysostosis
+pds|NBK1486|ALDH7A1|Pyridoxine-Dependent Epilepsy - ALDH7A1
+pdc|NBK6852|PC|Pyruvate Carboxylase Deficiency
+rab18-def|NBK475670|RAB18|RAB18 Deficiency
+rab18-def|NBK475670|RAB3GAP1|RAB18 Deficiency
+rab18-def|NBK475670|RAB3GAP2|RAB18 Deficiency
+rab18-def|NBK475670|TBC1D20|RAB18 Deficiency
+rere-dis|NBK538938|RERE|RERE-Related Disorders
+rvcl|NBK546576|TREX1|Retinal Vasculopathy with Cerebral Leukoencephalopathy and Systemic Manifestations
+retinoblastoma|NBK1452|RB1|Retinoblastoma
+rfc1-canvas|NBK564656|RFC1|RFC1 CANVAS / Spectrum Disorder
+rtps|NBK469816|SMARCA4|Rhabdoid Tumor Predisposition Syndrome (RTPS)
+rtps|NBK469816|SMARCB1|Rhabdoid Tumor Predisposition Syndrome (RTPS)
+riboflavin-tn|NBK299312|SLC52A1|Riboflavin Transporter Deficiency
+riboflavin-tn|NBK299312|SLC52A2|Riboflavin Transporter Deficiency
+riboflavin-tn|NBK299312|SLC52A3|Riboflavin Transporter Deficiency
+ritscher-schinzel|NBK553049|CCDC22|Ritscher-Schinzel Syndrome
+ritscher-schinzel|NBK553049|WASHC5|Ritscher-Schinzel Syndrome
+rnu4atac-dis|NBK589232|RNU4ATAC|RNU4atac-opathy
+rob|NBK1240|ROR2|ROR2-Related Robinow Syndrome
+rts|NBK1237|ANAPC1|Rothmund-Thomson Syndrome
+rts|NBK1237|RECQL4|Rothmund-Thomson Syndrome
+rotor|NBK114805|SLCO1B1|Rotor Syndrome
+rotor|NBK114805|SLCO1B3|Rotor Syndrome
+rpe65-lca|NBK549574|RPE65|RPE65-Related Leber Congenital Amaurosis / Early-Onset Severe Retinal Dystrophy
+cls|NBK1346|RPS6KA3|RPS6KA3-Related Intellectual Disability
+rrm2b-mtddepl|NBK195854|RRM2B|RRM2B Mitochondrial DNA Maintenance Defects
+rsts|NBK1526|CREBBP|Rubinstein-Taybi Syndrome
+rsts|NBK1526|EP300|Rubinstein-Taybi Syndrome
+runx1|NBK568319|RUNX1|RUNX1 Familial Platelet Disorder with Associated Myeloid Malignancies
+scs|NBK1189|TWIST1|Saethre-Chotzen Syndrome
+salih-myo|NBK83297|TTN|Salih Myopathy
+tbs|NBK1445|SALL1|SALL1-Related Townes-Brocks Syndrome
+drrs|NBK1373|SALL4|SALL4-Related Disorders
+samd9l-ap|NBK435692|SAMD9L|SAMD9L Ataxia-Pancytopenia Syndrome
+sandhoff|NBK579484|HEXB|Sandhoff Disease
+satb2-dis|NBK458647|SATB2|SATB2-Associated Syndrome
+saul-wilson|NBK554080|COG4|Saul-Wilson Syndrome
+amrf|NBK333437|SCARB2|SCARB2-Related Action Myoclonus-Renal Failure Syndrome
+schaaf-yang|NBK567492|MAGEL2|Schaaf-Yang Syndrome
+siod|NBK1376|SMARCAL1|Schimke Immunoosseous Dysplasia
+schinzel-giedion|NBK601394|SETBP1|Schinzel-Giedion Syndrome
+schmid-mcd|NBK547823|COL10A1|Schmid Metaphyseal Chondrodysplasia
+schwann|NBK487394|LZTR1|Schwannomatosis
+schwann|NBK487394|SMARCB1|Schwannomatosis
+gefs|NBK1318|SCN1A|SCN1A Seizure Disorders
+scn3a-ndd|NBK570882|SCN3A|SCN3A-Related Neurodevelopmental Disorder
+scn8a-ee|NBK379665|SCN8A|SCN8A-Related Epilepsy and/or Neurodevelopmental Disorders
+etha|NBK1163|SCN9A|SCN9A Neuropathic Pain Syndromes
+spr-def|NBK304122|SPR|Sepiapterin Reductase Deficiency
+megdel|NBK195853|SERAC1|SERAC1 Deficiency
+serine-def|NBK592681|PHGDH|Serine Deficiency Disorders
+serine-def|NBK592681|PSAT1|Serine Deficiency Disorders
+serine-def|NBK592681|PSPH|Serine Deficiency Disorders
+setbp1-hd|NBK575336|SETBP1|SETBP1 Haploinsufficiency Disorder
+setd1b-ndd|NBK584549|SETD1B|SETD1B-Related Neurodevelopmental Disorder
+setd2-ndd|NBK575927|SETD2|SETD2 Neurodevelopmental Disorders
+myo-dystonia|NBK1414|SGCE|SGCE Myoclonus-Dystonia
+cmt4c|NBK1340|SH3TC2|SH3TC2-Related Hereditary Motor and Sensory Neuropathy
+shashi-pena|NBK609017|ASXL2|Shashi-Pena Syndrome
+short|NBK201365|PIK3R1|SHORT Syndrome
+scad|NBK63582|ACADS|Short-Chain Acyl-CoA Dehydrogenase Deficiency
+lwd|NBK1215|SHOX|SHOX Deficiency Disorders
+sgs|NBK1277|SKI|Shprintzen-Goldberg Syndrome
+sds|NBK1756|DNAJC21|Shwachman-Diamond Syndrome
+sds|NBK1756|EFL1|Shwachman-Diamond Syndrome
+sds|NBK1756|SBDS|Shwachman-Diamond Syndrome
+sds|NBK1756|SRP54|Shwachman-Diamond Syndrome
+sickle|NBK1377|HBB|Sickle Cell Disease
+rss|NBK1324|CDKN1C|Silver-Russell Syndrome
+rss|NBK1324|H19|Silver-Russell Syndrome
+rss|NBK1324|HMGA2|Silver-Russell Syndrome
+rss|NBK1324|IGF2|Silver-Russell Syndrome
+rss|NBK1324|PLAG1|Silver-Russell Syndrome
+sgbs|NBK1219|GPC3|Simpson-Golabi-Behmel Syndrome Type 1
+stsl|NBK131810|ABCG5|Sitosterolemia
+stsl|NBK131810|ABCG8|Sitosterolemia
+slc12a5-e|NBK537476|SLC12A5|SLC12A5-Related Epilepsy of Infancy with Migrating Focal Seizures
+slc19a1-ft-def|NBK617054|SLC19A1|SLC19A1-Related Folate Transport Deficiency
+amish-mcph|NBK1365|SLC25A19|SLC25A19-Related Thiamine Metabolism Dysfunction
+slc25a24-fps|NBK581082|SLC25A24|SLC25A24 Fontaine Progeroid Syndrome
+ao2|NBK1317|SLC26A2|SLC26A2-Related Atelosteogenesis
+edm|NBK1306|SLC26A2|SLC26A2-Related Multiple Epiphyseal Dysplasia
+pendred|NBK1467|SLC26A4|SLC26A4-Related Sensorineural Hearing Loss
+slc39a14-def|NBK431123|SLC39A14|SLC39A14 Deficiency
+slc39a8-cdg|NBK590152|SLC39A8|SLC39A8-CDG
+slc6a1-ndd|NBK589173|SLC6A1|SLC6A1-Related Neurodevelopmental Disorder
+slc6a3-dtds|NBK442323|SLC6A3|SLC6A3-Related Dopamine Transporter Deficiency Syndrome
+nbs|NBK321516|SMARCA2|SMARCA2-Related Nicolaides-Baraitser Syndrome
+smith-kingsmore|NBK619247|MTOR|Smith-Kingsmore Syndrome
+slo|NBK1143|DHCR7|Smith-Lemli-Opitz Syndrome
+sms|NBK1310|RAI1|Smith-Magenis Syndrome
+snyder-robinson|NBK144284|SMS|Snyder-Robinson Syndrome
+sost|NBK587318|SOST|SOST-Related Sclerosing Bone Dysplasias
+sotos|NBK1479|NSD1|Sotos Syndrome
+sox2|NBK1300|SOX2|SOX2 Disorder
+spg11|NBK1210|SPG11|Spastic Paraplegia 11
+spg15|NBK570772|ZFYVE26|Spastic Paraplegia 15
+spg3a|NBK45978|ATL1|Spastic Paraplegia 3A
+spg4|NBK1160|SPAST|Spastic Paraplegia 4
+spg7|NBK1107|SPG7|Spastic Paraplegia 7
+spg8|NBK1827|WASHC5|Spastic Paraplegia 8
+sgpl1|NBK562988|SGPL1|Sphingosine Phosphate Lyase Insufficiency Syndrome
+kennedy|NBK1333|AR|Spinal and Bulbar Muscular Atrophy
+sma|NBK1352|SMN1|Spinal Muscular Atrophy
+sma|NBK1352|SMN2|Spinal Muscular Atrophy
+sma-xli|NBK2594|UBA1|Spinal Muscular Atrophy, X-Linked Infantile
+sca1|NBK1184|ATXN1|Spinocerebellar Ataxia Type 1
+sca10|NBK1175|ATXN10|Spinocerebellar Ataxia Type 10
+sca11|NBK1757|TTBK2|Spinocerebellar Ataxia Type 11
+sca13|NBK1225|KCNC3|Spinocerebellar Ataxia Type 13
+sca14|NBK1399|PRKCG|Spinocerebellar Ataxia Type 14
+sca17|NBK1438|TBP|Spinocerebellar Ataxia Type 17
+sca2|NBK1275|ATXN2|Spinocerebellar Ataxia Type 2
+sca20|NBK1471|-|Spinocerebellar Ataxia Type 20
+sca3|NBK1196|ATXN3|Spinocerebellar Ataxia Type 3
+sca36|NBK231880|NOP56|Spinocerebellar Ataxia Type 36
+sca37|NBK541729|DAB1|Spinocerebellar Ataxia Type 37
+sca38|NBK543515|ELOVL5|Spinocerebellar Ataxia Type 38
+sca4|NBK610215|ZFHX3|Spinocerebellar Ataxia Type 4
+sca6|NBK1140|CACNA1A|Spinocerebellar Ataxia Type 6
+sca7|NBK1256|ATXN7|Spinocerebellar Ataxia Type 7
+sca8|NBK1268|ATXN8|Spinocerebellar Ataxia Type 8
+sca8|NBK1268|ATXN8OS|Spinocerebellar Ataxia Type 8
+scan1|NBK1105|TDP1|Spinocerebellar Ataxia with Axonal Neuropathy Type 1
+spondylocostal-d|NBK8828|DLL3|Spondylocostal Dysostosis, Autosomal Recessive
+spondylocostal-d|NBK8828|HES7|Spondylocostal Dysostosis, Autosomal Recessive
+spondylocostal-d|NBK8828|LFNG|Spondylocostal Dysostosis, Autosomal Recessive
+spondylocostal-d|NBK8828|MESP2|Spondylocostal Dysostosis, Autosomal Recessive
+spondylocostal-d|NBK8828|RIPPLY2|Spondylocostal Dysostosis, Autosomal Recessive
+spondylocostal-d|NBK8828|TBX6|Spondylocostal Dysostosis, Autosomal Recessive
+smdcf|NBK555103|COL2A1|Spondylometaphyseal Dysplasia, Corner Fracture Type
+smdcf|NBK555103|FN1|Spondylometaphyseal Dysplasia, Corner Fracture Type
+sptbn4|NBK559435|SPTBN4|SPTBN4 Disorder
+hsn1|NBK1390|SPTLC1|SPTLC1-Related Hereditary Sensory Neuropathy
+ss-def|NBK553533|FDFT1|Squalene Synthase Deficiency
+fhs|NBK114458|SRCAP|SRCAP-Related Floating-Harbor Syndrome
+stac3-dis|NBK542808|STAC3|STAC3 Disorder
+higes|NBK25507|STAT3|STAT3 Hyper IgE Syndrome
+stickler|NBK1302|COL11A1|Stickler Syndrome
+stickler|NBK1302|COL11A2|Stickler Syndrome
+stickler|NBK1302|COL2A1|Stickler Syndrome
+stickler|NBK1302|COL9A1|Stickler Syndrome
+stickler|NBK1302|COL9A2|Stickler Syndrome
+stickler|NBK1302|COL9A3|Stickler Syndrome
+strc-hearing-loss|NBK598310|CATSPER2|STRC-Related Autosomal Recessive Hearing Loss
+strc-hearing-loss|NBK598310|STRC|STRC-Related Autosomal Recessive Hearing Loss
+stromme|NBK586170|CENPF|Strømme Syndrome
+stxbp1-ee|NBK396561|STXBP1|STXBP1 Encephalopathy with Epilepsy
+ssadh|NBK1195|ALDH5A1|Succinic Semialdehyde Dehydrogenase Deficiency
+sucla2-def|NBK6803|SUCLA2|SUCLA2-Related Mitochondrial DNA Depletion Syndrome, Encephalomyopathic Form with Methylmalonic Aciduria
+suclg1-mtddepl|NBK425223|SUCLG1|SUCLG1-Related Mitochondrial DNA Depletion Syndrome, Encephalomyopathic Form with Methylmalonic Aciduria
+syne1ca-ar|NBK1379|SYNE1|SYNE1 Deficiency
+syngap1-id|NBK537721|SYNGAP1|SYNGAP1-Related Intellectual Disability
+tangier|NBK549920|ABCA1|Tangier Disease
+tango2-mea|NBK476443|TANGO2|TANGO2 Deficiency
+tardbp-als|NBK5942|TARDBP|TARDBP-Related Amyotrophic Lateral Sclerosis-Frontotemporal Dementia
+tbrs|NBK581652|DNMT3A|Tatton-Brown-Rahman Syndrome
+tbc1d24-dis|NBK274566|TBC1D24|TBC1D24-Related Disorders
+tbck-ndd|NBK615430|TBCK|TBCK-Related Neurodevelopmental Disorder
+tcirg1-opt|NBK617444|TCIRG1|TCIRG1-Related Osteopetrosis
+tecpr2-hsan-id|NBK584409|TECPR2|TECPR2-Related Hereditary Sensory and Autonomic Neuropathy with Intellectual Disability
+vmcm|NBK1967|TEK|TEK-Related Venous Malformations
+beck-fahrner|NBK591837|TET3|TET3-Related Beck-Fahrner Syndrome
+tfr2|NBK1349|TFR2|TFR2-Related Hemochromatosis
+td|NBK1366|FGFR3|Thanatophoric Dysplasia
+trma|NBK1282|SLC19A2|Thiamine-Responsive Megaloblastic Anemia Syndrome
+thoc6-id|NBK560442|THOC6|THOC6 Intellectual Disability Syndrome
+tar|NBK23758|RBM8A|Thrombocytopenia Absent Radius Syndrome
+tk2-mtddepl|NBK114628|TK2|TK2-Related Mitochondrial DNA Maintenance Defect, Myopathic Form
+traps|NBK586171|TNFRSF1A|TNF Receptor-Associated Periodic Fever Syndrome
+tnxb-eds|NBK584019|TNXB|TNXB-Related Classical-Like Ehlers-Danlos Syndrome
+aec|NBK43797|TP63|TP63-Related Disorders
+tcs|NBK1532|POLR1B|Treacher Collins Syndrome
+tcs|NBK1532|POLR1C|Treacher Collins Syndrome
+tcs|NBK1532|POLR1D|Treacher Collins Syndrome
+tcs|NBK1532|TCOF1|Treacher Collins Syndrome
+sd-thes|NBK475802|SKIC2|Trichohepatoenteric Syndrome
+sd-thes|NBK475802|SKIC3|Trichohepatoenteric Syndrome
+tps|NBK425926|EXT1|Trichorhinophalangeal Syndrome
+tps|NBK425926|RAD21|Trichorhinophalangeal Syndrome
+tps|NBK425926|TRPS1|Trichorhinophalangeal Syndrome
+trio-id|NBK447257|TRIO|TRIO-Related Neurodevelopmental Disorder
+trmu-def|NBK591557|TRMU|TRMU Deficiency
+spg20|NBK1382|SPART|Troyer Syndrome
+trpm3-ndd|NBK589387|TRPM3|TRPM3-Related Neurodevelopmental Disorder
+pc-hypo-p|NBK9673|TSEN54|TSEN54 Pontocerebellar Hypoplasia
+tubb4a-leuk|NBK395611|TUBB4A|TUBB4A-Related Leukodystrophy
+tuberous-sclerosis|NBK1220|TSC1|Tuberous Sclerosis Complex
+tuberous-sclerosis|NBK1220|TSC2|Tuberous Sclerosis Complex
+tubulin-ov|NBK350554|TUBA1A|Tubulinopathies
+tubulin-ov|NBK350554|TUBB|Tubulinopathies
+tubulin-ov|NBK350554|TUBB2A|Tubulinopathies
+tubulin-ov|NBK350554|TUBB2B|Tubulinopathies
+tubulin-ov|NBK350554|TUBB3|Tubulinopathies
+tubulin-ov|NBK350554|TUBG1|Tubulinopathies
+burn-mckeown|NBK373577|TXNL4A|TXNL4A-Related Craniofacial Disorders
+collagen-2|NBK540447|COL2A1|Type II Collagen Disorders
+thdrd|NBK1437|TH|Tyrosine Hydroxylase Deficiency
+tyrosinemia|NBK1515|FAH|Tyrosinemia Type I
+tyrosinemia-2|NBK608431|TAT|Tyrosinemia Type II
+udd|NBK1323|TTN|Udd Distal Myopathy – Tibial Muscular Dystrophy
+unc80-def|NBK453434|UNC80|UNC80 Deficiency
+hsp|NBK1509|ADAR|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+hsp|NBK1509|ALDH18A1|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+hsp|NBK1509|AP5Z1|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+hsp|NBK1509|ATL1|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+hsp|NBK1509|ATP2B4|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+hsp|NBK1509|BSCL2|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+hsp|NBK1509|CPT1C|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+hsp|NBK1509|CYP7B1|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+hsp|NBK1509|DDHD1|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+hsp|NBK1509|DNM2|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+hsp|NBK1509|ERLIN2|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+hsp|NBK1509|HSPD1|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+hsp|NBK1509|KIF1A|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+hsp|NBK1509|KIF5A|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+hsp|NBK1509|NIPA1|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+hsp|NBK1509|REEP1|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+hsp|NBK1509|REEP2|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+hsp|NBK1509|RTN2|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+hsp|NBK1509|SLC33A1|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+hsp|NBK1509|SPAST|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+hsp|NBK1509|SPG7|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+hsp|NBK1509|USP8|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+hsp|NBK1509|WASHC5|Uncomplicated (Pure) Hereditary Spastic Paraplegia Overview
+ucd-overview|NBK1217|ARG1|Urea Cycle Disorders
+ucd-overview|NBK1217|ASL|Urea Cycle Disorders
+ucd-overview|NBK1217|ASS1|Urea Cycle Disorders
+ucd-overview|NBK1217|CPS1|Urea Cycle Disorders
+ucd-overview|NBK1217|NAGS|Urea Cycle Disorders
+ucd-overview|NBK1217|OTC|Urea Cycle Disorders
+ucd-overview|NBK1217|SLC25A13|Urea Cycle Disorders
+ucd-overview|NBK1217|SLC25A15|Urea Cycle Disorders
+urofacial|NBK154138|HPSE2|Urofacial Syndrome
+urofacial|NBK154138|LRIG2|Urofacial Syndrome
+usher1|NBK1265|CDH23|Usher Syndrome Type I
+usher1|NBK1265|CIB2|Usher Syndrome Type I
+usher1|NBK1265|MYO7A|Usher Syndrome Type I
+usher1|NBK1265|PCDH15|Usher Syndrome Type I
+usher1|NBK1265|USH1C|Usher Syndrome Type I
+usher1|NBK1265|USH1G|Usher Syndrome Type I
+usher2|NBK1341|ADGRV1|Usher Syndrome Type II
+usher2|NBK1341|USH2A|Usher Syndrome Type II
+usher2|NBK1341|WHRN|Usher Syndrome Type II
+porphyria-var|NBK121283|PPOX|Variegate Porphyria
+eds4|NBK1494|COL3A1|Vascular Ehlers-Danlos Syndrome
+vlcad|NBK6816|ACADVL|Very Long-Chain Acyl-Coenzyme A Dehydrogenase Deficiency
+vexas|NBK614471|UBA1|VEXAS Syndrome
+vldlr-ch|NBK1874|VLDLR|VLDLR Cerebellar Hypoplasia
+vhl|NBK1463|VHL|Von Hippel-Lindau Syndrome
+von-willebrand|NBK7014|VWF|Von Willebrand Disease
+chac|NBK1387|VPS13A|VPS13A Disease
+vps13d-md|NBK537720|VPS13D|VPS13D Movement Disorder
+vps35-pd|NBK447258|VPS35|VPS35-Related Parkinson Disease
+ws1|NBK1531|PAX3|Waardenburg Syndrome Type I
+wac-id|NBK465012|WAC|WAC-Related Intellectual Disability
+wars2-def|NBK595820|WARS2|WARS2 Deficiency
+was|NBK1178|WAS|WAS-Related Disorders
+wdr26-id|NBK540448|WDR26|WDR26-Related Intellectual Disability
+wdr62-pm|NBK578067|WDR62|WDR62 Primary Microcephaly
+weill-ms|NBK1114|ADAMTS10|Weill-Marchesani Syndrome
+weill-ms|NBK1114|ADAMTS17|Weill-Marchesani Syndrome
+weill-ms|NBK1114|FBN1|Weill-Marchesani Syndrome
+weill-ms|NBK1114|LTBP2|Weill-Marchesani Syndrome
+weiss-kruszka|NBK549204|ZNF462|Weiss-Kruszka Syndrome
+werner|NBK1514|WRN|Werner Syndrome
+wfs|NBK4144|WFS1|WFS1 Spectrum Disorder
+white-sutton|NBK573972|POGZ|White-Sutton Syndrome
+wiedemann-steiner|NBK580718|KMT2A|Wiedemann-Steiner Syndrome
+williams|NBK1249|ELN|Williams Syndrome
+williams|NBK1249|GTF2I|Williams Syndrome
+williams|NBK1249|GTF2IRD1|Williams Syndrome
+williams|NBK1249|LIMK1|Williams Syndrome
+williams|NBK1249|NCF1|Williams Syndrome
+williams|NBK1249|Not applicable|Williams Syndrome
+wilms-ov|NBK1294|CTR9|Wilms Tumor Predisposition
+wilms-ov|NBK1294|FBXW7|Wilms Tumor Predisposition
+wilms-ov|NBK1294|KDM3B|Wilms Tumor Predisposition
+wilms-ov|NBK1294|NYNRIN|Wilms Tumor Predisposition
+wilms-ov|NBK1294|REST|Wilms Tumor Predisposition
+wilms-ov|NBK1294|TRIM28|Wilms Tumor Predisposition
+wilms-ov|NBK1294|WT1|Wilms Tumor Predisposition
+wilson|NBK1512|ATP7B|Wilson Disease
+wss|NBK378974|DCAF17|Woodhouse-Sakati Syndrome
+wt1-dis|NBK556455|WT1|WT1 Disorder
+xp|NBK1397|DDB2|Xeroderma Pigmentosum
+xp|NBK1397|ERCC1|Xeroderma Pigmentosum
+xp|NBK1397|ERCC2|Xeroderma Pigmentosum
+xp|NBK1397|ERCC3|Xeroderma Pigmentosum
+xp|NBK1397|ERCC4|Xeroderma Pigmentosum
+xp|NBK1397|ERCC5|Xeroderma Pigmentosum
+xp|NBK1397|POLH|Xeroderma Pigmentosum
+xp|NBK1397|XPA|Xeroderma Pigmentosum
+xp|NBK1397|XPC|Xeroderma Pigmentosum
+xia-gibbs|NBK575793|AHDC1|Xia-Gibbs Syndrome
+x-ag|NBK476671|GPR101|X-Linked Acrogigantism
+x-ald|NBK1315|ABCD1|X-Linked Adrenoleukodystrophy
+xla|NBK1453|BTK|X-Linked Agammaglobulinemia
+retinoschisis|NBK1222|RS1|X-Linked Congenital Retinoschisis
+csnb|NBK1245|CACNA1F|X-Linked Congenital Stationary Night Blindness
+csnb|NBK1245|NYX|X-Linked Congenital Stationary Night Blindness
+xdp|NBK1489|TAF1|X-Linked Dystonia-Parkinsonism
+xlhi|NBK1402|CD40LG|X-Linked Hyper IgM Syndrome
+rickets-xlh|NBK83985|PHEX|X-Linked Hypophosphatemia
+x-lpd|NBK1406|SH2D1A|X-Linked Lymphoproliferative Disease
+x-lpd|NBK1406|XIAP|X-Linked Lymphoproliferative Disease
+mtm|NBK1432|MTM1|X-Linked Myotubular Myopathy
+epp-xl|NBK121284|ALAS2|X-Linked Protoporphyria
+x-scid|NBK1410|IL2RG|X-Linked Severe Combined Immunodeficiency
+sedt|NBK1145|TRAPPC2|X-Linked Spondyloepiphyseal Dysplasia Tarda
+xq28-dup|NBK349624|CLIC2|Xq28 Duplication Syndrome, Int22h1/Int22h2 Mediated
+xq28-dup|NBK349624|RAB39B|Xq28 Duplication Syndrome, Int22h1/Int22h2 Mediated
+yci|NBK1339|DDX3Y|Y Chromosome Infertility
+yci|NBK1339|Not applicable|Y Chromosome Infertility
+yci|NBK1339|USP9Y|Y Chromosome Infertility
+yars1-def|NBK615917|YARS1|YARS1 Deficiency
+yif1b-ndd|NBK606999|YIF1B|YIF1B-Related Neurodevelopmental Disorder
+zap70-scid|NBK20221|ZAP70|ZAP70-Related Combined Immunodeficiency
+pbd|NBK1448|PEX1|Zellweger Spectrum Disorder (ZSD)
+pbd|NBK1448|PEX10|Zellweger Spectrum Disorder (ZSD)
+pbd|NBK1448|PEX11B|Zellweger Spectrum Disorder (ZSD)
+pbd|NBK1448|PEX12|Zellweger Spectrum Disorder (ZSD)
+pbd|NBK1448|PEX13|Zellweger Spectrum Disorder (ZSD)
+pbd|NBK1448|PEX14|Zellweger Spectrum Disorder (ZSD)
+pbd|NBK1448|PEX16|Zellweger Spectrum Disorder (ZSD)
+pbd|NBK1448|PEX19|Zellweger Spectrum Disorder (ZSD)
+pbd|NBK1448|PEX2|Zellweger Spectrum Disorder (ZSD)
+pbd|NBK1448|PEX26|Zellweger Spectrum Disorder (ZSD)
+pbd|NBK1448|PEX3|Zellweger Spectrum Disorder (ZSD)
+pbd|NBK1448|PEX5|Zellweger Spectrum Disorder (ZSD)
+pbd|NBK1448|PEX6|Zellweger Spectrum Disorder (ZSD)
+zttk|NBK618356|SON|Zhu-Tokita-Takenouchi-Kim Syndrome

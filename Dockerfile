@@ -1,7 +1,7 @@
 # AttenGene API container.
 # Embeddings live in a separate container - see Dockerfile.embeddings.
 
-FROM python:3.12-slim AS base
+FROM docker.io/library/python:3.12-slim AS base
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1

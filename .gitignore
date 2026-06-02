@@ -22,10 +22,18 @@ env/
 
 # Indexed data (downloaded by scripts/index_*.py)
 data/clinvar/
-data/genereviews/
 data/gene_NBK1116/
 data/nephrogenetics/
 gene_NBK1116/
+
+# GeneReviews: only the small, factual NBK-id/gene/disease lookup tables are
+# committed (demo data the API loads at runtime). Everything else in this dir -
+# the narrative prose .txt files - is copyrighted (c) University of Washington
+# and must NOT be redistributed, so ignore the whole dir then re-include the
+# two factual tables.
+data/genereviews/*
+!data/genereviews/GRshortname_NBKid_genesymbol_dzname.txt
+!data/genereviews/NBKid_shortname_genesymbol.txt
 
 # Large data files
 *.tar.gz

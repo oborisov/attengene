@@ -66,6 +66,13 @@ If you have an NVIDIA GPU, add `--profile gpu` to step 4 - embeddings
 will run in fp16 on CUDA instead of fp32 on CPU (roughly 20-30x
 throughput on a mid-range GPU).
 
+### Podman
+
+The stack runs unchanged under Podman - substitute `podman compose`
+(or `podman-compose`) for `docker compose`. All image references are
+fully qualified (`docker.io/...`), so no `unqualified-search-registries`
+entry in `/etc/containers/registries.conf` is required.
+
 ## Architecture
 
 ```

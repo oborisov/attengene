@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.3.0 - 2026-06-02
+
+- Fix: the API image now builds on a fresh clone. The `Dockerfile` copies
+  `data/genereviews/`, but those lookup tables were gitignored, so
+  `docker/podman compose up` failed at the `COPY data/genereviews/` step.
+  The two factual NBK-id/gene/disease lookup tables (the demo data the API
+  loads at runtime) are now committed; copyrighted GeneReviews prose stays
+  out of the repo.
+- Podman: all image references are fully qualified (`docker.io/...`) in the
+  compose file and Dockerfiles, so the stack runs under stock Podman without
+  an `unqualified-search-registries` entry in `registries.conf`. Quickstart
+  documents the `podman compose` path.
+
 ## v0.2.0 - 2026-06-02
 
 - RAG prompt: responses now open with a 2-3 sentence ANSWER synthesis

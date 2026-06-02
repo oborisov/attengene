@@ -3,7 +3,7 @@
 # Hosts BAAI/bge-large-en-v1.5 behind a TEI-compatible /embed endpoint plus
 # OpenAI-compatible /v1/embeddings. For GPU builds see Dockerfile.embeddings.gpu.
 
-FROM python:3.12-slim
+FROM docker.io/library/python:3.12-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
