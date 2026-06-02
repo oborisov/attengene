@@ -114,10 +114,28 @@ def route_and_retrieve(query: str, k: int = 10) -> RetrievalResult:
         logger.info("Skipping retrieval (no clinical signal): %r", query)
         return result
 
-    # Always search GeneReviews (primary source for clinical questions)
+    # Always search GeneReviews (primary source for clinical questions).
+    #
+    # When the query names gene symbols, anchor retrieval on them via
+    # gene_filter. Pure semantic search drifts badly here: a query about a
+    # gene that isn't in the corpus (e.g. WFS1) still returns the densest
+    # "genetics prose" chunk - an unrelated gene like CFTR scoring ~0.56 -
+    # which then leaks into the citations even when the answer correctly
+    # says "no evidence". Filtering by gene makes off-target matches
+    # impossible: if the named gene isn't indexed, we get an empty result
+    # and the LLM reports no evidence with no misleading reference. We fall
+    # back to an unfiltered semantic search only when no gene symbol is
+    # present (e.g. phenotype-only questions).
+    gene_symbols = _extract_gene_symbols(query)
     try:
         t1 = time.perf_counter()
-        result.genereviews_chunks = retrieve_genereviews(query, k=k)
+        result.genereviews_chunks = retrieve_genereviews(
+            query, k=k, gene_filter=gene_symbols or None
+        )
+        if not result.genereviews_chunks and gene_symbols:
+            # Named gene not in the GeneReviews corpus - do NOT fall back to
+            # an unfiltered search, which would surface an off-target chunk.
+            logger.info("GeneReviews: no chunks for gene(s) %s", gene_symbols)
         if result.genereviews_chunks:
             result.sources_searched.append("GeneReviews")
         logger.info("GeneReviews search: %.1fs, %d chunks",
@@ -136,8 +154,7 @@ def route_and_retrieve(query: str, k: int = 10) -> RetrievalResult:
         except Exception:
             logger.exception("NephroGenetics search failed")
 
-    # Search PubMed using gene symbols from query
-    gene_symbols = _extract_gene_symbols(query)
+    # Search PubMed using gene symbols from query (computed above)
     if gene_symbols:
         try:
             t1 = time.perf_counter()

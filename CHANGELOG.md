@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.3.1 - 2026-06-02
+
+- Fix: GeneReviews retrieval no longer cites an unrelated gene's chapter.
+  When a query names a gene that isn't in the indexed corpus, pure semantic
+  search returned the densest "genetics prose" chunk (an off-target gene
+  scoring ~0.55), which surfaced as a citation even when the answer said
+  "no evidence". Retrieval is now anchored on gene symbols extracted from
+  the query (passed as a gene filter), so off-target chapters can't leak
+  in; absent genes return an empty GeneReviews result cleanly.
+- Fix: raised the GeneReviews similarity floor from 0.3 to 0.6. On-target
+  chunks score ~0.7-0.8 while noise tops out around 0.55, so the old 0.3
+  threshold filtered nothing.
+
 ## v0.3.0 - 2026-06-02
 
 - Fix: the API image now builds on a fresh clone. The `Dockerfile` copies

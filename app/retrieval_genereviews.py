@@ -31,7 +31,7 @@ def retrieve_genereviews(
     k: int = 5,
     gene_filter: list[str] = None,
     section_types: list[str] = None,
-    similarity_threshold: float = 0.3,
+    similarity_threshold: float = 0.6,
 ) -> list[GeneReviewsChunk]:
     """
     Retrieve top-k GeneReviews chunks matching the query.
@@ -41,7 +41,10 @@ def retrieve_genereviews(
         k: Number of results to return
         gene_filter: Optional list of gene symbols to filter by
         section_types: Optional list of section types to filter by
-        similarity_threshold: Minimum similarity score (0-1, cosine)
+        similarity_threshold: Minimum cosine similarity (0-1). Default 0.6:
+            on-target chunks score ~0.7-0.8, while off-target "genetics
+            prose" noise (e.g. an unrelated gene matching a gene query)
+            tops out around 0.55, so 0.6 cleanly drops the noise.
 
     Returns:
         List of GeneReviewsChunk objects ordered by similarity (descending)
