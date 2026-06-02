@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.2.0 - 2026-06-02
+
+- RAG prompt: responses now open with a 2-3 sentence ANSWER synthesis
+  (condition + gene(s), evidence-only, ending with a source list) before
+  the FINDINGS / GAPS audit trail
+- RAG prompt: tightened FINDINGS to at most 6 bullets, one fact each, with
+  non-matching conditions collapsed into a single rule-out line instead of
+  one bullet per retrieved entry
+- Local backend: optional `BACKEND_LOCAL_KEY` sends `Authorization: Bearer`
+  on outbound calls (chat and the startup `/models` probe) for a
+  llama-server running with `--api-key`; empty/unset keeps the no-auth path
+
 ## v0.1.0 - 2026-05-30
 
 Initial public release.

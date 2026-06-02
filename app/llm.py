@@ -36,12 +36,18 @@ def _build_backends() -> dict[str, Backend]:
     """Read env vars, drop backends whose required config is missing."""
     out: dict[str, Backend] = {}
 
+    # BACKEND_LOCAL_KEY is optional: empty/unset = no Authorization header
+    # (e.g. dev against a no-auth Ollama/llama-server). When set, every
+    # outbound call to the local backend carries `Authorization: Bearer <key>`,
+    # for an upstream llama-server started with --api-key. _build_headers()
+    # already no-ops on a falsy key, so `or None` keeps the no-auth path
+    # identical.
     out["attengene-local"] = Backend(
         model_id="attengene-local",
         base_url=os.getenv(
             "BACKEND_LOCAL_URL", "http://localhost:8080/v1/chat/completions"
         ),
-        api_key=None,
+        api_key=os.getenv("BACKEND_LOCAL_KEY", "").strip() or None,
         upstream_model=os.getenv("BACKEND_LOCAL_MODEL", "auto"),
     )
 
@@ -94,7 +100,12 @@ async def resolve_local_upstream_model() -> None:
     models_url = local.base_url.rsplit("/chat/completions", 1)[0] + "/models"
     try:
         async with httpx.AsyncClient() as client:
-            response = await client.get(models_url, timeout=5.0)
+            # Carry the same bearer as chat calls - llama-server with
+            # --api-key returns 401 on /v1/models too, which would otherwise
+            # silently drop us to the "local" sentinel below.
+            response = await client.get(
+                models_url, headers=_build_headers(local), timeout=5.0
+            )
             response.raise_for_status()
             data = response.json()
             resolved = data["data"][0]["id"]

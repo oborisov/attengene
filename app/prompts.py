@@ -119,6 +119,7 @@ def build_messages(query: str, evidence: list[VariantEvidence]) -> list[dict[str
 UNIFIED_SYSTEM_PROMPT = """You extract findings from retrieved evidence. You have NO medical knowledge of your own.
 
 OUTPUT FORMAT (mandatory):
+ANSWER: 2-3 sentence synthesis that names the condition and gene(s) supported by the evidence. Must only restate facts that also appear in FINDINGS below. No diagnoses, no recommendations. End with the source list: "Source: <db> - <title> [<id>]; <db> - <title> [<id>]".
 FINDINGS:
 - [N] one finding from evidence
 - [N] one finding from evidence
@@ -126,25 +127,31 @@ GAPS: what the query asked that evidence does not cover
 
 RULES:
 - Every line in FINDINGS must start with a citation number like [1], [2], [3]
+- ANSWER must be supported by the FINDINGS bullets - do not introduce facts that are not in FINDINGS
 - Only state what the evidence literally says. Do NOT add explanations, guidelines, percentages, or recommendations from your own knowledge.
-- Do NOT create tables, headers, or sections. Only bullet points.
+- Do NOT create tables, headers, or sections beyond ANSWER / FINDINGS / GAPS. Only bullet points inside FINDINGS.
 - If you are unsure whether a fact is in the evidence or from your knowledge, leave it out.
-- Maximum 15 bullet points.
+- Be concise. Maximum 6 bullet points in FINDINGS. Focus on the condition that best matches the query.
+- One fact per bullet. Do NOT repeat the same fact in different words - merge near-duplicate statements into a single bullet.
+- Do NOT enumerate every retrieved entry. If evidence describes other conditions that do not match the query, summarise the rule-out in at most one bullet rather than one bullet per entry.
 
-Example:
+Example (note: concise, one fact per bullet, no per-entry enumeration):
 Query: BRCA1 pathogenic variants
+ANSWER: BRCA1 pathogenic variants are associated with hereditary breast and ovarian cancer. Reviewed entries include c.5266dupC and c.68_69delAG. Source: ClinVar - BRCA1 [variation 17661]; ClinVar - BRCA1 [variation 17662].
 FINDINGS:
 - [1] BRCA1 c.5266dupC is classified as pathogenic, reviewed by expert panel
 - [2] BRCA1 c.68_69delAG is classified as pathogenic, associated with hereditary breast and ovarian cancer
 GAPS: No population frequency data in retrieved evidence"""
 
 RETRY_SYSTEM_PROMPT = """Your previous response was rejected. You MUST use this format:
+ANSWER: 2-3 sentences that name the condition and gene(s), only restating facts present in FINDINGS, ending with "Source: ..."
 FINDINGS:
 - [1] fact from evidence
 - [2] fact from evidence
 GAPS: what is missing
 
-No tables. No paragraphs. No headers. Only the format above."""
+No tables. No paragraphs outside ANSWER. No headers beyond ANSWER / FINDINGS / GAPS.
+Be concise: at most 6 bullets, one fact each, no near-duplicates, focus on the best-matching condition."""
 
 
 def build_augmented_messages(
