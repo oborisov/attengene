@@ -15,7 +15,8 @@ from dataclasses import dataclass, field
 from app.citations import build_citations, format_evidence_with_citations
 from app.models import Citation, VariantEvidence
 from app.pubmed import search_pubmed
-from app.retrieval import retrieve_variants_hybrid
+from app.hgvs import parse_variant
+from app.retrieval import retrieve_variants_exact, retrieve_variants_hybrid
 from app.retrieval_genereviews import (
     retrieve_genereviews,
     GeneReviewsChunk,
@@ -124,18 +125,27 @@ def route_and_retrieve(query: str, k: int = 10) -> RetrievalResult:
     has_hgvs = bool(_HGVS_PATTERN.search(query))
     result.query_type = "variant" if (gene_symbols or has_hgvs) else "phenotype"
 
-    # Search ClinVar (hybrid lexical+semantic) for variant-level queries.
-    # The lexical (pg_trgm) leg matches exact HGVS notation like c.526G>A,
-    # which pure semantic search misses; the gene/HGVS gate keeps the
-    # variants table out of phenotype-only prose where it adds only noise.
+    # Search ClinVar for variant-level queries, two tiers:
+    #   Tier 1 (exact): parse gene + HGVS tokens out of the query and do an
+    #     exact ILIKE lookup. High precision, clean true negatives, immune to
+    #     the sentence-dilution problem that defeats fuzzy matching on a
+    #     conversational query ("what about the variant c.526G>A ... in ALPL").
+    #   Tier 2 (hybrid): fall back to lexical+semantic search only when Tier 1
+    #     finds nothing - e.g. phenotype-ish variant queries with no parseable
+    #     HGVS token ("what variants are known in BRCA1").
     if gene_symbols or has_hgvs:
         try:
             t1 = time.perf_counter()
-            result.clinvar_evidence = retrieve_variants_hybrid(query, k=k)
+            parsed = parse_variant(query)
+            result.clinvar_evidence = retrieve_variants_exact(parsed, k=k)
+            tier = "exact"
+            if not result.clinvar_evidence:
+                result.clinvar_evidence = retrieve_variants_hybrid(query, k=k)
+                tier = "hybrid"
             if result.clinvar_evidence:
                 result.sources_searched.append("ClinVar")
-            logger.info("ClinVar search: %.1fs, %d variants",
-                         time.perf_counter() - t1, len(result.clinvar_evidence))
+            logger.info("ClinVar search (%s): %.1fs, %d variants",
+                         tier, time.perf_counter() - t1, len(result.clinvar_evidence))
         except Exception:
             logger.exception("ClinVar search failed")
 

@@ -6,7 +6,86 @@ No LLM usage. Embedding model loaded once at module level.
 
 from app.db import get_connection, release_connection
 from app.embeddings import encode
+from app.hgvs import ParsedVariant
 from app.models import VariantEvidence
+
+
+def retrieve_variants_exact(parsed: ParsedVariant, k: int = 5) -> list[VariantEvidence]:
+    """Exact ClinVar lookup from a parsed variant (Tier 1 of variant retrieval).
+
+    Builds an ILIKE query on the structured tokens (gene + HGVS) rather than
+    fuzzy-matching the whole sentence. High precision: an HGVS substring either
+    appears in a ClinVar variant name or it does not. Returns an empty list when
+    the variant is genuinely absent (clean true negative) - no cross-gene bleed,
+    no similarity floor needed.
+
+    Requires at least one concrete variant token (c./p./rsID). If only a gene is
+    present, returns [] so the caller falls back to hybrid/semantic search.
+    """
+    if not parsed.has_variant_token:
+        return []
+
+    conds: list[str] = []
+    params: list[str] = []
+
+    # rsID is the most specific anchor when present.
+    if parsed.rsid:
+        conds.append("name ILIKE %s")
+        params.append(f"%{parsed.rsid}%")
+
+    # HGVS tokens: require each present token to appear in the name. AND-ing
+    # c. and p. tightens precision (both must match the same variant).
+    for tok in (parsed.c_hgvs, parsed.p_hgvs):
+        if tok:
+            conds.append("name ILIKE %s")
+            params.append(f"%{tok}%")
+
+    if not conds:
+        return []
+
+    where = " AND ".join(conds)
+    # Gene filter narrows further when we have a confident symbol, but stays
+    # optional: ClinVar names embed the gene, so a matching HGVS in the wrong
+    # gene is already unlikely, and an over-eager gene guess shouldn't zero out
+    # a correct HGVS hit. Apply gene only as a tie-breaker in ORDER BY.
+    gene_rank = "0"
+    if parsed.gene:
+        gene_rank = "CASE WHEN gene = %s THEN 0 ELSE 1 END"
+
+    sql = f"""
+        SELECT variation_id, gene, name, clinical_significance, review_status,
+               array_to_string(phenotypes, '; ') AS phenotypes, document
+        FROM variants
+        WHERE {where}
+        ORDER BY {gene_rank}, variation_id
+        LIMIT %s
+    """
+    order_params = [parsed.gene] if parsed.gene else []
+
+    conn = get_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(sql, (*params, *order_params, k))
+            rows = cur.fetchall()
+    finally:
+        release_connection(conn)
+
+    results = []
+    for row in rows:
+        (variation_id, gene, name, sig, review, pheno, document) = row
+        results.append(
+            VariantEvidence(
+                variation_id=variation_id,
+                gene_symbol=gene,
+                variant_name=name,
+                clinical_significance=sig,
+                review_status=review or "",
+                condition_names=pheno or None,
+                similarity=1.0,  # exact substring match - not a similarity score
+                document=document,
+            )
+        )
+    return results
 
 
 def retrieve_variants(query: str, k: int = 5) -> list[VariantEvidence]:

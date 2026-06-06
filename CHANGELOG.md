@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.5.0 - 2026-06-06
+
+- Feature: structured HGVS lookup for variant queries. Variant-level questions
+  are now answered by parsing the gene symbol and HGVS tokens out of the query
+  (e.g. `c.526G>A`, `p.(Ala176Thr)`, gene `ALPL`) and doing an exact match
+  against ClinVar, instead of fuzzy-matching the whole sentence. This is more
+  precise and gives clean true negatives: a variant that genuinely isn't in
+  ClinVar returns no evidence rather than off-target near-matches.
+- Fix: resolves a regression where conversational phrasing around a variant
+  ("what about the variant c.526G>A ... in ALPL") diluted the fuzzy-match score
+  below the v0.4.1 similarity floor, causing a correct, indexed pathogenic
+  variant to be wrongly reported as not found. The exact-lookup tier is immune
+  to this; the fuzzy hybrid search remains as a fallback for variant queries
+  with no parseable HGVS token (e.g. "what variants are known in BRCA1").
+- Parsing normalizes common input variations: HTML-escaped `&gt;`, letter case,
+  parentheses around the protein change, and `del`/`dup`/`ins` events.
+
 ## v0.4.1 - 2026-06-06
 
 - Fix: ClinVar hybrid search no longer surfaces off-target variants when the
