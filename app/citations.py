@@ -15,11 +15,30 @@ from app.retrieval_genereviews import GeneReviewsChunk
 # Phrases the model uses to signal the queried item is absent from evidence.
 # When present, the appended References block is suppressed (the listed
 # sources are off-target neighbours, not support for the answer).
+#
+# German clinicians are the primary user base and the LLM answers German
+# prompts in German, so the not-found phrasings must be matched in German too -
+# otherwise the suppression silently fails and stray off-target citations
+# return on a German "no evidence" answer.
 _NO_EVIDENCE_PATTERN = re.compile(
+    # English
     r"not (?:mentioned|described|listed|found|present|available) in "
     r"the (?:retrieved |provided )?evidence"
     r"|does not contain sufficient information"
-    r"|no (?:relevant |matching )?(?:evidence|variants?) (?:was|were) (?:retrieved|found)",
+    r"|no (?:relevant |matching )?(?:evidence|variants?) (?:was|were) (?:retrieved|found)"
+    # German: "nicht in den (bereitgestellten/abgerufenen) Belegen/Nachweisen
+    # (erwähnt/enthalten/aufgeführt)"
+    r"|nicht in den (?:bereitgestellten |abgerufenen )?"
+    r"(?:belegen|nachweisen|quellen|daten)"
+    # German: "keine (relevanten/passenden) Belege/Nachweise/Varianten
+    # (gefunden/vorhanden)"
+    r"|keine (?:relevanten |passenden )?"
+    r"(?:belege|nachweise|hinweise|varianten?|informationen) "
+    r"(?:gefunden|vorhanden|verfügbar)"
+    # German: "(wird/ist) nicht erwähnt", "nicht aufgeführt", "nicht enthalten"
+    r"|nicht (?:erwähnt|aufgeführt|enthalten|aufgelistet)"
+    # German: "enthält nicht genügend/keine Informationen"
+    r"|enthält (?:nicht genügend|keine) information",
     re.IGNORECASE,
 )
 

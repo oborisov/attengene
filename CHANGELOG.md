@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.5.2 - 2026-06-06
+
+- Fix: when the model reported in German that a queried variant or condition was
+  not in the retrieved evidence (e.g. "keine relevanten Belege gefunden",
+  "nicht in den Belegen enthalten"), the References-suppression failed to fire
+  and stray off-target citations were still appended. The suppression now
+  recognizes German not-found phrasings in addition to English, so a German "no
+  evidence" answer correctly drops the misleading reference list. (The model
+  already answered German prompts in German; only the citation post-processing
+  was English-only.)
+
 ## v0.5.1 - 2026-06-06
 
 - Fix: variant queries with no gene symbol (e.g. a follow-up "what about the
