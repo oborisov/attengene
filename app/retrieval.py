@@ -77,6 +77,7 @@ def retrieve_variants(query: str, k: int = 5) -> list[VariantEvidence]:
 
 def retrieve_variants_hybrid(
     query: str, k: int = 5, alpha: float = 0.3, pool_size: int = 50,
+    lexical_floor: float = 0.45,
 ) -> list[VariantEvidence]:
     """
     Retrieve top-k variants using hybrid search (semantic + lexical).
@@ -84,14 +85,32 @@ def retrieve_variants_hybrid(
     Combines pgvector cosine similarity with pg_trgm trigram matching.
     Scores are min-max normalized before combining.
 
+    For ClinVar, the lexical (trigram) leg is the meaningful signal: an HGVS
+    query like c.526G>A either matches a variant name closely or it doesn't.
+    The semantic leg, by contrast, returns 50 near-identical "pathogenic
+    missense" neighbours, and min-max normalization then stretches that flat,
+    signal-free spread across [0,1] - manufacturing fake discrimination and
+    letting off-target variants surface for a variant that isn't in ClinVar
+    at all (e.g. a TRIP12 query smearing onto SPAST/KRT5/AR at ~0.31).
+
+    `lexical_floor` gates on the RAW (pre-normalization) trigram similarity:
+    any candidate whose best raw lexical score is below the floor is dropped.
+    A real match scores ~0.6+; trigram coincidence tops out around ~0.31. If
+    nothing clears the floor, the variant is absent from ClinVar and we return
+    an empty list rather than a normalized pile of noise. (Mirrors the
+    GeneReviews similarity-floor fix.)
+
     Args:
         query: Natural language query
         k: Number of results to return (default 5)
         alpha: Weight for semantic score; (1-alpha) for lexical (default 0.3)
         pool_size: Candidates to retrieve from each method before re-ranking
+        lexical_floor: Minimum raw trigram similarity for a candidate to
+            survive. Below this, lexical matches are coincidental noise.
 
     Returns:
-        List of VariantEvidence objects ordered by hybrid score (descending)
+        List of VariantEvidence objects ordered by hybrid score (descending).
+        Empty if no candidate clears the lexical floor.
     """
     embedding = encode(query)
 
@@ -146,6 +165,18 @@ def retrieve_variants_hybrid(
                     }
     finally:
         release_connection(conn)
+
+    # Lexical floor on the RAW trigram score, applied before normalization.
+    # A real HGVS/name match scores ~0.6+; trigram coincidence on a variant
+    # that isn't in ClinVar tops out around ~0.31. Dropping sub-floor
+    # candidates here means an absent-variant query returns [] instead of a
+    # min-max-normalized smear of unrelated variants (which would otherwise
+    # surface as authoritative-but-wrong ClinVar citations).
+    candidates = {
+        vid: c for vid, c in candidates.items() if c["lex"] >= lexical_floor
+    }
+    if not candidates:
+        return []
 
     # Normalize scores to [0, 1]
     sem_vals = [c["sem"] for c in candidates.values()]

@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.4.1 - 2026-06-06
+
+- Fix: ClinVar hybrid search no longer surfaces off-target variants when the
+  queried variant is absent. The hybrid score is min-max normalized, which
+  stretched a signal-free pool of trigram-coincidence matches (variants from
+  unrelated genes sharing an HGVS-like substring) across the full score range
+  and listed them as authoritative-but-wrong citations. A raw lexical-
+  similarity floor now drops sub-threshold candidates before normalization:
+  a real HGVS/name match scores well above the floor, so a query for a
+  variant that isn't in ClinVar returns no ClinVar evidence instead of noise.
+
 ## v0.4.0 - 2026-06-06
 
 - Feature: ClinVar variants are now searched in the chat pipeline. Previously
