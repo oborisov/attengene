@@ -44,23 +44,27 @@ def retrieve_variants_exact(parsed: ParsedVariant, k: int = 5) -> list[VariantEv
         return []
 
     where = " AND ".join(conds)
-    # Gene filter narrows further when we have a confident symbol, but stays
-    # optional: ClinVar names embed the gene, so a matching HGVS in the wrong
-    # gene is already unlikely, and an over-eager gene guess shouldn't zero out
-    # a correct HGVS hit. Apply gene only as a tie-breaker in ORDER BY.
-    gene_rank = "0"
+    # Gene narrows further when we have a confident symbol, but stays optional:
+    # ClinVar names embed the gene, so a matching HGVS in the wrong gene is
+    # already unlikely, and an over-eager gene guess shouldn't zero out a
+    # correct HGVS hit. Apply gene only as a tie-breaker in ORDER BY - and only
+    # when present (a bare "ORDER BY 0" is read by Postgres as column position
+    # 0, which is invalid; omit the term entirely instead).
+    order_params: list[str] = []
     if parsed.gene:
-        gene_rank = "CASE WHEN gene = %s THEN 0 ELSE 1 END"
+        order_by = "CASE WHEN gene = %s THEN 0 ELSE 1 END, variation_id"
+        order_params.append(parsed.gene)
+    else:
+        order_by = "variation_id"
 
     sql = f"""
         SELECT variation_id, gene, name, clinical_significance, review_status,
                array_to_string(phenotypes, '; ') AS phenotypes, document
         FROM variants
         WHERE {where}
-        ORDER BY {gene_rank}, variation_id
+        ORDER BY {order_by}
         LIMIT %s
     """
-    order_params = [parsed.gene] if parsed.gene else []
 
     conn = get_connection()
     try:

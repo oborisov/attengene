@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.5.1 - 2026-06-06
+
+- Fix: variant queries with no gene symbol (e.g. a follow-up "what about the
+  variant c.526G>A, p.(Ala176Thr)") crashed the exact ClinVar lookup with an
+  invalid SQL ordering clause. The query then fell back to semantic prose
+  search, which drifted to unrelated articles and could attach a wrong citation
+  to the variant. The exact lookup now handles gene-less queries correctly and
+  returns the right ClinVar entries.
+
 ## v0.5.0 - 2026-06-06
 
 - Feature: structured HGVS lookup for variant queries. Variant-level questions
