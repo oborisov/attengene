@@ -23,6 +23,7 @@ def log_query(
     model_used: str,
     latency_ms: int,
     client_ip: str | None = None,
+    query_type: str | None = None,
     was_rejected: bool = False,
     rejection_reason: str | None = None,
     error_message: str | None = None,
@@ -62,6 +63,7 @@ def log_query(
                     user_id,
                     client_ip,
                     query_text,
+                    query_type,
                     retrieved_variant_ids,
                     retrieval_scores,
                     response_text,
@@ -72,7 +74,7 @@ def log_query(
                     total_time_ms,
                     error_message
                 ) VALUES (
-                    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+                    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
                 )
                 """,
                 (
@@ -80,6 +82,7 @@ def log_query(
                     user_id,
                     client_ip,
                     query,
+                    query_type,
                     retrieved_variant_ids,
                     Json(retrieval_scores),
                     response,

@@ -1,8 +1,10 @@
 """
 Query classification and multi-database retrieval router.
 
-Chat-focused: searches GeneReviews, NephroGenetics, and PubMed for clinical
-questions. ClinVar variant lookup is a separate tool (not in chat pipeline).
+Chat-focused: searches ClinVar, GeneReviews, NephroGenetics, and PubMed for
+clinical questions. ClinVar hybrid search is engaged when the query carries a
+gene symbol or HGVS notation (variant-level questions); it is skipped for
+phenotype-only prose where the variants table only adds noise.
 """
 
 import logging
@@ -13,6 +15,7 @@ from dataclasses import dataclass, field
 from app.citations import build_citations, format_evidence_with_citations
 from app.models import Citation, VariantEvidence
 from app.pubmed import search_pubmed
+from app.retrieval import retrieve_variants_hybrid
 from app.retrieval_genereviews import (
     retrieve_genereviews,
     GeneReviewsChunk,
@@ -34,6 +37,7 @@ class RetrievalResult:
     citations: list[Citation] = field(default_factory=list)
     prompt_context: str = ""
     sources_searched: list[str] = field(default_factory=list)
+    query_type: str = ""
 
 
 # Kidney/renal terms for NephroGenetics routing
@@ -96,11 +100,12 @@ def _has_clinical_signal(query: str) -> bool:
 
 def route_and_retrieve(query: str, k: int = 10) -> RetrievalResult:
     """
-    Search GeneReviews, NephroGenetics, and PubMed for clinical context.
+    Search ClinVar, GeneReviews, NephroGenetics, and PubMed for clinical context.
 
-    ClinVar is excluded from the chat pipeline - variant lookup is a
-    separate tool. This keeps context focused on clinical information
-    that actually answers clinician questions.
+    ClinVar hybrid search runs only for variant-level queries - those that
+    name a gene symbol or carry HGVS notation. Phenotype-only prose skips
+    ClinVar, because the variants table only contributes noise there and the
+    nearest-neighbour match would leak an off-target variant into citations.
     """
     result = RetrievalResult()
     t0 = time.perf_counter()
@@ -112,7 +117,27 @@ def route_and_retrieve(query: str, k: int = 10) -> RetrievalResult:
     # back to a plain greeting.
     if not _has_clinical_signal(query):
         logger.info("Skipping retrieval (no clinical signal): %r", query)
+        result.query_type = "non-clinical"
         return result
+
+    gene_symbols = _extract_gene_symbols(query)
+    has_hgvs = bool(_HGVS_PATTERN.search(query))
+    result.query_type = "variant" if (gene_symbols or has_hgvs) else "phenotype"
+
+    # Search ClinVar (hybrid lexical+semantic) for variant-level queries.
+    # The lexical (pg_trgm) leg matches exact HGVS notation like c.526G>A,
+    # which pure semantic search misses; the gene/HGVS gate keeps the
+    # variants table out of phenotype-only prose where it adds only noise.
+    if gene_symbols or has_hgvs:
+        try:
+            t1 = time.perf_counter()
+            result.clinvar_evidence = retrieve_variants_hybrid(query, k=k)
+            if result.clinvar_evidence:
+                result.sources_searched.append("ClinVar")
+            logger.info("ClinVar search: %.1fs, %d variants",
+                         time.perf_counter() - t1, len(result.clinvar_evidence))
+        except Exception:
+            logger.exception("ClinVar search failed")
 
     # Always search GeneReviews (primary source for clinical questions).
     #
@@ -126,7 +151,6 @@ def route_and_retrieve(query: str, k: int = 10) -> RetrievalResult:
     # and the LLM reports no evidence with no misleading reference. We fall
     # back to an unfiltered semantic search only when no gene symbol is
     # present (e.g. phenotype-only questions).
-    gene_symbols = _extract_gene_symbols(query)
     try:
         t1 = time.perf_counter()
         result.genereviews_chunks = retrieve_genereviews(
@@ -170,7 +194,7 @@ def route_and_retrieve(query: str, k: int = 10) -> RetrievalResult:
 
     # Build citations and format evidence for the LLM
     result.citations = build_citations(
-        clinvar_evidence=[],
+        clinvar_evidence=result.clinvar_evidence,
         genereviews_chunks=result.genereviews_chunks,
         nephro_results=result.nephro_results,
         gnomad_data=[],
@@ -178,7 +202,7 @@ def route_and_retrieve(query: str, k: int = 10) -> RetrievalResult:
     )
     result.prompt_context = format_evidence_with_citations(
         citations=result.citations,
-        clinvar_evidence=[],
+        clinvar_evidence=result.clinvar_evidence,
         genereviews_chunks=result.genereviews_chunks,
         nephro_results=result.nephro_results,
         gnomad_data=[],

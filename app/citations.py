@@ -12,6 +12,17 @@ import re
 from app.models import Citation, CitationSource, VariantEvidence
 from app.retrieval_genereviews import GeneReviewsChunk
 
+# Phrases the model uses to signal the queried item is absent from evidence.
+# When present, the appended References block is suppressed (the listed
+# sources are off-target neighbours, not support for the answer).
+_NO_EVIDENCE_PATTERN = re.compile(
+    r"not (?:mentioned|described|listed|found|present|available) in "
+    r"the (?:retrieved |provided )?evidence"
+    r"|does not contain sufficient information"
+    r"|no (?:relevant |matching )?(?:evidence|variants?) (?:was|were) (?:retrieved|found)",
+    re.IGNORECASE,
+)
+
 
 def build_citations(
     clinvar_evidence: list[VariantEvidence] | None = None,
@@ -208,6 +219,14 @@ def postprocess_citations(response: str, citations: list[Citation]) -> str:
         return response
 
     by_number = {c.number: c for c in citations}
+
+    # When the model reports that the queried variant/condition is absent from
+    # the retrieved evidence, any citations attached to that answer are
+    # off-target neighbours (e.g. a pronoun-only follow-up that drifted into
+    # an unrelated gene). Suppressing the References block here stops those
+    # stray sources from being presented as if they supported the answer.
+    if _NO_EVIDENCE_PATTERN.search(response):
+        return response
 
     # Find which citation numbers the LLM actually used
     used_numbers = set()

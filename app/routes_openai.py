@@ -226,6 +226,7 @@ async def chat_completions(request: ChatCompletionRequest, req: Request):
             model_used=model_id,
             latency_ms=latency_ms,
             client_ip=client_ip,
+            query_type=retrieval.query_type,
             error_message=str(e),
         )
         return ChatCompletionResponse(
@@ -281,6 +282,7 @@ async def chat_completions(request: ChatCompletionRequest, req: Request):
         model_used=model_id,
         latency_ms=latency_ms,
         client_ip=client_ip,
+        query_type=retrieval.query_type,
         was_rejected=not response_validation.valid,
         rejection_reason=(
             response_validation.reason if not response_validation.valid else None
@@ -411,6 +413,7 @@ def _stream_response(
                 model_used=model_id,
                 latency_ms=latency_ms,
                 client_ip=client_ip,
+                query_type=retrieval.query_type,
                 error_message=str(e),
             )
             error_chunk = ChatCompletionChunk(
@@ -450,7 +453,10 @@ def _stream_response(
             )
             yield f"data: {refs_chunk.model_dump_json()}\n\n"
 
-        final_text = status_msg + accumulated_text + refs_suffix
+        # Persist the answer + references only. status_msg is a transient
+        # UI streaming frame ("*Searching databases...*") - it is shown to
+        # the client mid-stream but must not pollute the stored audit record.
+        final_text = accumulated_text + refs_suffix
 
         latency_ms = int((time.perf_counter() - start_time) * 1000)
 
@@ -463,6 +469,7 @@ def _stream_response(
             model_used=model_id,
             latency_ms=latency_ms,
             client_ip=client_ip,
+            query_type=retrieval.query_type,
             was_rejected=was_rejected,
             rejection_reason=(
                 response_validation.reason if was_rejected else None

@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.4.0 - 2026-06-06
+
+- Feature: ClinVar variants are now searched in the chat pipeline. Previously
+  variant-level questions ("what about c.526G>A in ALPL") were answered only
+  from narrative sources and missed the variant even when it was indexed.
+  The router now runs hybrid lexical+semantic search over ClinVar when the
+  query carries a gene symbol or HGVS notation, and cites the matching
+  ClinVar variation IDs. Phenotype-only queries still skip ClinVar so the
+  variants table does not add noise.
+- Fix: the References block is suppressed when the answer states the queried
+  item is absent from the retrieved evidence, so off-target neighbour sources
+  are no longer listed as if they supported a "not found" answer.
+- Fix: the transient "Searching databases..." status line is no longer
+  persisted into the stored response text.
+- Audit: each query is now classified (variant / phenotype / non-clinical)
+  and the classification plus retrieved variant IDs are recorded.
+
 ## v0.3.1 - 2026-06-02
 
 - Fix: GeneReviews retrieval no longer cites an unrelated gene's chapter.
