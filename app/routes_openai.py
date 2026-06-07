@@ -21,7 +21,7 @@ from fastapi.responses import JSONResponse, StreamingResponse
 
 from app.auth import verify_api_key
 from app.audit import log_query
-from app.citations import postprocess_citations
+from app.citations import postprocess_citations, REFERENCES_HEADING
 from app.guardrails import validate_query, validate_response
 from app.llm import (
     UnknownBackendError,
@@ -379,13 +379,55 @@ def _stream_response(
         )
 
         accumulated_text = ""
+        # The model is prompted to cite and some models append their own
+        # "References:" block in-stream. We render the canonical block ourselves
+        # afterwards (clickable links, correct titles), so we must NOT forward
+        # the model's own block - otherwise the answer shows two References
+        # sections (and tokens already shipped can't be recalled). Strategy:
+        # forward tokens normally, but once a References heading appears in the
+        # accumulated text, stop forwarding from the point it begins. We hold a
+        # small tail buffer so a heading split across token boundaries is caught
+        # before its first character is streamed.
+        streamed_len = 0          # chars of accumulated_text already forwarded
+        refs_started = False      # the model began its own References block
+        TAIL = 24                 # >= longest heading prefix we match on
+
+        def _refs_start(text: str) -> int | None:
+            m = REFERENCES_HEADING.search(text)
+            return m.start() if m else None
+
         try:
             async for token in generate_stream(llm_messages, model_id):
                 accumulated_text += token
+                if refs_started:
+                    continue  # swallow the model's own ref block
+                start = _refs_start(accumulated_text)
+                if start is not None:
+                    refs_started = True
+                    safe_upto = start  # don't stream the heading or anything after
+                else:
+                    # Hold back a tail so a heading forming across tokens isn't
+                    # streamed before we can detect it.
+                    safe_upto = max(streamed_len, len(accumulated_text) - TAIL)
+                if safe_upto > streamed_len:
+                    out = accumulated_text[streamed_len:safe_upto]
+                    streamed_len = safe_upto
+                    chunk = ChatCompletionChunk(
+                        id=completion_id,
+                        model=model_id,
+                        choices=[StreamChoice(delta=DeltaMessage(content=out))],
+                    )
+                    yield f"data: {chunk.model_dump_json()}\n\n"
+            # Flush any held-back tail (only when the model never started a refs
+            # block; if it did, everything from the heading on is intentionally
+            # dropped).
+            if not refs_started and streamed_len < len(accumulated_text):
+                out = accumulated_text[streamed_len:]
+                streamed_len = len(accumulated_text)
                 chunk = ChatCompletionChunk(
                     id=completion_id,
                     model=model_id,
-                    choices=[StreamChoice(delta=DeltaMessage(content=token))],
+                    choices=[StreamChoice(delta=DeltaMessage(content=out))],
                 )
                 yield f"data: {chunk.model_dump_json()}\n\n"
         except UnknownBackendError:
@@ -440,9 +482,13 @@ def _stream_response(
             accumulated_text = response_validation.filtered_response
             was_rejected = True
 
-        # The body was already streamed token-by-token with bare [N] markers;
-        # we can only append the References section now. (Rewriting [N] ->
-        # [[N]](url) in-place isn't possible after the tokens have shipped.)
+        # The body was already streamed token-by-token with bare [N] markers,
+        # and the model's own References block (if any) was withheld mid-stream
+        # above. We now append our canonical References block. postprocess_
+        # citations() also strips any model-written ref block from its input, so
+        # _references_suffix gives only our block - no duplication. (Rewriting
+        # [N] -> [[N]](url) in the body in-place isn't possible after the tokens
+        # have shipped.)
         processed = postprocess_citations(accumulated_text, citations)
         refs_suffix = _references_suffix(processed)
         if refs_suffix:
@@ -453,10 +499,11 @@ def _stream_response(
             )
             yield f"data: {refs_chunk.model_dump_json()}\n\n"
 
-        # Persist the answer + references only. status_msg is a transient
-        # UI streaming frame ("*Searching databases...*") - it is shown to
-        # the client mid-stream but must not pollute the stored audit record.
-        final_text = accumulated_text + refs_suffix
+        # Persist what the client actually received: the streamed body with the
+        # model's own ref block stripped (matching what we forwarded), plus our
+        # canonical block. status_msg is a transient UI frame and is excluded.
+        streamed_body = REFERENCES_HEADING.split(accumulated_text)[0].rstrip()
+        final_text = streamed_body + refs_suffix
 
         latency_ms = int((time.perf_counter() - start_time) * 1000)
 

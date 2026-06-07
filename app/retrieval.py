@@ -43,33 +43,42 @@ def retrieve_variants_exact(parsed: ParsedVariant, k: int = 5) -> list[VariantEv
     if not conds:
         return []
 
-    where = " AND ".join(conds)
-    # Gene narrows further when we have a confident symbol, but stays optional:
-    # ClinVar names embed the gene, so a matching HGVS in the wrong gene is
-    # already unlikely, and an over-eager gene guess shouldn't zero out a
-    # correct HGVS hit. Apply gene only as a tie-breaker in ORDER BY - and only
-    # when present (a bare "ORDER BY 0" is read by Postgres as column position
-    # 0, which is invalid; omit the term entirely instead).
-    order_params: list[str] = []
+    # Gene narrows to the gene in scope when we have a confident symbol. This
+    # is a FILTER, not just an ORDER BY tie-breaker: HGVS coordinates are not
+    # unique across the genome - common ones (e.g. c.203C>T, c.526G>A) exist in
+    # multiple genes, so an HGVS-only match pulls in same-coordinate variants
+    # from unrelated genes (ALPL query -> GP1BB/PNPT1 ride along). Sorting alone
+    # still returns them under LIMIT k, where they surface as authoritative-but-
+    # wrong-gene ClinVar citations. Filtering makes that impossible.
+    #
+    # When the gene is filtered to empty, that is the correct answer: the variant
+    # is not in THIS gene. We return [] (a clean true negative) rather than
+    # leaking a same-coordinate hit from another gene; the caller then falls back
+    # to prose/hybrid and reports absence.
+    #
+    # When no gene was parsed (e.g. a gene-less follow-up "what about c.526G>A"),
+    # we cannot filter and keep the old ungated behavior - ordering by
+    # variation_id - so a correct hit is never zeroed out. (Threading the
+    # last-known gene from conversation history into retrieval is a separate,
+    # larger change.)
     if parsed.gene:
-        order_by = "CASE WHEN gene = %s THEN 0 ELSE 1 END, variation_id"
-        order_params.append(parsed.gene)
-    else:
-        order_by = "variation_id"
+        conds.append("gene = %s")
+        params.append(parsed.gene)
 
+    where = " AND ".join(conds)
     sql = f"""
         SELECT variation_id, gene, name, clinical_significance, review_status,
                array_to_string(phenotypes, '; ') AS phenotypes, document
         FROM variants
         WHERE {where}
-        ORDER BY {order_by}
+        ORDER BY variation_id
         LIMIT %s
     """
 
     conn = get_connection()
     try:
         with conn.cursor() as cur:
-            cur.execute(sql, (*params, *order_params, k))
+            cur.execute(sql, (*params, k))
             rows = cur.fetchall()
     finally:
         release_connection(conn)

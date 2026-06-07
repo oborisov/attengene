@@ -12,6 +12,26 @@ import re
 from app.models import Citation, CitationSource, VariantEvidence
 from app.retrieval_genereviews import GeneReviewsChunk
 
+# The heading of a References section the LLM wrote itself (it is prompted to
+# cite, and some models append their own "References:" list). Matches an optional
+# markdown rule, optional "**"/"#" decoration, the word References, and a
+# trailing ':' or newline. Shared with the streaming path so it can stop
+# forwarding the model's own block before its first character is shipped.
+REFERENCES_HEADING = re.compile(
+    r"\n+(?:-{3,}\s*\n+)?"        # optional horizontal rule
+    r"(?:\*{0,2}|#{1,6}\s*)"      # optional bold / heading markers
+    r"References\b\s*:?\**",      # the heading word + optional colon/bold
+    re.IGNORECASE,
+)
+
+# Same heading plus everything after it to end-of-text: the full block to strip
+# from a complete (non-streamed) response before we append our canonical one,
+# so the answer never ends up with two References sections.
+_LLM_REFERENCES_BLOCK = re.compile(
+    REFERENCES_HEADING.pattern + r".*$",
+    re.IGNORECASE | re.DOTALL,
+)
+
 # Phrases the model uses to signal the queried item is absent from evidence.
 # When present, the appended References block is suppressed (the listed
 # sources are off-target neighbours, not support for the answer).
@@ -239,11 +259,19 @@ def postprocess_citations(response: str, citations: list[Citation]) -> str:
 
     by_number = {c.number: c for c in citations}
 
+    # Strip any References section the LLM wrote itself first, so we don't end
+    # up appending a second one (duplicate-References bug) and so the no-evidence
+    # check below looks at the answer prose, not the model's own ref list. We
+    # rebuild a canonical block (clickable links, correct titles) from our
+    # citations afterwards.
+    response = _LLM_REFERENCES_BLOCK.sub("", response).rstrip()
+
     # When the model reports that the queried variant/condition is absent from
     # the retrieved evidence, any citations attached to that answer are
     # off-target neighbours (e.g. a pronoun-only follow-up that drifted into
     # an unrelated gene). Suppressing the References block here stops those
-    # stray sources from being presented as if they supported the answer.
+    # stray sources from being presented as if they supported the answer. We
+    # return the response with the LLM's own (stray) ref block already stripped.
     if _NO_EVIDENCE_PATTERN.search(response):
         return response
 

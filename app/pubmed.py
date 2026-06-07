@@ -104,8 +104,17 @@ def _efetch(pmids: list[str]) -> list[dict]:
             continue
 
         pmid = pmid_el.text or ""
-        title = title_el.text or ""
-        abstract = abstract_el.text or "" if abstract_el is not None else ""
+        # ArticleTitle / AbstractText carry inline markup (<i>, <sup>, <b>) for
+        # gene names, italics, etc. ElementTree's .text stops at the first child
+        # element, so a title like "...Variants in the <i>TRIP12</i> Gene" was
+        # silently truncated to "...Variants in the ". itertext() walks the
+        # whole subtree and concatenates every text node, preserving the full
+        # string minus the (display-only) tags.
+        title = "".join(title_el.itertext()).strip()
+        abstract = (
+            "".join(abstract_el.itertext()).strip()
+            if abstract_el is not None else ""
+        )
 
         # Truncate abstract
         if len(abstract) > _MAX_ABSTRACT_LEN:

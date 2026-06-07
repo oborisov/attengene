@@ -1,5 +1,30 @@
 # Changelog
 
+## v0.5.3 - 2026-06-07
+
+Three clinical-correctness fixes for variant citations, surfaced by real chat
+logs and verified against the live ClinVar corpus:
+
+- Fix: wrong-gene citation bleed. HGVS coordinates are not unique across the
+  genome - a coordinate like `c.203C>T (p.Thr68Met)` exists in more than one
+  gene (e.g. ALPL and GP1BB), and `c.526G>A (p.Ala176Thr)` in ALPL and PNPT1.
+  The exact ClinVar lookup used the parsed gene only as a sort tie-breaker, so
+  the same-coordinate variant from the *wrong* gene could still ride in under
+  the result limit and be presented as an authoritative citation. The gene is
+  now a hard filter when confidently parsed: a gene-filtered-empty result is the
+  correct true negative (the answer falls back to prose) rather than a leaked
+  wrong-gene hit. When no gene is parsed, the previous ungated behavior is kept
+  so a correct hit is never zeroed out.
+- Fix: duplicate "References" block. Some models append their own References
+  list in their answer, and the citation post-processor then appended a second,
+  canonical one. Post-processing now strips any model-written References block
+  before rebuilding the canonical one, and the streaming path stops forwarding
+  the model's own block mid-stream (since shipped tokens can't be recalled).
+- Fix: truncated PubMed citation titles. Titles and abstracts carry inline
+  markup (e.g. `<i>GENE</i>`); the XML parser stopped at the first child element
+  and silently truncated the title (e.g. dropping a trailing gene name). It now
+  walks the whole subtree so the full title is captured.
+
 ## v0.5.2 - 2026-06-06
 
 - Fix: when the model reported in German that a queried variant or condition was
