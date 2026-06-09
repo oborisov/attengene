@@ -1,5 +1,36 @@
 # Changelog
 
+## v0.6.0 - 2026-06-09
+
+Role-boundary guardrails and citation grounding, surfaced by a manual walk
+through a gold-standard query catalog against a live instance.
+
+- New: patient-specific role boundary. The assistant now declines requests to
+  diagnose, prognosticate for, manage, or advise on patient communication for a
+  **specific individual** ("diagnose this 5-year-old...", "should I tell my
+  patient they will get cancer?") and directs the user to a qualified clinical
+  geneticist. General and educational questions ("how is cystic fibrosis
+  diagnosed?", "what is the surveillance interval in Lynch syndrome?") are
+  explicitly unaffected and answered normally. Enforced across three layers: the
+  system prompt, a pre-generation keyword check, and a post-generation pattern
+  check that catches third-person differential delivery for a named patient.
+- New: pathogenicity-classification boundary. Requests to generate, score,
+  reclassify, or give an opinion on a variant's pathogenicity (e.g. "apply the
+  ACMG criteria and give me a final score", "is this VUS pathogenic in your
+  opinion?") are declined - the system reports existing ClinVar classifications
+  but never generates its own.
+- Fix: fabricated provenance on no-evidence answers. When nothing relevant was
+  retrieved, the model could fill its inline "Source:" line from its own
+  training, citing databases the pipeline does not use (e.g. NCBI Gene, UniProt)
+  for a gene with no corpus hit. The Source line is now sanitized against an
+  allowlist (ClinVar, GeneReviews, NephroGenetics, PubMed); fabricated tuples
+  are dropped.
+- Fix: no-evidence answers leaked stray references. The phrase matcher that
+  suppresses the References block on a "no relevant evidence" answer missed
+  several common phrasings ("No X is described in the evidence", "does not
+  document ... in the evidence", "... based on the retrieved evidence", "... in
+  the provided references"); those off-target citations no longer appear.
+
 ## v0.5.3 - 2026-06-07
 
 Three clinical-correctness fixes for variant citations, surfaced by real chat

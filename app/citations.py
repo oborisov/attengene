@@ -32,6 +32,27 @@ _LLM_REFERENCES_BLOCK = re.compile(
     re.IGNORECASE | re.DOTALL,
 )
 
+# Databases the system actually retrieves from. The model is prompted to end its
+# ANSWER with an inline "Source: <db> - <title> [<id>]; ..." line. When retrieval
+# comes up empty the model sometimes invents provenance from its own training -
+# e.g. citing "NCBI Gene [GeneID 340070]" or "UniProt [P0DJD8]" for a gene with
+# no corpus hit. Those databases are not in the pipeline, so any Source tuple
+# naming one is fabricated and must be dropped. Allowlist only - a tuple is
+# removed only when its leading db token is a KNOWN disallowed source, never when
+# it is merely unrecognized (avoids eating a valid source we forgot to list).
+_ALLOWED_SOURCE_DBS = (
+    "clinvar", "genereviews", "gene reviews", "nephrogenetics",
+    "pmid", "pubmed",
+)
+_DISALLOWED_SOURCE_DBS = (
+    "ncbi gene", "ncbigene", "gene id", "geneid", "entrez",
+    "uniprot", "ensembl", "refseq", "dbsnp", "genecards", "wikipedia",
+)
+# The "Source: ..." segment of the ANSWER. The model emits it inline at the end
+# of the ANSWER paragraph (not necessarily at line start), running to end of line
+# or end of text. Capture the "Source:" lead-in and the tuple list after it.
+_SOURCE_LINE = re.compile(r"(?i)(Source:\s*)([^\n]+)")
+
 # Phrases the model uses to signal the queried item is absent from evidence.
 # When present, the appended References block is suppressed (the listed
 # sources are off-target neighbours, not support for the answer).
@@ -42,10 +63,21 @@ _LLM_REFERENCES_BLOCK = re.compile(
 # return on a German "no evidence" answer.
 _NO_EVIDENCE_PATTERN = re.compile(
     # English
-    r"not (?:mentioned|described|listed|found|present|available) in "
+    r"not (?:mentioned|described|listed|found|present|available|documented|reported) in "
     r"the (?:retrieved |provided )?evidence"
     r"|does not contain sufficient information"
     r"|no (?:relevant |matching )?(?:evidence|variants?) (?:was|were) (?:retrieved|found)"
+    # "No <noun> ... is/are described|reported|documented|mentioned in the
+    # ... evidence/references" (leading-No negation; Q10/Q10b phrasing)
+    r"|no .{0,120}?(?:is|are|or any .{0,60}?is) "
+    r"(?:described|reported|documented|mentioned|listed|present) "
+    r"in the (?:retrieved |provided )?(?:evidence|references)"
+    # "does not document ... in the (retrieved/provided) evidence"
+    r"|does not (?:document|describe|mention|list|report|contain) .{0,80}?"
+    r"in the (?:retrieved |provided )?evidence"
+    # leading-No negation ending in "based on the retrieved/provided evidence"
+    # (Q11: "No conditions are reported ... based on the retrieved evidence")
+    r"|no .{0,160}?based on the (?:retrieved|provided) evidence"
     # German: "nicht in den (bereitgestellten/abgerufenen) Belegen/Nachweisen
     # (erwähnt/enthalten/aufgeführt)"
     r"|nicht in den (?:bereitgestellten |abgerufenen )?"
@@ -245,15 +277,52 @@ def format_evidence_with_citations(
     return "\n\n".join(parts)
 
 
+def sanitize_source_line(response: str) -> str:
+    """
+    Drop fabricated provenance from the model's inline "Source: ..." line.
+
+    The model ends its ANSWER with "Source: <db> - <title> [<id>]; ..." built
+    from retrieved evidence. When nothing relevant was retrieved it sometimes
+    fills that line from parametric knowledge, citing databases the pipeline
+    does not use (NCBI Gene, UniProt, ...). Each semicolon-separated tuple whose
+    db token is a KNOWN disallowed source is removed; allowed/unrecognized tuples
+    are kept. If every tuple is dropped, the empty "Source:" lead-in is removed.
+    """
+    def _clean(m: re.Match) -> str:
+        lead, body = m.group(1), m.group(2)
+        kept = []
+        for tuple_ in body.split(";"):
+            t = tuple_.strip()
+            if not t:
+                continue
+            low = t.lower()
+            if any(bad in low for bad in _DISALLOWED_SOURCE_DBS):
+                continue  # fabricated provenance - drop
+            kept.append(t)
+        if not kept:
+            return ""  # nothing legitimate left; drop the whole Source: line
+        return f"{lead}{'; '.join(kept)}"
+
+    cleaned = _SOURCE_LINE.sub(_clean, response)
+    # Tidy any double-space / dangling space left where a Source segment was removed
+    cleaned = re.sub(r"[ \t]{2,}", " ", cleaned)
+    return re.sub(r"[ \t]+(\n|$)", r"\1", cleaned)
+
+
 def postprocess_citations(response: str, citations: list[Citation]) -> str:
     """
     Post-process LLM response: replace [N] with clickable markdown links
     and append a References section.
 
     The LLM outputs plain [1], [2] markers. This function:
-    1. Replaces [N] with [[N]](url) for clickable links in markdown
-    2. Appends a formatted References section at the end
+    1. Strips fabricated Source-line provenance (sanitize_source_line)
+    2. Replaces [N] with [[N]](url) for clickable links in markdown
+    3. Appends a formatted References section at the end
     """
+    # Always scrub fabricated provenance, even on the no-citations / no-evidence
+    # paths (the OR4F5 UniProt leak happened on a no-evidence answer).
+    response = sanitize_source_line(response)
+
     if not citations:
         return response
 

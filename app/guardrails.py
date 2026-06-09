@@ -31,6 +31,49 @@ DIAGNOSIS_KEYWORDS = [
     "confirm disease",
     "confirm condition",
     "rule out",
+    # Imperative patient framing - "Diagnose this 5-year-old..." (Q12). Anchored
+    # to "this"/"the patient" so it stays patient-specific and does not catch the
+    # educational "how is X diagnosed?" use case.
+    "diagnose this",
+    "diagnose the patient",
+    "diagnose this patient",
+    "what does my patient have",
+    "what's wrong with my patient",
+    "whats wrong with my patient",
+    # Patient-communication / prognosis-for-a-person (Q13)
+    "should i tell my patient",
+    "should i tell them",
+    "tell my patient",
+    "will my patient",
+    "will they get",
+    "will i get",
+    # Patient-specific prognosis / report-interpretation / confirm-my-call
+    "how long does he have",
+    "how long does she have",
+    "how long do i have",
+    "interpret it and tell me",
+    "interpret my",
+    "confirm the diagnosis",
+    "confirm my suspicion",
+]
+
+# Phrases asking the system to GENERATE a pathogenicity classification (guardrail
+# #2: never generate classifications - only report what ClinVar already says).
+# High-precision: each phrase implies the user wants US to make/score/override a
+# call, not retrieve an existing one. "What is the clinical significance of..."
+# and "is X pathogenic?" stay OUT - those are lookups answered from evidence.
+PATHOGENICITY_KEYWORDS = [
+    "classify this",
+    "classify the variant",
+    "reclassify",
+    "in your opinion",
+    "pathogenicity score",
+    "apply the acmg",
+    "acmg criteria",
+    "predict whether",
+    "predict if",
+    "what is the real answer",
+    "give me a final",
 ]
 
 # Keywords indicating treatment intent
@@ -60,6 +103,14 @@ RESPONSE_DIAGNOSIS_PATTERNS = [
     r"\bi diagnose\b",
     r"\bthe diagnosis is\b",
     r"\bbased on (?:this|these) (?:variant|result)s?,? (?:you|the patient) (?:has|have)\b",
+    # Third-person differential delivered for a SPECIFIC patient (Q12 shape):
+    # "...in a 5-year-old is associated with X syndrome", "this patient is
+    # consistent with...". Requires a patient-deictic subject so general
+    # educational "X is associated with Y" statements are NOT flagged.
+    r"\b(?:this|the)\s+(?:\d+[\s-]?year[\s-]?old|patient|child|individual|case|boy|girl|man|woman)\b"
+    r".{0,120}?\b(?:is (?:consistent with|associated with|suggestive of|diagnostic of|indicative of)|most likely has|likely has|points to)\b",
+    r"\bin (?:a|this|the)\s+(?:\d+[\s-]?year[\s-]?old|patient|child|individual|case)\b"
+    r".{0,120}?\bis associated with\b",
 ]
 
 RESPONSE_TREATMENT_PATTERNS = [
@@ -107,6 +158,16 @@ def validate_query(query: str) -> ValidationResult:
             return ValidationResult(
                 valid=False,
                 reason="This system cannot provide diagnoses. Please consult a qualified healthcare professional.",
+                filtered_response="",
+            )
+
+    # Check pathogenicity-classification intent (we report ClinVar's existing
+    # classification; we never generate, score, or override one)
+    for keyword in PATHOGENICITY_KEYWORDS:
+        if keyword in query_lower:
+            return ValidationResult(
+                valid=False,
+                reason="This system reports existing ClinVar classifications but cannot generate, score, or override variant pathogenicity calls. Please consult ClinVar and a qualified clinical geneticist.",
                 filtered_response="",
             )
 
