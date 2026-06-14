@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.11.0 - 2026-06-14
+
+Gene-only ClinVar lookups now return variants.
+
+- New: a query that names only a gene ("BRCA1", with no HGVS notation) now
+  returns representative ClinVar variants for that gene. Previously it returned
+  nothing: the exact-HGVS tier had no variant token to match, and the hybrid
+  tier's lexical leg scored the short gene symbol against full variant names far
+  below its similarity floor, so every candidate was dropped - even for a gene
+  with thousands of records. A new gene-exact tier does a direct gene-column
+  lookup, ordered by ClinVar review status (expert-panel and multi-submitter
+  records first) so the returned variants are the most authoritative for the
+  gene. It runs only for a bare gene with no variant token; HGVS queries still
+  go through the exact tier, and a gene absent from ClinVar falls through to
+  hybrid search as before.
+
 ## v0.10.0 - 2026-06-14
 
 Lighter Docker-Compose try-it path.

@@ -109,6 +109,91 @@ def retrieve_variants_exact(parsed: ParsedVariant, k: int = 5) -> list[VariantEv
     return results
 
 
+# ClinVar review-status quality tiers (the "gold stars"), best first. Used to
+# surface the most authoritative variants when a query names only a gene.
+_REVIEW_STATUS_RANK = {
+    "practice guideline": 0,
+    "reviewed by expert panel": 1,
+    "criteria provided, multiple submitters, no conflicts": 2,
+    "criteria provided, single submitter": 3,
+    "criteria provided, conflicting classifications": 4,
+    "criteria provided, conflicting interpretations": 4,
+    "no assertion criteria provided": 5,
+    "no assertion for the individual variant": 6,
+    "no classification provided": 7,
+}
+_REVIEW_STATUS_RANK_DEFAULT = 8
+
+
+def retrieve_variants_by_gene(gene: str, k: int = 5) -> list[VariantEvidence]:
+    """Exact gene-column lookup for a bare gene query (e.g. "BRCA1").
+
+    A query that names a gene but carries no HGVS token has an exact match
+    sitting in the `gene` column, but neither the HGVS-exact tier (no variant
+    token) nor the hybrid tier finds it: a short gene symbol trigram-matches a
+    full variant *name* far below the lexical floor (e.g. "BRCA1" vs
+    "NM_007294.4(BRCA1):c.190T>G" scores ~0.23 < 0.45), so hybrid drops every
+    candidate and returns nothing. This tier closes that gap with a direct
+    `gene = %s` filter.
+
+    Ordered by ClinVar review status (expert-panel/multi-submitter first) so
+    the k returned are the most authoritative variants for the gene, not an
+    arbitrary slice. Empty list when the gene is absent from ClinVar.
+    """
+    if not gene:
+        return []
+
+    # Rank review_status in SQL via a CASE so ordering happens in the DB. The
+    # rank ints are trusted constants (inlined); only the status strings are
+    # parameterized.
+    when_clauses = "\n".join(
+        f"WHEN review_status = %s THEN {rank}"
+        for status, rank in _REVIEW_STATUS_RANK.items()
+    )
+    status_params = list(_REVIEW_STATUS_RANK.keys())
+
+    sql = f"""
+        SELECT variation_id, gene, name, clinical_significance, review_status,
+               array_to_string(phenotypes, '; ') AS phenotypes, document
+        FROM variants
+        WHERE gene = %s
+        ORDER BY
+            CASE
+                {when_clauses}
+                ELSE {_REVIEW_STATUS_RANK_DEFAULT}
+            END,
+            variation_id
+        LIMIT %s
+    """
+
+    # Params must be in the SQL's textual placeholder order: WHERE gene first,
+    # then the CASE status strings, then LIMIT.
+    conn = get_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(sql, (gene, *status_params, k))
+            rows = cur.fetchall()
+    finally:
+        release_connection(conn)
+
+    results = []
+    for row in rows:
+        (variation_id, gene_sym, name, sig, review, pheno, document) = row
+        results.append(
+            VariantEvidence(
+                variation_id=variation_id,
+                gene_symbol=gene_sym,
+                variant_name=name,
+                clinical_significance=sig,
+                review_status=review or "",
+                condition_names=pheno or None,
+                similarity=1.0,  # exact gene match - not a similarity score
+                document=document,
+            )
+        )
+    return results
+
+
 def retrieve_variants(query: str, k: int = 5) -> list[VariantEvidence]:
     """
     Retrieve top-k variants matching the query using vector similarity.

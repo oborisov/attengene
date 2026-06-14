@@ -18,7 +18,11 @@ from app.citations import build_citations, format_evidence_with_citations
 from app.models import Citation, VariantEvidence
 from app.pubmed import search_pubmed
 from app.hgvs import parse_variant
-from app.retrieval import retrieve_variants_exact, retrieve_variants_hybrid
+from app.retrieval import (
+    retrieve_variants_exact,
+    retrieve_variants_by_gene,
+    retrieve_variants_hybrid,
+)
 from app.retrieval_genereviews import (
     retrieve_genereviews,
     GeneReviewsChunk,
@@ -333,6 +337,15 @@ def route_and_retrieve(
             parsed = parse_variant(query)
             result.clinvar_evidence = retrieve_variants_exact(parsed, k=k)
             tier = "exact"
+            # Gene-exact tier: a bare gene ("BRCA1") with no HGVS token has no
+            # exact-HGVS match, and the hybrid lexical leg trigram-matches the
+            # short symbol against full variant names far below the floor, so it
+            # too returns nothing - even though the gene has thousands of
+            # variants. Look them up directly by gene before falling back to
+            # hybrid.
+            if not result.clinvar_evidence and gene_symbols and not parsed.has_variant_token:
+                result.clinvar_evidence = retrieve_variants_by_gene(gene_symbols[0], k=k)
+                tier = "gene"
             if not result.clinvar_evidence:
                 result.clinvar_evidence = retrieve_variants_hybrid(query, k=k)
                 tier = "hybrid"
