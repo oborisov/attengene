@@ -24,6 +24,7 @@ class GeneReviewsChunk:
     chunk_index: int
     token_estimate: int
     similarity: float  # cosine similarity score
+    retired: bool = False  # retired/historical chapter (excluded by default)
 
 
 def retrieve_genereviews(
@@ -32,6 +33,7 @@ def retrieve_genereviews(
     gene_filter: list[str] = None,
     section_types: list[str] = None,
     similarity_threshold: float = 0.6,
+    include_retired: bool = False,
 ) -> list[GeneReviewsChunk]:
     """
     Retrieve top-k GeneReviews chunks matching the query.
@@ -45,6 +47,10 @@ def retrieve_genereviews(
             on-target chunks score ~0.7-0.8, while off-target "genetics
             prose" noise (e.g. an unrelated gene matching a gene query)
             tops out around 0.55, so 0.6 cleanly drops the noise.
+        include_retired: If False (default), exclude retired/historical
+            chapters so they never appear as a cited clinical source. The
+            "RETIRED CHAPTER, FOR HISTORICAL REFERENCE ONLY" chapters carry
+            dead Bookshelf links and stale content - never a primary source.
 
     Returns:
         List of GeneReviewsChunk objects ordered by similarity (descending)
@@ -57,6 +63,9 @@ def retrieve_genereviews(
             # Build query with optional filters
             where_clauses = ["1 - (embedding <=> %s::vector) > %s"]
             params = [embedding, similarity_threshold]
+
+            if not include_retired:
+                where_clauses.append("retired = false")
 
             if gene_filter:
                 where_clauses.append("gene_symbols && %s")
@@ -80,6 +89,7 @@ def retrieve_genereviews(
                     chunk_text,
                     chunk_index,
                     token_estimate,
+                    retired,
                     1 - (embedding <=> %s::vector) as similarity
                 FROM genereviews_chunks
                 WHERE {where_sql}
@@ -106,7 +116,8 @@ def retrieve_genereviews(
                     chunk_text=row[7],
                     chunk_index=row[8],
                     token_estimate=row[9],
-                    similarity=row[10],
+                    retired=row[10],
+                    similarity=row[11],
                 ))
 
             return results

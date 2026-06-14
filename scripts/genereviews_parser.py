@@ -38,6 +38,7 @@ class GeneReviewsSection:
     chunk_index: int  # 0 for single-chunk sections, 0,1,2... for multi-chunk
     char_count: int
     token_estimate: int
+    retired: bool  # True if the chapter is retired/historical (title marker)
 
 
 # Chunking configuration
@@ -209,6 +210,19 @@ SECTION_TYPE_MAP = {
 }
 
 
+# Retired GeneReviews chapters carry a marker like
+# "... – RETIRED CHAPTER, FOR HISTORICAL REFERENCE ONLY" in the article title.
+# The dash before "RETIRED" varies in the source (en-dash, box-drawing char),
+# so match on the stable "RETIRED CHAPTER" / "FOR HISTORICAL REFERENCE ONLY"
+# text rather than the punctuation.
+_RETIRED_MARKER = re.compile(r"retired chapter|for historical reference only", re.IGNORECASE)
+
+
+def is_retired_title(article_title: str) -> bool:
+    """True if an article title marks the chapter as retired/historical."""
+    return bool(article_title and _RETIRED_MARKER.search(article_title))
+
+
 def normalize_section_type(section_id: str) -> str:
     """Map section ID to normalized section type."""
     # Extract the part after the shortname (e.g., "hnpcc.Diagnosis" -> "diagnosis")
@@ -373,6 +387,9 @@ def parse_nxml(file_path: Path | str, xml_content: bytes = None) -> Iterator[Gen
     # Condition name - prefer from metadata (standardized)
     condition_name = meta.condition_name if meta else article_title
 
+    # Retired/historical chapters are marked in the title; flag once here.
+    retired = is_retired_title(article_title)
+
     # Gene symbols - prefer from metadata file (more complete)
     if meta and meta.gene_symbols:
         gene_symbols = meta.gene_symbols
@@ -437,6 +454,7 @@ def parse_nxml(file_path: Path | str, xml_content: bytes = None) -> Iterator[Gen
                     chunk_index=chunk_idx,
                     char_count=char_count,
                     token_estimate=token_estimate,
+                    retired=retired,
                 )
 
         # Process nested sections

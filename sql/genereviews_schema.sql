@@ -26,6 +26,12 @@ CREATE TABLE IF NOT EXISTS genereviews_chunks (
     char_count INT,
     token_estimate INT,
 
+    -- Retired/historical GeneReviews chapters carry a "RETIRED CHAPTER,
+    -- FOR HISTORICAL REFERENCE ONLY" marker in their title. They must not be
+    -- surfaced as live clinical sources. Set at index time from the title
+    -- marker; retrieval default-excludes retired = true.
+    retired BOOLEAN NOT NULL DEFAULT false,
+
     -- Vector embedding (BGE-large uses 1024 dimensions)
     embedding vector(1024),
 
@@ -74,3 +80,10 @@ ORDER BY nbk_id, id;
 -- Comment on table
 COMMENT ON TABLE genereviews_chunks IS 'GeneReviews article sections for RAG retrieval';
 COMMENT ON COLUMN genereviews_chunks.embedding IS 'BGE-large-en-v1.5 embedding (1024 dimensions)';
+COMMENT ON COLUMN genereviews_chunks.retired IS 'True for retired/historical GeneReviews chapters (title marker); excluded from retrieval by default';
+
+-- Migration for an already-populated table (in-place backfill, no re-index):
+--   ALTER TABLE genereviews_chunks ADD COLUMN IF NOT EXISTS retired BOOLEAN NOT NULL DEFAULT false;
+--   UPDATE genereviews_chunks SET retired = true WHERE article_title ILIKE '%RETIRED CHAPTER%';
+-- A fresh re-index sets `retired` at index time, so the UPDATE is only needed
+-- when adding the column to an existing index without re-indexing.

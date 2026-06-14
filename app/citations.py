@@ -9,6 +9,7 @@ and a References section.
 import json
 import re
 
+from app.genereviews import genereviews_url
 from app.models import Citation, CitationSource, VariantEvidence
 from app.retrieval_genereviews import GeneReviewsChunk
 
@@ -134,7 +135,7 @@ def build_citations(
             title_parts.append(f"({genes})")
         title_parts.append(f"[{chunk.nbk_id}]")
         title = " ".join(title_parts)
-        url = f"https://www.ncbi.nlm.nih.gov/books/{chunk.nbk_id}/"
+        url = genereviews_url(chunk.nbk_id)
         citations.append(Citation(
             number=n, source=CitationSource.GENEREVIEWS,
             title=title, url=url,

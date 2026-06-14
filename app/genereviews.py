@@ -10,8 +10,29 @@ See: https://www.ncbi.nlm.nih.gov/books/NBK1116/ for full terms.
 """
 
 import os
+import re
 from dataclasses import dataclass
 from pathlib import Path
+
+# Only numeric NCBI Bookshelf IDs (NBK followed by digits) resolve as a live
+# /books/<id>/ page. Some indexed chapters carry a shortname-derived fallback
+# id (e.g. "NBKwagner", "NBKaic") that was never a real Bookshelf ID - building
+# a /books/ URL from those yields a dead link. For those, link to the
+# GeneReviews landing page instead of presenting a broken source to a clinician.
+_NUMERIC_NBK = re.compile(r"^NBK\d+$")
+_GENEREVIEWS_LANDING = "https://www.ncbi.nlm.nih.gov/books/NBK1116/"
+
+
+def genereviews_url(nbk_id: str) -> str:
+    """Build a GeneReviews source URL, guarding against dead links.
+
+    Returns the canonical /books/<id>/ URL only for valid numeric Bookshelf
+    IDs; otherwise falls back to the GeneReviews landing page so cited links
+    always resolve.
+    """
+    if nbk_id and _NUMERIC_NBK.match(nbk_id):
+        return f"https://www.ncbi.nlm.nih.gov/books/{nbk_id}/"
+    return _GENEREVIEWS_LANDING
 
 
 @dataclass
@@ -25,8 +46,8 @@ class GeneReviewsEntry:
 
     @property
     def url(self) -> str:
-        """NCBI GeneReviews URL."""
-        return f"https://www.ncbi.nlm.nih.gov/books/{self.nbk_id}/"
+        """NCBI GeneReviews URL (guarded against non-numeric/dead Bookshelf IDs)."""
+        return genereviews_url(self.nbk_id)
 
 
 class GeneReviewsDB:

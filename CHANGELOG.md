@@ -1,5 +1,27 @@
 # Changelog
 
+## v0.7.0 - 2026-06-14
+
+Retired-chapter filtering and dead-link guards for GeneReviews citations.
+
+- New: retired GeneReviews chapters are excluded from retrieval by default.
+  Retired/historical chapters carry a "RETIRED CHAPTER, FOR HISTORICAL
+  REFERENCE ONLY" marker in their title; these are detected at index time
+  (handling the en-dash and box-drawing-dash variants seen in the corpus),
+  persisted as a `retired` boolean on `genereviews_chunks`, and default-excluded
+  in retrieval so they never appear as a cited clinical source. An
+  `include_retired` opt-in is available for historical lookups.
+- Fix: dead Bookshelf citation links. GeneReviews source URLs are now built as
+  `/books/<id>/` only for valid numeric NCBI Bookshelf IDs. Chapters carrying a
+  shortname-derived fallback id (e.g. `NBKwagner`) - which never resolved to a
+  real Bookshelf page - now link to the GeneReviews landing page instead of
+  presenting a broken link to a clinician.
+- Indexer hardening: `index_genereviews.py` accepts a directory argument
+  (expanded to its `*.nxml` files) and aborts before any `--clear` if 0 sections
+  were parsed, so a bad path can no longer wipe the live index.
+- Schema: `genereviews_chunks` gains a `retired BOOLEAN NOT NULL DEFAULT false`
+  column, with an in-place backfill migration documented for existing indexes.
+
 ## v0.6.0 - 2026-06-09
 
 Role-boundary guardrails and citation grounding, surfaced by a manual walk

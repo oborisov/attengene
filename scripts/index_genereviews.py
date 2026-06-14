@@ -92,7 +92,7 @@ def insert_chunks(conn, sections: list[tuple]):
                 nbk_id, shortname, article_title, condition_name, gene_symbols,
                 section_id, section_title, section_path, section_type,
                 chunk_text, chunk_index, char_count, token_estimate,
-                embedding
+                retired, embedding
             ) VALUES %s
             """,
             sections,
@@ -100,7 +100,7 @@ def insert_chunks(conn, sections: list[tuple]):
                 %(nbk_id)s, %(shortname)s, %(article_title)s, %(condition_name)s, %(gene_symbols)s,
                 %(section_id)s, %(section_title)s, %(section_path)s, %(section_type)s,
                 %(chunk_text)s, %(chunk_index)s, %(char_count)s, %(token_estimate)s,
-                %(embedding)s
+                %(retired)s, %(embedding)s
             )"""
         )
     conn.commit()
@@ -121,6 +121,7 @@ def _section_to_row(sec: GeneReviewsSection, emb: list[float]) -> dict:
         "chunk_index": sec.chunk_index,
         "char_count": sec.char_count,
         "token_estimate": sec.token_estimate,
+        "retired": sec.retired,
         "embedding": emb,
     }
 
@@ -189,7 +190,20 @@ def main():
     print("Parsing GeneReviews...", file=sys.stderr)
     all_sections = []
 
+    # Expand any directory arguments into the .nxml files they contain, so
+    # `index_genereviews.py data/gene_NBK1116/` works the same as passing the
+    # glob. (A bare directory used to silently parse 0 sections.)
+    expanded_inputs: list[Path] = []
     for input_path in args.inputs:
+        if input_path.is_dir():
+            nxml_files = sorted(input_path.glob("*.nxml"))
+            if not nxml_files:
+                print(f"WARNING: no .nxml files in directory {input_path}", file=sys.stderr)
+            expanded_inputs.extend(nxml_files)
+        else:
+            expanded_inputs.append(input_path)
+
+    for input_path in expanded_inputs:
         if input_path.suffix == ".gz":
             # Tarball - use quiet mode since we show final count
             for section in parse_tarball(input_path, quiet=True):
@@ -218,6 +232,14 @@ def main():
         if len(all_sections) > 5:
             print(f"\n... and {len(all_sections) - 5} more sections", file=sys.stderr)
         return
+
+    # Guard against the destructive-clear footgun: if parsing produced nothing
+    # (bad path, empty dir, wrong file type), do NOT clear - otherwise a
+    # --clear/--clear-all run wipes the live index and refills it with nothing.
+    if not all_sections:
+        print("ERROR: parsed 0 sections - refusing to clear/index. "
+              "Check the input path(s).", file=sys.stderr)
+        return 1
 
     # Initialize
     print("Connecting to database...", file=sys.stderr)
