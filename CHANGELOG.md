@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.12.0 - 2026-06-14
+
+Browsable retrieved-evidence block.
+
+- New: after retrieval, a collapsible "Retrieved evidence" block lets you read
+  what was retrieved while the answer generates. It nests per database (ClinVar,
+  GeneReviews, NephroGenetics, PubMed); each item expands to a short snippet of
+  its content and a link to the source. All sections are collapsed by default,
+  so the default view is unchanged. Built from the already-retrieved context (no
+  extra queries) and gated by the same `RAG_TRACE` flag as the retrieval trace.
+
 ## v0.11.0 - 2026-06-14
 
 Gene-only ClinVar lookups now return variants.

@@ -15,6 +15,7 @@ from collections.abc import Callable
 from dataclasses import dataclass, field
 
 from app.citations import build_citations, format_evidence_with_citations
+from app.genereviews import genereviews_url
 from app.models import Citation, VariantEvidence
 from app.pubmed import search_pubmed
 from app.hgvs import parse_variant
@@ -174,6 +175,128 @@ TRACE_DETAILS_CLOSE = "```\n\n</details>\n\n"
 def wrap_trace_details(body: str) -> str:
     """Wrap trace lines in a collapsed <details> block, OWUI/markdown-safe."""
     return f"{TRACE_DETAILS_OPEN}{body}\n{TRACE_DETAILS_CLOSE}"
+
+
+# --- Evidence browser ------------------------------------------------------
+# A nested-collapsible block of the actual retrieved content, emitted as one
+# complete chunk when retrieval finishes - so the user can read what was
+# retrieved during the (much longer) generation wait. Distinct from the live
+# trace: that streams line-by-line in a code block during retrieval; this is
+# fully-formed HTML <details> (which can't render inside a code block), so it
+# is built whole and never token-streamed (no half-open-tag glitches).
+
+_SNIPPET_CHARS = 320  # per-item excerpt length; enough to read, not a wall
+
+
+def _snippet(text: str | None, limit: int = _SNIPPET_CHARS) -> str:
+    """One-paragraph excerpt: collapse whitespace, truncate on a word boundary."""
+    if not text:
+        return ""
+    t = " ".join(text.split())
+    if len(t) <= limit:
+        return t
+    cut = t[:limit].rsplit(" ", 1)[0]
+    return cut + "…"
+
+
+def _md_escape_summary(text: str) -> str:
+    """Keep a <summary> on one line and free of stray markup."""
+    return " ".join((text or "").split())
+
+
+def _evidence_item(summary: str, body: str, link: str | None = None) -> str:
+    """One collapsed <details> for a single retrieved item (snippet + link)."""
+    link_md = f"\n\n[source]({link})" if link else ""
+    return (
+        f"<details>\n<summary>{_md_escape_summary(summary)}</summary>\n\n"
+        f"{body}{link_md}\n\n</details>"
+    )
+
+
+def _evidence_group(title: str, items: list[str]) -> str:
+    """A per-DB group: an open-by-default-collapsed <details> holding items."""
+    inner = "\n".join(items)
+    return (
+        f"<details>\n<summary>{_md_escape_summary(title)}</summary>\n\n"
+        f"{inner}\n\n</details>"
+    )
+
+
+def format_evidence_browser(result: "RetrievalResult", query: str) -> str:
+    """A nested collapsible block of the retrieved content, for reading while
+    the answer generates.
+
+    Returns "" when the trace is disabled or nothing was retrieved. All sections
+    are collapsed by default, so it adds nothing to the default view until the
+    user clicks. Emitted as one complete chunk (not streamed) so the nested
+    <details> render cleanly.
+    """
+    if not _trace_enabled():
+        return ""
+
+    genes = _extract_gene_symbols(query)
+    groups: list[str] = []
+
+    # ClinVar
+    if result.clinvar_evidence:
+        items = []
+        for v in result.clinvar_evidence:
+            summ = f"ClinVar {v.variation_id} — {v.gene_symbol} {v.variant_name} ({v.clinical_significance})"
+            body_lines = []
+            if v.condition_names:
+                body_lines.append(f"**Conditions:** {v.condition_names}")
+            if v.review_status:
+                body_lines.append(f"**Review status:** {v.review_status}")
+            body = "\n\n".join(body_lines) or "_(no additional detail)_"
+            link = f"https://www.ncbi.nlm.nih.gov/clinvar/variation/{v.variation_id}/"
+            items.append(_evidence_item(summ, body, link))
+        groups.append(_evidence_group(
+            f"ClinVar — {_count(len(items), 'variant')}", items))
+
+    # GeneReviews
+    if result.genereviews_chunks:
+        items = []
+        for ch in result.genereviews_chunks:
+            sect = f" · {ch.section_title}" if ch.section_title else ""
+            summ = f"{ch.condition_name} [{ch.nbk_id}]{sect}"
+            body = _snippet(ch.chunk_text) or "_(no text)_"
+            items.append(_evidence_item(summ, body, genereviews_url(ch.nbk_id)))
+        groups.append(_evidence_group(
+            f"GeneReviews — {_count(len(items), 'chapter')}", items))
+
+    # NephroGenetics
+    if result.nephro_results:
+        items = []
+        for n in result.nephro_results:
+            summ = f"{n.get('gene', '?')} — {n.get('title', '?')}"
+            body_lines = []
+            if n.get("inheritance"):
+                body_lines.append(f"**Inheritance:** {n['inheritance']}")
+            if n.get("kidney"):
+                body_lines.append(f"**Kidney:** {_snippet(n['kidney'], 200)}")
+            body = "\n\n".join(body_lines) or "_(no additional detail)_"
+            items.append(_evidence_item(summ, body))
+        groups.append(_evidence_group(
+            f"NephroGenetics — {_count(len(items), 'entry')}", items))
+
+    # PubMed
+    if result.pubmed_abstracts:
+        items = []
+        for a in result.pubmed_abstracts:
+            summ = f"PMID {a.get('pmid', '?')} — {a.get('title', '?')}"
+            body = _snippet(a.get("abstract")) or "_(no abstract)_"
+            items.append(_evidence_item(summ, body, a.get("url")))
+        groups.append(_evidence_group(
+            f"PubMed — {_count(len(items), 'abstract')}", items))
+
+    if not groups:
+        return ""
+
+    inner = "\n".join(groups)
+    return (
+        "<details>\n<summary>📚 Retrieved evidence (click to browse)</summary>\n\n"
+        f"{inner}\n\n</details>\n\n"
+    )
 
 
 # Kidney/renal terms for NephroGenetics routing

@@ -42,6 +42,7 @@ from app.openai_compat import (
 from app.prompts import build_augmented_messages, RETRY_SYSTEM_PROMPT
 from app.router import (
     route_and_retrieve,
+    format_evidence_browser,
     _trace_enabled,
     TRACE_DETAILS_OPEN,
     TRACE_DETAILS_CLOSE,
@@ -415,6 +416,15 @@ def _stream_response(
             yield _content_chunk(f"\n{TRACE_DETAILS_CLOSE}")
 
             retrieval = await retrieval_task
+
+            # Retrieval done: drop in the browsable evidence block (nested
+            # collapsibles, all collapsed) as one complete chunk, so the user
+            # can read what was retrieved during the longer generation wait.
+            # Emitted whole (not token-streamed) so the nested <details> render
+            # cleanly. Empty string when nothing was retrieved.
+            browser = format_evidence_browser(retrieval, user_query)
+            if browser:
+                yield _content_chunk(browser)
         else:
             retrieval = await loop.run_in_executor(
                 None, lambda: route_and_retrieve(user_query, k=5)
