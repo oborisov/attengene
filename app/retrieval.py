@@ -6,7 +6,7 @@ No LLM usage. Embedding model loaded once at module level.
 
 from app.db import get_connection, release_connection
 from app.embeddings import encode
-from app.hgvs import ParsedVariant
+from app.hgvs import ParsedVariant, hgvs_match_forms
 from app.models import VariantEvidence
 
 
@@ -35,10 +35,18 @@ def retrieve_variants_exact(parsed: ParsedVariant, k: int = 5) -> list[VariantEv
 
     # HGVS tokens: require each present token to appear in the name. AND-ing
     # c. and p. tightens precision (both must match the same variant).
-    for tok in (parsed.c_hgvs, parsed.p_hgvs):
-        if tok:
-            conds.append("name ILIKE %s")
-            params.append(f"%{tok}%")
+    #
+    # The coding token may have more than one valid ClinVar surface form
+    # (ClinVar stores deletions both with and without trailing bases, e.g.
+    # c.730_731delAG vs c.1521_1523del); OR its forms so we match whichever is
+    # stored. The p. token and rsID have a single form.
+    if parsed.c_hgvs:
+        forms = hgvs_match_forms(parsed.c_hgvs)
+        conds.append("(" + " OR ".join(["name ILIKE %s"] * len(forms)) + ")")
+        params.extend(f"%{f}%" for f in forms)
+    if parsed.p_hgvs:
+        conds.append("name ILIKE %s")
+        params.append(f"%{parsed.p_hgvs}%")
 
     if not conds:
         return []

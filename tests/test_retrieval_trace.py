@@ -120,5 +120,61 @@ class TestTraceNonClinical(unittest.TestCase):
         self.assertNotIn("ClinVar", out)
 
 
+class TestOnStepCallback(unittest.TestCase):
+    """route_and_retrieve(on_step=...) reports one line per DB, in order, with
+    text identical to the all-at-once trace's lines."""
+
+    @patch.dict(os.environ, {"RAG_TRACE": "1"})
+    @patch("app.router.search_pubmed")
+    @patch("app.router.retrieve_nephrogenetics")
+    @patch("app.router.retrieve_genereviews")
+    @patch("app.router.retrieve_variants_hybrid")
+    @patch("app.router.retrieve_variants_exact")
+    def test_variant_query_steps_in_order(
+        self, m_exact, m_hybrid, m_grx, m_nephro, m_pubmed
+    ):
+        from app.router import route_and_retrieve
+
+        m_exact.return_value = [_variant()] * 5
+        m_grx.return_value = [_chunk()] * 3
+        m_nephro.return_value = []
+        m_pubmed.return_value = [{"pmid": "12345678", "title": "t"}] * 2
+
+        steps: list[str] = []
+        route_and_retrieve("BRCA1 gene", k=5, on_step=steps.append)
+
+        # Header first, then one line per DB in pipeline order.
+        self.assertEqual(len(steps), 5)
+        self.assertIn("variant lookup (BRCA1)", steps[0])
+        self.assertIn("ClinVar — 5 variants", steps[1])
+        self.assertIn("GeneReviews — 3 chapters", steps[2])
+        self.assertIn("NephroGenetics — skipped (no renal terms)", steps[3])
+        self.assertIn("PubMed — 2 abstracts", steps[4])
+
+    @patch.dict(os.environ, {"RAG_TRACE": "1"})
+    @patch("app.router.search_pubmed")
+    @patch("app.router.retrieve_nephrogenetics")
+    @patch("app.router.retrieve_genereviews")
+    def test_no_callback_is_noop(self, m_grx, m_nephro, m_pubmed):
+        # on_step=None (default) must not raise and must still return a result.
+        from app.router import route_and_retrieve
+
+        m_grx.return_value = []
+        m_nephro.return_value = []
+        m_pubmed.return_value = []
+        result = route_and_retrieve("what causes Kabuki syndrome", k=5)
+        self.assertEqual(result.query_type, "phenotype")
+
+    @patch.dict(os.environ, {"RAG_TRACE": "1"})
+    def test_non_clinical_emits_header_and_skip(self):
+        from app.router import route_and_retrieve
+
+        steps: list[str] = []
+        route_and_retrieve("hello there", k=5, on_step=steps.append)
+        self.assertEqual(len(steps), 2)
+        self.assertIn("non-clinical", steps[0])
+        self.assertIn("databases not searched", steps[1])
+
+
 if __name__ == "__main__":
     unittest.main()

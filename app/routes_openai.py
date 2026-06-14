@@ -40,7 +40,12 @@ from app.openai_compat import (
     Usage,
 )
 from app.prompts import build_augmented_messages, RETRY_SYSTEM_PROMPT
-from app.router import route_and_retrieve
+from app.router import (
+    route_and_retrieve,
+    _trace_enabled,
+    TRACE_DETAILS_OPEN,
+    TRACE_DETAILS_CLOSE,
+)
 
 router = APIRouter(prefix="/v1", dependencies=[Depends(verify_api_key)])
 
@@ -358,21 +363,63 @@ def _stream_response(
         )
         yield f"data: {initial.model_dump_json()}\n\n"
 
-        # Show status while retrieving
-        status_msg = "*Searching databases...*\n\n"
-        status_chunk = ChatCompletionChunk(
-            id=completion_id,
-            model=model_id,
-            choices=[StreamChoice(delta=DeltaMessage(content=status_msg))],
-        )
-        yield f"data: {status_chunk.model_dump_json()}\n\n"
+        def _content_chunk(text: str) -> str:
+            chunk = ChatCompletionChunk(
+                id=completion_id,
+                model=model_id,
+                choices=[StreamChoice(delta=DeltaMessage(content=text))],
+            )
+            return f"data: {chunk.model_dump_json()}\n\n"
 
-        # Retrieve (this is the slow part - ~5-10s).
-        # Run in executor to avoid blocking the event loop.
+        # Retrieve (the slow part, ~5-10s) in an executor so the event loop
+        # stays free. When the trace is enabled, route_and_retrieve reports
+        # each DB's line via on_step the moment it finishes; we forward those
+        # over a thread-safe queue and stream them into a <details> block that
+        # is opened before the first line and closed when retrieval completes.
+        # This gives a live "this DB, then this DB" reveal that collapses to a
+        # tidy trace once done. With the trace disabled, no queue/markers - just
+        # the plain blocking retrieve, identical to before.
         loop = asyncio.get_event_loop()
-        retrieval = await loop.run_in_executor(
-            None, lambda: route_and_retrieve(user_query, k=5)
-        )
+        trace_on = _trace_enabled()
+
+        if trace_on:
+            step_queue: asyncio.Queue[str | None] = asyncio.Queue()
+
+            def _on_step(line: str) -> None:
+                # Called from the executor thread; hand the line back to the
+                # event loop thread safely.
+                loop.call_soon_threadsafe(step_queue.put_nowait, line)
+
+            async def _run_retrieval() -> "object":
+                try:
+                    return await loop.run_in_executor(
+                        None,
+                        lambda: route_and_retrieve(user_query, k=5, on_step=_on_step),
+                    )
+                finally:
+                    # Sentinel: unblock the queue drain below once retrieval
+                    # is done (whether it returned or raised).
+                    loop.call_soon_threadsafe(step_queue.put_nowait, None)
+
+            retrieval_task = asyncio.ensure_future(_run_retrieval())
+
+            # Drain step lines as they arrive, building the <details> block.
+            yield _content_chunk(TRACE_DETAILS_OPEN)
+            first = True
+            while True:
+                line = await step_queue.get()
+                if line is None:
+                    break
+                yield _content_chunk(line if first else f"\n{line}")
+                first = False
+            yield _content_chunk(f"\n{TRACE_DETAILS_CLOSE}")
+
+            retrieval = await retrieval_task
+        else:
+            retrieval = await loop.run_in_executor(
+                None, lambda: route_and_retrieve(user_query, k=5)
+            )
+
         evidence = retrieval.clinvar_evidence
         llm_messages = build_augmented_messages(
             conversation_history, retrieval.prompt_context

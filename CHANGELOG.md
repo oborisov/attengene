@@ -1,5 +1,25 @@
 # Changelog
 
+## v0.9.0 - 2026-06-14
+
+Live-streaming retrieval trace and a ClinVar deletion-matching fix.
+
+- New: the retrieval trace now streams live. Each database's line appears the
+  moment that search finishes (building the trace block incrementally) rather
+  than all at once after retrieval completes, so there's no blank wait while
+  the databases are queried. `route_and_retrieve` gained an optional `on_step`
+  callback (no-op by default, so non-streaming callers are unchanged); the
+  per-line text is shared with the all-at-once trace so the two forms can't
+  drift. Still gated by `RAG_TRACE`.
+- Fix: ClinVar deletions/duplications stored without trailing bases were
+  missed. ClinVar is inconsistent about trailing bases (it stores both
+  `c.730_731delAG` and the base-less `c.1521_1523del` - the CFTR F508del form).
+  A clinician typing the base-bearing form (`c.1521_1523delCTT`) found nothing,
+  because the exact lookup matched only that literal. The lookup now tries both
+  the base-bearing and base-less form for a simple trailing del/dup event, so it
+  matches whichever ClinVar stored (compound delins keeps its single form). The
+  gene filter still constrains breadth.
+
 ## v0.8.0 - 2026-06-14
 
 Streaming retrieval trace and lowercase gene-symbol routing.

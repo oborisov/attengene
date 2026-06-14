@@ -106,6 +106,37 @@ def _normalize_hgvs(token: str) -> str:
     return t
 
 
+# A *simple* deletion/duplication ending in explicit bases, e.g. "delCTT",
+# "dupCGGCA". Deliberately excludes compound delins (c....delCCinsAA), where
+# dropping a base group would yield a malformed token - those keep their single
+# form. Anchored to end-of-string so only a trailing event matches.
+_DEL_DUP_WITH_BASES = re.compile(r"(?<![a-z])(del|dup)([ACGT]+)$", re.IGNORECASE)
+
+
+def hgvs_match_forms(c_hgvs: str) -> list[str]:
+    """Surface forms of a coding HGVS token to try against ClinVar names.
+
+    ClinVar is inconsistent about trailing bases on deletions/duplications: the
+    same kind of variant appears both with bases (c.730_731delAG) and without
+    (c.1521_1523del, the CFTR F508del form). A clinician usually types the
+    base-bearing form, so an exact substring lookup on that alone misses the
+    base-less records. Return both the given form and, when it ends in a
+    base-bearing del/dup event, the base-less form - so the caller can match
+    whichever ClinVar happens to store.
+
+    Only simple trailing del/dup events are reduced; compound delins and other
+    shapes keep their single form. Order preserved. For tokens with no
+    trailing-base event, the list is just [c_hgvs].
+    """
+    forms = [c_hgvs]
+    m = _DEL_DUP_WITH_BASES.search(c_hgvs)
+    if m:
+        baseless = c_hgvs[: m.start()] + m.group(1).lower()
+        if baseless != c_hgvs:
+            forms.append(baseless)
+    return forms
+
+
 def parse_variant(query: str, not_genes: set[str] | None = None) -> ParsedVariant:
     """Extract gene symbol + HGVS tokens from a free-text query.
 
