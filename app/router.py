@@ -8,6 +8,7 @@ phenotype-only prose where the variants table only adds noise.
 """
 
 import logging
+import os
 import re
 import time
 from dataclasses import dataclass, field
@@ -41,6 +42,119 @@ class RetrievalResult:
     query_type: str = ""
 
 
+def _trace_enabled() -> bool:
+    """Whether to render the retrieval trace. RAG_TRACE=0/false/off disables.
+
+    Read at call time (not import) so it can be toggled per-process/in tests.
+    Defaults on for the demo/pilot; flip the env var to silence it without a
+    code change.
+    """
+    return os.getenv("RAG_TRACE", "1").strip().lower() not in ("0", "false", "off", "no")
+
+
+_QUERY_TYPE_LABEL = {
+    "variant": "variant lookup",
+    "phenotype": "phenotype search",
+    "non-clinical": "non-clinical (no retrieval)",
+}
+
+
+def format_retrieval_trace(result: "RetrievalResult", query: str) -> str:
+    """Render a collapsible <details> "Retrieval trace" block for a query.
+
+    Shows the query classification and, per database, whether it was searched,
+    how many results came back, and the top hit's identifier/title. Databases
+    that weren't searched (no signal for them) are shown as skipped, so the
+    trace reflects the routing decision, not just the hits.
+
+    Returns "" when RAG_TRACE is disabled. Pure formatting over the already-
+    populated RetrievalResult - no DB access, safe to unit-test.
+    """
+    if not _trace_enabled():
+        return ""
+
+    label = _QUERY_TYPE_LABEL.get(result.query_type, result.query_type or "search")
+    lines: list[str] = []
+
+    # Header: classification (and genes, when this was a variant-level route).
+    genes = _extract_gene_symbols(query)
+    gene_note = f" ({', '.join(genes)})" if genes else ""
+    lines.append(f"🔍 {label}{gene_note}")
+
+    if result.query_type == "non-clinical":
+        lines.append("· No clinical-genetics signal - databases not searched.")
+        return _wrap_details(lines)
+
+    # ClinVar - only searched for variant-level queries.
+    if genes or result.clinvar_evidence:
+        if result.clinvar_evidence:
+            top = result.clinvar_evidence[0]
+            lines.append(
+                f"✓ ClinVar — {_count(len(result.clinvar_evidence), 'variant')} "
+                f"(top: Variation {top.variation_id}, {top.gene_symbol}, "
+                f"{top.clinical_significance})"
+            )
+        else:
+            lines.append("· ClinVar — no matching variants")
+    else:
+        lines.append("· ClinVar — skipped (phenotype-only query)")
+
+    # GeneReviews - always searched.
+    if result.genereviews_chunks:
+        top = result.genereviews_chunks[0]
+        lines.append(
+            f"✓ GeneReviews — {_count(len(result.genereviews_chunks), 'chapter')} "
+            f"(top: {top.condition_name} [{top.nbk_id}])"
+        )
+    else:
+        lines.append("· GeneReviews — no matching chapters")
+
+    # NephroGenetics - only when renal terms are present.
+    if _has_nephro_terms(query):
+        if result.nephro_results:
+            top = result.nephro_results[0]
+            lines.append(
+                f"✓ NephroGenetics — {_count(len(result.nephro_results), 'entry')} "
+                f"(top: {top.get('gene', '?')} - {top.get('title', '?')})"
+            )
+        else:
+            lines.append("· NephroGenetics — no matching entries")
+    else:
+        lines.append("· NephroGenetics — skipped (no renal terms)")
+
+    # PubMed - only when a gene symbol was parsed.
+    if genes:
+        if result.pubmed_abstracts:
+            top = result.pubmed_abstracts[0]
+            lines.append(
+                f"✓ PubMed — {_count(len(result.pubmed_abstracts), 'abstract')} "
+                f"(top: PMID {top.get('pmid', '?')})"
+            )
+        else:
+            lines.append("· PubMed — no matching abstracts")
+    else:
+        lines.append("· PubMed — skipped (no gene symbol)")
+
+    return _wrap_details(lines)
+
+
+def _count(n: int, noun: str) -> str:
+    """'1 variant' / '3 variants', '1 entry' / '3 entries'."""
+    if n == 1:
+        return f"{n} {noun}"
+    plural = noun[:-1] + "ies" if noun.endswith("y") else noun + "s"
+    return f"{n} {plural}"
+
+
+def _wrap_details(lines: list[str]) -> str:
+    """Wrap trace lines in a collapsed <details> block, OWUI/markdown-safe."""
+    body = "\n".join(lines)
+    return (
+        "<details>\n<summary>🔎 Retrieval trace</summary>\n\n"
+        f"```\n{body}\n```\n\n</details>\n\n"
+    )
+
+
 # Kidney/renal terms for NephroGenetics routing
 _NEPHRO_TERMS = [
     "kidney", "renal", "nephro", "nephrotic", "nephritic", "glomerul",
@@ -48,8 +162,24 @@ _NEPHRO_TERMS = [
     "fsgs", "cakut", "ckd", "dialysis", "transplant",
 ]
 
-# Pattern to extract gene symbols from query
+# Pattern to extract gene symbols from query.
+# Uppercase tokens are taken as gene symbols directly (gene symbols are
+# uppercase by HGNC convention - "BRCA1", "COL4A3").
 _GENE_PATTERN = re.compile(r'\b([A-Z][A-Z0-9]{1,9})\b')
+
+# Lowercase/mixed-case gene tokens are only accepted when a nearby cue marks
+# them as a gene ("muc1 gene", "gene KMT2D", "variant in brca1"). Matching
+# lowercase unconditionally would treat every prose word ("what", "kidney",
+# "causes") as a candidate and wrongly flip phenotype queries to the
+# variant route. The cue keeps recall (clinicians type lowercase) without
+# that flood. The symbol itself is the same shape as _GENE_PATTERN but
+# case-insensitive; we uppercase the capture to the canonical form.
+_GENE_TOKEN = r'[A-Za-z][A-Za-z0-9]{1,9}'
+_CUED_GENE_PATTERN = re.compile(
+    rf'\b(?:(?:gene|variant|mutation|allele)s?\s+(?:in\s+|of\s+)?({_GENE_TOKEN})'
+    rf'|({_GENE_TOKEN})\s+gene)\b',
+    re.IGNORECASE,
+)
 
 # Common English words that look like gene symbols
 _NOT_GENES = {
@@ -63,9 +193,35 @@ _NOT_GENES = {
 
 
 def _extract_gene_symbols(query: str) -> list[str]:
-    """Extract likely gene symbols from query text."""
-    candidates = _GENE_PATTERN.findall(query)
-    return [g for g in candidates if g not in _NOT_GENES and len(g) >= 2]
+    """Extract likely gene symbols from query text.
+
+    Two sources, both normalized to uppercase canonical form:
+      - bare uppercase tokens ("BRCA1"), as before;
+      - cued lowercase/mixed-case tokens ("muc1 gene", "gene kmt2d",
+        "variant in brca1"), so clinicians typing lowercase still get the
+        variant-level route. The cue requirement prevents prose words from
+        being mistaken for genes.
+
+    Stopwords (THE, AND, GENE, ...) are filtered after upper-casing, so the
+    cue word itself ("gene") never survives as a candidate. Order is
+    preserved and duplicates removed.
+    """
+    candidates = list(_GENE_PATTERN.findall(query))
+    for m in _CUED_GENE_PATTERN.finditer(query):
+        # Exactly one of the two alternation groups matches per cue.
+        token = m.group(1) or m.group(2)
+        if token:
+            candidates.append(token.upper())
+
+    seen: set[str] = set()
+    result: list[str] = []
+    for g in candidates:
+        g = g.upper()
+        if g in _NOT_GENES or len(g) < 2 or g in seen:
+            continue
+        seen.add(g)
+        result.append(g)
+    return result
 
 
 def _has_nephro_terms(query: str) -> bool:

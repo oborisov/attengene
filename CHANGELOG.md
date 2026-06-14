@@ -1,5 +1,27 @@
 # Changelog
 
+## v0.8.0 - 2026-06-14
+
+Streaming retrieval trace and lowercase gene-symbol routing.
+
+- New: retrieval trace. When streaming, the answer is now preceded by a
+  collapsible "Retrieval trace" block showing the query classification and,
+  per database (ClinVar, GeneReviews, NephroGenetics, PubMed), whether it was
+  searched, how many results it returned, and the top hit - or "skipped" with
+  the routing reason. It surfaces what the RAG router actually did, which makes
+  routing gaps and off-target retrieval visible. Emitted as ordinary OpenAI
+  content (a Markdown `<details>` block), so it works in any OpenAI-compatible
+  client without provider-specific status events. Gated by the new `RAG_TRACE`
+  env var (default on; set `0`/`false`/`off` to disable). See `.env.example`.
+- Fix: lowercase gene symbols in queries. Gene-symbol extraction only matched
+  uppercase tokens, so a query like `muc1 gene` or `kmt2d gene` silently routed
+  as a phenotype query - skipping the variant-level path (ClinVar, PubMed) and
+  leaving the GeneReviews search unanchored, which could drift to a sibling
+  gene's chapter. Lowercase/mixed-case tokens are now accepted when a gene cue
+  is adjacent (`X gene`, `gene X`, `variant/mutation in X`) and normalized to
+  the canonical uppercase symbol. Phenotype prose with no gene cue still yields
+  no gene, so general questions keep routing as phenotype queries.
+
 ## v0.7.0 - 2026-06-14
 
 Retired-chapter filtering and dead-link guards for GeneReviews citations.
