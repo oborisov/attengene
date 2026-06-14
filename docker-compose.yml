@@ -8,6 +8,13 @@
 #   api         FastAPI backend (RAG orchestration, OpenAI-compatible
 #               /v1/chat/completions endpoint)
 #
+# Light try-it path (no ~2 GB torch build): `--profile lite` swaps the
+# bundled sentence-transformers `embeddings` build for the prebuilt
+# HuggingFace text-embeddings-inference (TEI) image (~80 MB pull, same
+# BGE-large model, same 1024-dim /embed contract). See the `embeddings-lite`
+# service below. To skip local embeddings entirely, point EMBEDDINGS_URL at a
+# hosted TEI-shape endpoint (e.g. the HF Inference API) - see .env.example.
+#
 # The LLM is intentionally NOT included. AttenGene calls out to any
 # OpenAI-compatible chat-completions endpoint of your choice (llama.cpp's
 # llama-server, Ollama, vLLM, etc.). Point BACKEND_LOCAL_URL at it.
@@ -17,6 +24,10 @@
 #   cp .env.example .env
 #   docker compose up -d
 #   curl http://localhost:8000/health
+#
+# Light embeddings (prebuilt TEI image, no torch build, ~80 MB pull):
+#
+#   docker compose --profile lite up -d
 #
 # GPU embeddings (NVIDIA only, requires nvidia-container-toolkit):
 #
@@ -77,6 +88,29 @@ services:
       retries: 5
     restart: unless-stopped
 
+  # Light embeddings: prebuilt HuggingFace text-embeddings-inference (TEI)
+  # image, no local torch build. Same BGE-large model, same 1024-dim /embed
+  # contract as the bundled `embeddings` service. Only started with
+  # `--profile lite`. Registers the `embeddings` network alias so the api's
+  # EMBEDDINGS_URL (http://embeddings:8081/embed) resolves to it unchanged.
+  embeddings-lite:
+    image: ghcr.io/huggingface/text-embeddings-inference:cpu-1.5
+    container_name: attengene-embeddings-lite
+    profiles: ["lite"]
+    command: ["--model-id", "BAAI/bge-large-en-v1.5", "--port", "8081"]
+    networks:
+      default:
+        aliases:
+          - embeddings
+    ports:
+      - "127.0.0.1:8081:8081"
+    volumes:
+      # First boot downloads the BGE-large weights (~1.3 GB) into this volume;
+      # cached for subsequent starts. (The torch *build* is what's avoided -
+      # the model weights are 1.3 GB whichever local server you run.)
+      - embeddings_cache:/data
+    restart: unless-stopped
+
   # GPU-accelerated embeddings. Only built when `--profile gpu` is set.
   # Requires nvidia-container-toolkit on the host.
   embeddings-gpu:
@@ -119,9 +153,11 @@ services:
     ports:
       - "127.0.0.1:8000:8000"
     depends_on:
+      # Only the DB is a hard gate. The embeddings server is reached lazily
+      # over HTTP (EMBEDDINGS_URL), so it isn't required at api startup - this
+      # lets `--profile lite` (embeddings-lite), `--profile gpu`, or an
+      # external hosted EMBEDDINGS_URL all work without editing depends_on.
       db:
-        condition: service_healthy
-      embeddings:
         condition: service_healthy
     extra_hosts:
       # Lets BACKEND_LOCAL_URL resolve host.docker.internal on Linux for

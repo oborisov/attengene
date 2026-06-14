@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.10.0 - 2026-06-14
+
+Lighter Docker-Compose try-it path.
+
+- New: `docker compose --profile lite up -d` runs embeddings from the prebuilt
+  HuggingFace text-embeddings-inference (TEI) image (~80 MB pull) instead of the
+  bundled sentence-transformers build (~2 GB torch build). Same BGE-large model,
+  same 1024-dim `/embed` contract, so nothing else changes. Lowers the barrier
+  to a first run.
+- Change: the `api` service no longer hard-gates on the `embeddings` service at
+  startup. Embeddings are reached lazily over HTTP (`EMBEDDINGS_URL`), so the
+  `lite` and `gpu` profiles - and an external hosted embeddings endpoint - all
+  work without editing `depends_on`. The database remains a hard startup gate.
+
 ## v0.9.0 - 2026-06-14
 
 Live-streaming retrieval trace and a ClinVar deletion-matching fix.
