@@ -176,5 +176,20 @@ class TestOnStepCallback(unittest.TestCase):
         self.assertIn("databases not searched", steps[1])
 
 
+class TestPipelineMode(unittest.TestCase):
+    """route_and_retrieve records its pipeline_mode on the result. Uses the
+    no-clinical-signal early return so no DB access is needed."""
+
+    def test_default_mode_is_stable(self):
+        from app.router import route_and_retrieve
+        result = route_and_retrieve("hello there", k=5)
+        self.assertEqual(result.pipeline_mode, "stable")
+
+    def test_dev_mode_recorded(self):
+        from app.router import route_and_retrieve
+        result = route_and_retrieve("hello there", k=5, pipeline_mode="dev")
+        self.assertEqual(result.pipeline_mode, "dev")
+
+
 if __name__ == "__main__":
     unittest.main()

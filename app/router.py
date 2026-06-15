@@ -46,6 +46,7 @@ class RetrievalResult:
     prompt_context: str = ""
     sources_searched: list[str] = field(default_factory=list)
     query_type: str = ""
+    pipeline_mode: str = "stable"
 
 
 def _trace_enabled() -> bool:
@@ -403,6 +404,7 @@ def route_and_retrieve(
     query: str,
     k: int = 10,
     on_step: "Callable[[str], None] | None" = None,
+    pipeline_mode: str = "stable",
 ) -> RetrievalResult:
     """
     Search ClinVar, GeneReviews, NephroGenetics, and PubMed for clinical context.
@@ -418,9 +420,19 @@ def route_and_retrieve(
         to a plain blocking retrieval - the non-streaming path and existing
         callers are unaffected. The line text is the same as the all-at-once
         trace (shared _trace_*_line functions).
+
+    pipeline_mode: "stable" (default) or "dev". Selected from the requested
+        OWUI model id (attengene-dev -> "dev"; see llm.pipeline_mode_for). It is
+        the seam in-development features gate on, so experiments can be exercised
+        live via the attengene-dev model id without touching the stable path.
+        Currently no feature branches on it - it is plumbing for upcoming work;
+        a feature graduates by dropping its `if pipeline_mode == "dev"` guard.
     """
     result = RetrievalResult()
+    result.pipeline_mode = pipeline_mode
     t0 = time.perf_counter()
+    if pipeline_mode != "stable":
+        logger.info("route_and_retrieve: pipeline_mode=%s", pipeline_mode)
 
     def _emit(line: str) -> None:
         if on_step is not None:

@@ -65,7 +65,42 @@ def _build_backends() -> dict[str, Backend]:
             ),
         )
 
+    # attengene-dev: same on-box LLM as attengene-local, exposed as a second
+    # OWUI model id so in-development pipeline features can be exercised live
+    # without disturbing the stable path. It is NOT a separate LLM backend -
+    # it clones the local backend's url/key/upstream-model. The stable/dev
+    # split happens upstream in the RAG pipeline (pipeline_mode_for()), not in
+    # the LLM call. Opt-in: advertised only when BACKEND_DEV_ENABLED is truthy,
+    # so production stays single-model unless the flag is set.
+    if _truthy(os.getenv("BACKEND_DEV_ENABLED")):
+        local = out["attengene-local"]
+        out[DEV_MODEL_ID] = Backend(
+            model_id=DEV_MODEL_ID,
+            base_url=local.base_url,
+            api_key=local.api_key,
+            upstream_model=local.upstream_model,
+        )
+
     return out
+
+
+DEV_MODEL_ID = "attengene-dev"
+
+
+def _truthy(value: str | None) -> bool:
+    """Env-flag truthiness: 1/true/yes/on (case-insensitive). Unset = False."""
+    return (value or "").strip().lower() in ("1", "true", "yes", "on")
+
+
+def pipeline_mode_for(model_id: str) -> str:
+    """Map an OWUI model id to a RAG pipeline mode.
+
+    `attengene-dev` runs the pipeline with in-development features enabled
+    ("dev"); every other model id runs the stable pipeline ("stable"). This is
+    the single seam the stable/dev split hangs off - the LLM call is identical
+    for attengene-dev and attengene-local (see _build_backends).
+    """
+    return "dev" if model_id == DEV_MODEL_ID else "stable"
 
 
 BACKENDS: dict[str, Backend] = _build_backends()
@@ -122,6 +157,16 @@ async def resolve_local_upstream_model() -> None:
         api_key=local.api_key,
         upstream_model=resolved,
     )
+    # Keep the dev clone pointed at the same resolved upstream model - it is the
+    # same on-box LLM, only the OWUI-visible id and pipeline mode differ.
+    dev = BACKENDS.get(DEV_MODEL_ID)
+    if dev is not None:
+        BACKENDS[DEV_MODEL_ID] = Backend(
+            model_id=dev.model_id,
+            base_url=dev.base_url,
+            api_key=dev.api_key,
+            upstream_model=resolved,
+        )
     logger.info("Resolved attengene-local upstream model: %s", resolved)
 
 

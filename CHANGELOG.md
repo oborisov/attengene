@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.13.0 - 2026-06-15
+
+Optional `attengene-dev` model id for live in-development testing.
+
+- New: when `BACKEND_DEV_ENABLED` is set, a second model id, `attengene-dev`,
+  is advertised on `/v1/models`. It uses the same local LLM as `attengene-local`
+  but runs the RAG pipeline in "dev" mode, so in-development features can be
+  exercised live from the UI's model dropdown without disturbing the stable
+  path - one process, no second UI. Off by default, so production is unchanged
+  unless the flag is enabled. The `pipeline_mode` is threaded through retrieval
+  as the seam new features gate on; a feature graduates by dropping its guard.
+
 ## v0.12.0 - 2026-06-14
 
 Browsable retrieved-evidence block.

@@ -28,6 +28,7 @@ from app.llm import (
     available_model_ids,
     generate,
     generate_stream,
+    pipeline_mode_for,
 )
 from app.openai_compat import (
     ChatCompletionRequest,
@@ -55,6 +56,7 @@ router = APIRouter(prefix="/v1", dependencies=[Depends(verify_api_key)])
 # host and shift the GDPR boundary.
 _MODEL_DESCRIPTIONS = {
     "attengene-local": "AttenGene RAG with local llama-server backend (GDPR-safe).",
+    "attengene-dev": "AttenGene RAG (dev) - same local backend as attengene-local, with in-development pipeline features enabled. For testing, not clinical use.",
     "attengene-mistral": "AttenGene RAG with Mistral cloud backend. Non-clinical only - chats leave the box.",
     "attengene-claude": "AttenGene RAG with Anthropic Claude backend. Non-clinical only - chats leave the box.",
 }
@@ -115,6 +117,11 @@ async def chat_completions(request: ChatCompletionRequest, req: Request):
     model_id = request.model
     if model_id not in available_model_ids():
         return _unknown_model_response(model_id)
+
+    # Stable vs in-development pipeline, keyed on the requested model id
+    # (attengene-dev -> "dev"). The LLM call is identical to attengene-local;
+    # only the RAG pipeline path differs. Threaded into route_and_retrieve.
+    pipeline_mode = pipeline_mode_for(model_id)
 
     start_time = time.perf_counter()
     completion_id = f"chatcmpl-{uuid4().hex[:12]}"
@@ -207,10 +214,11 @@ async def chat_completions(request: ChatCompletionRequest, req: Request):
             user_query=user_query,
             client_ip=client_ip,
             start_time=start_time,
+            pipeline_mode=pipeline_mode,
         )
 
     # Non-streaming: retrieve first
-    retrieval = route_and_retrieve(user_query, k=5)
+    retrieval = route_and_retrieve(user_query, k=5, pipeline_mode=pipeline_mode)
     llm_messages = build_augmented_messages(
         conversation_history, retrieval.prompt_context
     )
@@ -352,6 +360,7 @@ def _stream_response(
     user_query: str,
     client_ip: str | None,
     start_time: float,
+    pipeline_mode: str = "stable",
 ) -> StreamingResponse:
     """Stream LLM response in OpenAI SSE format with retrieval status."""
 
@@ -395,7 +404,10 @@ def _stream_response(
                 try:
                     return await loop.run_in_executor(
                         None,
-                        lambda: route_and_retrieve(user_query, k=5, on_step=_on_step),
+                        lambda: route_and_retrieve(
+                            user_query, k=5, on_step=_on_step,
+                            pipeline_mode=pipeline_mode,
+                        ),
                     )
                 finally:
                     # Sentinel: unblock the queue drain below once retrieval
@@ -427,7 +439,10 @@ def _stream_response(
                 yield _content_chunk(browser)
         else:
             retrieval = await loop.run_in_executor(
-                None, lambda: route_and_retrieve(user_query, k=5)
+                None,
+                lambda: route_and_retrieve(
+                    user_query, k=5, pipeline_mode=pipeline_mode
+                ),
             )
 
         evidence = retrieval.clinvar_evidence
