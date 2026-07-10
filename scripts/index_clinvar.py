@@ -49,6 +49,13 @@ from psycopg2.extras import execute_values
 from tqdm import tqdm
 from dotenv import load_dotenv
 
+# Make the repo root importable so `from app.embeddings import ...` works when
+# this script is run by path (python scripts/index_clinvar.py) rather than as a
+# module - running a script by path only puts its own dir (scripts/) on the
+# path, not the repo root. The sibling indexers (index_kdigo, index_bio2clin,
+# ...) do the same.
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 load_dotenv()
 
 

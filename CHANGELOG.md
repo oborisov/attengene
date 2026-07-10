@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.15.1 - 2026-07-10
+
+- Fix: `index_clinvar.py` raised `ModuleNotFoundError: No module named 'app'`
+  when run by path (`python scripts/index_clinvar.py`) from a shell without the
+  repo root on `PYTHONPATH`. It now inserts the repo root into `sys.path` at
+  startup, matching the other indexer scripts.
+
 ## v0.15.0 - 2026-07-10
 
 Zero-downtime staging re-index for ClinVar (`--staging`).
