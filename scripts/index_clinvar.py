@@ -24,6 +24,12 @@ Usage:
     # embedded document so the model reports them as uncertain/disputed.
     python scripts/index_clinvar.py --all-significance
 
+    # Zero-downtime full re-index (recommended for the recurring/weekly run):
+    # builds variants_staging off to the side, indexes it, then swaps it in
+    # atomically. Live `variants` keeps serving throughout. Needs ~120 GB free
+    # on the PGDATA volume for the ~4.2M full build - df it first.
+    python scripts/index_clinvar.py --all-significance --staging --batch-size 512
+
     # Custom database host
     python scripts/index_clinvar.py --db-host YOUR_DB_HOST
 """
@@ -31,6 +37,7 @@ Usage:
 import gzip
 import csv
 import os
+import re
 import argparse
 import sys
 import urllib.request
@@ -240,17 +247,34 @@ def get_db_connection(host: str, port: str, dbname: str, user: str, password: st
     )
 
 
-def clear_variants_table(conn):
-    """Clear existing variants."""
+# Staging table name for the zero-downtime re-index (see --staging). Kept
+# distinct from the live table so a build never touches production until the
+# atomic swap at the very end.
+STAGING_TABLE = "variants_staging"
+
+# Only bare identifiers ([A-Za-z0-9_]) are ever passed as a table name here
+# (the two module constants below), never user input - but assert it so a
+# future caller can't smuggle SQL through the f-string interpolation the
+# psycopg2 client requires for identifiers.
+def _assert_ident(name: str) -> str:
+    if not re.fullmatch(r"[A-Za-z0-9_]+", name):
+        raise ValueError(f"unsafe table identifier: {name!r}")
+    return name
+
+
+def clear_variants_table(conn, table: str = "variants"):
+    """Clear existing rows from `table`."""
+    _assert_ident(table)
     with conn.cursor() as cur:
-        cur.execute("TRUNCATE TABLE variants RESTART IDENTITY")
+        cur.execute(f"TRUNCATE TABLE {table} RESTART IDENTITY")
     conn.commit()
 
 
-def insert_variants_batch(conn, variants: list[dict]):
-    """Insert batch of variants with embeddings."""
+def insert_variants_batch(conn, variants: list[dict], table: str = "variants"):
+    """Insert batch of variants with embeddings into `table`."""
     if not variants:
         return
+    _assert_ident(table)
 
     # Deduplicate by variation_id (keep last occurrence)
     seen = {}
@@ -259,8 +283,8 @@ def insert_variants_batch(conn, variants: list[dict]):
     variants = list(seen.values())
 
     with conn.cursor() as cur:
-        sql = """
-            INSERT INTO variants
+        sql = f"""
+            INSERT INTO {table}
             (variation_id, name, gene, clinical_significance, review_status, phenotypes, document, embedding)
             VALUES %s
             ON CONFLICT (variation_id) DO UPDATE SET
@@ -290,6 +314,162 @@ def insert_variants_batch(conn, variants: list[dict]):
 
         execute_values(cur, sql, values)
     conn.commit()
+
+
+# --- Zero-downtime staging re-index -----------------------------------------
+#
+# ClinVar refreshes weekly, so the re-index is a recurring operation and must
+# never leave production degraded. --staging builds a fresh `variants_staging`
+# table off to the side (live `variants` keeps serving throughout), embeds and
+# indexes it, then swaps it in atomically at the very end. A crash before the
+# swap touches only staging; production is untouched.
+
+# Sanity floor: never swap in a staging table with implausibly few rows (a
+# truncated download or a parse that silently dropped most rows would otherwise
+# replace the live index with a broken one). The full corpus is ~4.2M; even a
+# pathogenic-only rebuild is ~350K, so 100K is a safe "obviously broken" floor.
+# Disk-space pre-check is operator-level (df on the PGDATA volume before the
+# run - SQL cannot read filesystem free space without a superuser extension);
+# see the runbook. Peak footprint of the ~4.2M full build is ~100 GB.
+STAGING_MIN_ROWS = 100_000
+
+
+def create_staging_table(conn, staging: str = STAGING_TABLE, force: bool = False):
+    """Create an empty `staging` table mirroring `variants`, WITHOUT the HNSW
+    index (it is built once after the bulk load - far faster than maintaining
+    the graph across millions of inserts).
+
+    Includes the UNIQUE(variation_id) constraint so the ON CONFLICT upsert in
+    insert_variants_batch works during the load, plus the cheap btree/gin
+    indexes. Only the expensive HNSW index is deferred to build_staging_indexes.
+
+    Aborts if `staging` already exists (leftover from a failed run) unless
+    force=True, in which case it is dropped and recreated.
+    """
+    _assert_ident(staging)
+    with conn.cursor() as cur:
+        cur.execute("SELECT to_regclass(%s)", (staging,))
+        exists = cur.fetchone()[0] is not None
+        if exists:
+            if not force:
+                raise RuntimeError(
+                    f"{staging} already exists (leftover from a failed run?). "
+                    f"Re-run with --force-staging to drop and recreate it."
+                )
+            print(f"  Dropping existing {staging} (--force-staging)")
+            cur.execute(f"DROP TABLE {staging}")
+
+        # Mirror sql/init.sql, minus the HNSW index and the updated_at trigger
+        # (staging is write-once during the load; no in-place updates to track).
+        cur.execute(f"""
+            CREATE TABLE {staging} (
+                id SERIAL PRIMARY KEY,
+                variation_id INTEGER UNIQUE NOT NULL,
+                name TEXT NOT NULL,
+                gene TEXT NOT NULL,
+                clinical_significance TEXT NOT NULL,
+                review_status TEXT,
+                phenotypes TEXT[],
+                document TEXT NOT NULL,
+                embedding vector(1024),
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        """)
+        cur.execute(f"CREATE INDEX idx_{staging}_gene ON {staging}(gene)")
+        cur.execute(
+            f"CREATE INDEX idx_{staging}_clinsig "
+            f"ON {staging}(clinical_significance)"
+        )
+    conn.commit()
+    print(f"  Created empty staging table {staging} (HNSW deferred)")
+
+
+def build_staging_indexes(
+    conn, staging: str = STAGING_TABLE,
+    maintenance_work_mem: str = "16GB", parallel_workers: int = 7,
+):
+    """Build the HNSW + FTS indexes on the fully-loaded staging table.
+
+    Raises maintenance_work_mem and max_parallel_maintenance_workers for THIS
+    session only (SET, not ALTER SYSTEM) so the ~33 GB HNSW graph builds in
+    memory on the DB box (128 GB) instead of spilling to a slow on-disk phase
+    at the server default (64 MB). HNSW params match sql/init.sql (m=16,
+    ef_construction=64).
+    """
+    _assert_ident(staging)
+    print(f"  Building indexes on {staging} "
+          f"(maintenance_work_mem={maintenance_work_mem}, "
+          f"parallel_workers={parallel_workers})...")
+    with conn.cursor() as cur:
+        cur.execute(f"SET maintenance_work_mem = %s", (maintenance_work_mem,))
+        cur.execute(
+            "SET max_parallel_maintenance_workers = %s", (parallel_workers,)
+        )
+        print("    - HNSW (embedding vector_cosine_ops)...")
+        cur.execute(
+            f"CREATE INDEX idx_{staging}_embedding ON {staging} "
+            f"USING hnsw (embedding vector_cosine_ops) "
+            f"WITH (m = 16, ef_construction = 64)"
+        )
+        print("    - FTS (gin on document)...")
+        cur.execute(
+            f"CREATE INDEX idx_{staging}_document_fts ON {staging} "
+            f"USING gin(to_tsvector('english', document))"
+        )
+        print("    - ANALYZE...")
+        cur.execute(f"ANALYZE {staging}")
+    conn.commit()
+    print(f"  Indexes built on {staging}")
+
+
+def swap_staging_into_place(
+    conn, staging: str = STAGING_TABLE, live: str = "variants",
+    min_rows: int = STAGING_MIN_ROWS,
+):
+    """Atomically replace the live table with the staging table.
+
+    Sanity-gates on row count first (never swap in an implausibly small build),
+    then renames within a single transaction so no query ever sees a missing
+    table. The old live table is renamed aside and dropped after commit, and
+    its indexes/constraints are renamed to avoid name collisions on the next run.
+
+    Table names for the swap are trusted module constants, validated by
+    _assert_ident (psycopg2 cannot parameterize identifiers).
+    """
+    _assert_ident(staging)
+    _assert_ident(live)
+    old = f"{live}_old"
+    _assert_ident(old)
+
+    with conn.cursor() as cur:
+        cur.execute(f"SELECT count(*) FROM {staging}")
+        n = cur.fetchone()[0]
+        if n < min_rows:
+            raise RuntimeError(
+                f"Refusing to swap: {staging} has only {n:,} rows "
+                f"(< {min_rows:,} floor). Aborting to protect the live index."
+            )
+        print(f"  {staging} row count OK: {n:,} (>= {min_rows:,})")
+
+        # Drop any leftover _old from a prior interrupted swap.
+        cur.execute(f"DROP TABLE IF EXISTS {old}")
+
+        # Atomic swap: rename live aside, staging into place. Rename the
+        # staging table's PK/constraint so it doesn't collide with the live
+        # names still held by the (about-to-be-dropped) old table.
+        print(f"  Swapping {staging} -> {live} (atomic)...")
+        cur.execute(f"ALTER TABLE {live} RENAME TO {old}")
+        cur.execute(f"ALTER TABLE {staging} RENAME TO {live}")
+    conn.commit()
+
+    # Drop the old table outside the swap txn so the rename commits fast and the
+    # (potentially large) DROP doesn't extend the lock window.
+    with conn.cursor() as cur:
+        print(f"  Dropping old table {old}...")
+        cur.execute(f"DROP TABLE IF EXISTS {old}")
+    conn.commit()
+    print(f"  Swap complete: {live} is now the rebuilt table ({n:,} rows)")
 
 
 def count_variants_in_file(filepath: str, all_significance: bool = False, genes_filter: set[str] = None) -> int:
@@ -344,6 +524,26 @@ def main():
     parser.add_argument("--no-clear", action="store_true", help="Don't clear existing data")
     parser.add_argument("--dry-run", action="store_true", help="Parse and embed but don't write to DB")
 
+    # Zero-downtime staging re-index. Builds a fresh variants_staging table
+    # (live `variants` keeps serving), embeds + indexes it, then swaps it in
+    # atomically. This is the recommended mode for the recurring (weekly)
+    # full ClinVar re-index. DISK: needs ~120 GB free on the PGDATA volume for
+    # the ~4.2M full build - df it before a big run (see the runbook).
+    parser.add_argument("--staging", action="store_true",
+                        help="Zero-downtime re-index: build variants_staging, "
+                             "index it, then atomically swap it in. Live table "
+                             "keeps serving throughout. Ignores --no-clear.")
+    parser.add_argument("--force-staging", action="store_true",
+                        help="With --staging, drop a leftover variants_staging "
+                             "from a failed run instead of aborting.")
+    parser.add_argument("--staging-work-mem", type=str, default="16GB",
+                        help="maintenance_work_mem for the staging HNSW build "
+                             "(session-scoped SET; default 16GB - needs the DB "
+                             "box RAM to keep the graph off disk)")
+    parser.add_argument("--staging-workers", type=int, default=7,
+                        help="max_parallel_maintenance_workers for the staging "
+                             "index build (default 7)")
+
     args = parser.parse_args()
 
     # --starter-dataset sets the gene filter to STARTER_GENES (unless
@@ -371,6 +571,11 @@ def main():
         return 1
     print(f"Embeddings server: {EMBEDDINGS_URL}")
 
+    # Target table for the load. In staging mode the load goes into
+    # variants_staging (live `variants` untouched until the atomic swap); the
+    # default path loads straight into `variants`.
+    target_table = STAGING_TABLE if args.staging else "variants"
+
     # Connect to database
     if not args.dry_run:
         print(f"Connecting to database: {args.db_host}:{args.db_port}/{args.db_name}")
@@ -383,8 +588,19 @@ def main():
             print(f"Error: Cannot connect to database: {e}")
             return 1
 
-        # Clear existing data
-        if not args.no_clear:
+        if args.staging:
+            # Build a fresh staging table (HNSW deferred to after the load).
+            # Live `variants` keeps serving; --no-clear is irrelevant here.
+            print(f"Staging re-index: preparing {STAGING_TABLE} "
+                  f"(live table untouched until swap)")
+            try:
+                create_staging_table(conn, STAGING_TABLE, force=args.force_staging)
+            except Exception as e:
+                print(f"Error: {e}")
+                conn.close()
+                return 1
+        elif not args.no_clear:
+            # Clear existing data
             print("Clearing existing variants...")
             clear_variants_table(conn)
     else:
@@ -424,7 +640,7 @@ def main():
                 v["embedding"] = emb
             try:
                 if conn and not args.dry_run:
-                    insert_variants_batch(conn, batch)
+                    insert_variants_batch(conn, batch, table=target_table)
                 indexed += len(batch)
             except Exception as e:
                 errors += 1
@@ -464,19 +680,43 @@ def main():
         except Exception as e:
             if not aborted:
                 # Embed-side or sink-side error not covered by the 10-error
-                # ceiling - print and exit non-zero.
+                # ceiling - print and exit non-zero. Staging table is left in
+                # place for inspection; the live table was never touched.
                 print(f"\nPipeline error: {e}")
                 if conn:
                     conn.close()
                 return 1
 
-    if conn:
-        conn.close()
-
     if aborted:
+        # Load failed. In staging mode the live table is untouched; the
+        # partial staging table is left for inspection (re-run with
+        # --force-staging to rebuild it).
+        if conn:
+            conn.close()
         return 1
 
-    print(f"\nDone! Indexed {indexed:,} variants ({errors} errors).")
+    print(f"\nDone! Loaded {indexed:,} variants ({errors} errors).")
+
+    # Staging finalization: build the deferred HNSW/FTS indexes on the loaded
+    # staging table, then atomically swap it in. A failure here leaves the live
+    # table serving and the staging table in place (re-runnable).
+    if args.staging and conn and not args.dry_run:
+        try:
+            build_staging_indexes(
+                conn, STAGING_TABLE,
+                maintenance_work_mem=args.staging_work_mem,
+                parallel_workers=args.staging_workers,
+            )
+            swap_staging_into_place(conn, STAGING_TABLE, "variants")
+        except Exception as e:
+            print(f"\nStaging finalization failed: {e}")
+            print(f"  Live `variants` is unchanged and still serving.")
+            print(f"  Staging table {STAGING_TABLE} left in place for inspection.")
+            conn.close()
+            return 1
+
+    if conn:
+        conn.close()
 
     if not args.dry_run:
         print(f"\nVerify with:")

@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.15.0 - 2026-07-10
+
+Zero-downtime staging re-index for ClinVar (`--staging`).
+
+- New: `index_clinvar.py --staging` builds a fresh `variants_staging` table
+  off to the side while the live `variants` table keeps serving, then swaps it
+  in atomically. Recommended for the recurring full re-index - the previous
+  flow cleared the live table and rebuilt in place, leaving an empty or partial
+  index for the duration.
+- The expensive HNSW index is deferred until after the bulk load (far faster
+  than maintaining the graph across millions of inserts) and built with a
+  raised `maintenance_work_mem` so it stays in memory. A row-count sanity gate
+  refuses to swap in an implausibly small build, and any failure before the
+  swap leaves the live table untouched. New flags: `--force-staging`,
+  `--staging-work-mem`, `--staging-workers`.
+
 ## v0.14.0 - 2026-07-10
 
 Index uncertain, conflicting, and benign ClinVar variants (not just pathogenic).
