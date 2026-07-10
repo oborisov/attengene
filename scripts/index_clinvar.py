@@ -19,7 +19,9 @@ Usage:
     # Remote GPU embeddings (any TEI-shape /embed endpoint)
     EMBEDDINGS_URL=http://example.com:8081/embed python scripts/index_clinvar.py
 
-    # Index all clinical significance (not just pathogenic)
+    # Index all clinical significance (pathogenic + VUS + conflicting +
+    # benign). Uncertain/conflicting tiers get a guardrail note in the
+    # embedded document so the model reports them as uncertain/disputed.
     python scripts/index_clinvar.py --all-significance
 
     # Custom database host
@@ -71,6 +73,43 @@ CLINVAR_VARIANT_SUMMARY_URL = (
 )
 
 
+def significance_tier(significance: str) -> str:
+    """Classify a ClinVar ClinicalSignificance string into a coarse tier.
+
+    Used to decide whether an uncertainty label is baked into the document
+    (see to_document). Substring match on lowercased text so compound values
+    like "Pathogenic/Likely pathogenic" and "Likely benign" land correctly.
+    Conflicting is checked first (it can co-occur with nothing else meaningful),
+    then uncertain, then pathogenic, then benign. Anything else -> "other".
+    """
+    s = significance.lower()
+    if "conflicting" in s:
+        return "conflicting"
+    if "uncertain" in s:
+        return "uncertain"
+    if "pathogenic" in s:  # covers Pathogenic + Likely pathogenic + compounds
+        return "pathogenic"
+    if "benign" in s:  # covers Benign + Likely benign
+        return "benign"
+    return "other"
+
+
+# Guardrail note baked into the embedded document for the non-firm tiers, so it
+# rides through every retrieval path (exact/gene/hybrid/semantic) and into the
+# embedded text without touching retrieval.py. Mirrors the Fabry in-silico
+# hard-labeling pattern. Pathogenic/benign are firm classifications - no note.
+_SIGNIFICANCE_NOTE = {
+    "conflicting": (
+        "NOTE: submitters DISAGREE on this classification (conflicting). "
+        "Report the disagreement; do not resolve it."
+    ),
+    "uncertain": (
+        "NOTE: UNCERTAIN significance (VUS) - this is NOT an established "
+        "pathogenic or benign classification."
+    ),
+}
+
+
 @dataclass
 class ClinVarVariant:
     variation_id: int
@@ -83,13 +122,17 @@ class ClinVarVariant:
     def to_document(self) -> str:
         """Create searchable document text."""
         phenotype_str = "; ".join(self.phenotypes[:5]) if self.phenotypes else "Not specified"
-        return (
+        doc = (
             f"Gene: {self.gene}. "
             f"Variant: {self.name}. "
             f"Clinical significance: {self.clinical_significance}. "
             f"Review status: {self.review_status}. "
             f"Associated conditions: {phenotype_str}."
         )
+        note = _SIGNIFICANCE_NOTE.get(significance_tier(self.clinical_significance))
+        if note:
+            doc += f" {note}"
+        return doc
 
 
 def parse_clinvar(
@@ -100,17 +143,14 @@ def parse_clinvar(
 ) -> Generator[ClinVarVariant, None, None]:
     """Parse ClinVar variant_summary.txt.gz and yield variants."""
 
-    # Significance values to include (pathogenic only by default)
+    # Significance values to include (pathogenic only by default). With
+    # --all-significance every class is indexed - including VUS, conflicting,
+    # and benign - and the uncertainty tiers get a guardrail note baked into
+    # the document by to_document(). Conflicting is no longer force-excluded.
     include_significance = {
         "Pathogenic",
         "Likely pathogenic",
         "Pathogenic/Likely pathogenic",
-    }
-
-    # Always exclude conflicting interpretations
-    exclude_significance = {
-        "Conflicting interpretations of pathogenicity",
-        "Conflicting classifications of pathogenicity",
     }
 
     count = 0
@@ -124,10 +164,6 @@ def parse_clinvar(
                 continue
 
             significance = row.get("ClinicalSignificance", "")
-
-            # Always exclude conflicting
-            if significance in exclude_significance:
-                continue
 
             # Filter by significance unless --all-significance
             if not all_significance:

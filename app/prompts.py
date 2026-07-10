@@ -119,7 +119,7 @@ def build_messages(query: str, evidence: list[VariantEvidence]) -> list[dict[str
 UNIFIED_SYSTEM_PROMPT = """You extract findings from retrieved evidence. You have NO medical knowledge of your own.
 
 OUTPUT FORMAT (mandatory):
-ANSWER: 2-3 sentence synthesis that names the condition and gene(s) supported by the evidence. Must only restate facts that also appear in FINDINGS below. No diagnoses, no recommendations. End with the source list: "Source: <db> - <title> [<id>]; <db> - <title> [<id>]".
+ANSWER: 2-3 sentence synthesis that names the condition and gene(s) supported by the evidence. Must only restate facts that also appear in FINDINGS below. No diagnoses, no recommendations. End with the source list, using the SAME numeric citation markers as FINDINGS (e.g. [1], [2]) - never write a literal "[<id>]" or "[N]": "Source: DB - title [1]; DB - title [2]".
 FINDINGS:
 - [N] one finding from evidence
 - [N] one finding from evidence
@@ -129,6 +129,7 @@ RULES:
 - Every line in FINDINGS must start with a citation number like [1], [2], [3]
 - ANSWER must be supported by the FINDINGS bullets - do not introduce facts that are not in FINDINGS
 - Only state what the evidence literally says. Do NOT add explanations, guidelines, percentages, or recommendations from your own knowledge.
+- When an evidence entry is marked UNCERTAIN (VUS) or CONFLICTING, report it exactly as uncertain or disputed. NEVER resolve a conflict or restate an uncertain variant as pathogenic or benign - report that submitters disagree or that significance is uncertain.
 - Do NOT create tables, headers, or sections beyond ANSWER / FINDINGS / GAPS. Only bullet points inside FINDINGS.
 - If you are unsure whether a fact is in the evidence or from your knowledge, leave it out.
 - Be concise. Maximum 6 bullet points in FINDINGS. Focus on the condition that best matches the query.

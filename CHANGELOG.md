@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.14.0 - 2026-07-10
+
+Index uncertain, conflicting, and benign ClinVar variants (not just pathogenic).
+
+- New: `--all-significance` now indexes the full ClinVar significance range -
+  Uncertain significance (VUS), Conflicting classifications, and Benign/Likely
+  benign - in addition to pathogenic. Conflicting variants are no longer
+  force-excluded. This lets a variant lookup surface disputed and uncertain
+  entries (e.g. a conflicting Fabry/GLA variant) instead of reporting absence.
+- Safety: uncertain (VUS) and conflicting entries carry a guardrail note baked
+  into the embedded document, and a system-prompt rule requires the model to
+  report them as uncertain or disputed - never resolving a conflict or
+  restating a VUS as pathogenic or benign. Keeps the "never generate
+  pathogenicity classifications" guardrail intact once non-firm classes are in
+  the corpus.
+
 ## v0.13.0 - 2026-06-15
 
 Optional `attengene-dev` model id for live in-development testing.
